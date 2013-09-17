@@ -1,0 +1,63 @@
+/*
+Desenvolvido por Mister W Informática 
+Wesley Martins Alves da Costa
+wesley@misterwinformatica.com.br
+www.misterwinformatica.com.br
+Site: www.institutoonyx.com.br
+*/
+
+body{ 
+	font-family: Arial;
+	/*background-color:white;*/
+}
+#centro{
+	margin-left: auto;
+	margin-right: auto;
+	/*background-color: white;*/
+	width:100%;
+	height:auto;
+}
+
+#sub_centro{
+	margin-left: auto;
+	margin-right: auto;
+	/*background-color: white;*/
+	width:80%;
+	height:auto;
+}
+
+#topo{height: 200px; width: 100%; background: url('../imagens/topo.png') repeat-x; }
+	#logo{height:200px; width: 34%;  float: left;}
+	#matricula{height:200px; width: 33%; float: left;}
+	#box_login{height:200px; width: 33%; float: left;}
+#menu{height: 30px; width: 100%;background-color: #077CC4;}
+#banner{height: 350px;width: 100%;}
+#destaque{height: 150px; width: 100%;}
+	#destaque_titulo{height: 150px; width: 25%;float: left;}
+	#destaque_banner1{height: 150px; width: 15%;float: left;}
+	#destaque_banner2{height: 150px; width: 15%;float: left;}
+	#destaque_banner3{height: 150px; width: 15%;float: left;}
+	#destaque_banner4{height: 150px; width: 15%;float: left;}
+	#destaque_banner5{height: 150px; width: 15%;float: left;}
+#conteudo{height: auto; width: 100%; background-color: black;}
+	#box_esquerda{height: 220px;width: 33%;float: left;}
+	#box_central{height: 200px;width: 34%; float: left;}
+	#box_direita{height: 200px;width: 33%; float: left;}
+#rodape{height: 150px;width: 100%;background: url(../imagens/fundo_rodape.png) repeat-x; float: left;}
+	#rodape_esquerda{height: 150px;width: 27%;float: left;padding: 1% 0 0 15%;}
+	#rodape_central{height: 150px;width: 20%;float: left;padding: 1% 0 0 0;}
+	#rodape_direita{height: 150px;width: 20%;float: left;padding: 1% 0 0 7%;}
+
+/*Imagens*/
+.imagens_logo{margin: 7% 0 0 33%;}
+.imagens_icone_caderneta{margin: 14% 0 0 20%;}
+.imagens_banner1{margin: 3% 0 0 14%;}
+.imagens_box_destaque{margin: 21% 0 0 18%;}
+
+/*Titulos*/
+.titulo_destaque{padding: 5% 0 0 0; text-align: center;}
+
+/* Tag */
+
+/*ul*/
+ul{list-style-image: url(../imagens/icone/rodape_li.png);}
