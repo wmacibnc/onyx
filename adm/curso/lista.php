@@ -3,7 +3,8 @@ include("../header.php");
 include("../../config.php"); 
 ?>
 <div id="conteudo">
-
+ teste
+<div id="progressbar" style="width: 50%;">teste</div>
   <?php
 
   $res = mysql_query("select * from convenio"); /*Executa o comando SQL, no caso para pegar todos os usuarios do sistema e retorna o valor da consulta em uma variavel ($res)  */

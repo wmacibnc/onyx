@@ -1,17 +1,16 @@
 <?php
-session_start();
 include("../../config.php");
 include("../header.php");
 ?>
-<form method="post" action="salva_convenio.php" enctype="multipart/form-data">
+<form method="post" action="salva.php" enctype="multipart/form-data">
 
-	<label>Categoria: </label>
+	<label>Cadastro de Curso: </label>
 	<br />
-	<select name="categoria_id">
+	<select name="grupo_id">
 		<?php 
-		$resultado = mysql_query("select * from categoria");
-		while($categoria=mysql_fetch_array($resultado)){
-			echo "<option value='".$categoria['id'] ."'>".$categoria['nome'] ."</option>";
+		$resultado = mysql_query("select * from grupo_curso");
+		while($grupo_curso=mysql_fetch_array($resultado)){
+			echo "<option value='".$grupo_curso['id'] ."'>".$grupo_curso['nome'] ."</option>";
 		}
 		?>			
 	</select>
@@ -19,44 +18,20 @@ include("../header.php");
 	<label>Nome: </label> <br />		
 	<input type="text" name="nome" id="nome"/><br/>
 
-	<label>Telefone: </label> <br />		
-	<input type="text" name="telefone" id="telefone"/><br/>
+	<label>Descrição: </label> <br />		
+	<input type="text" name="descricao" id="descricao"/><br/>
 
-	<label>E-mail: </label> <br />		
-	<input type="text" name="email" id="email"/><br/>
+	<label>Ementa: </label> <br />		
+	<input type="text" name="ementa" id="ementa"/><br/>
 
-	<label>Resumo: </label> <br />		
-	<input type="text" name="resumo" id="resumo"/><br/>
+	<label>Valor: </label> <br />		
+	<input type="text" name="valor" id="valor"/><br/>
 
-	<label>Logo: </label> <br />		
-	<input type="file" name="logo" id="logo"/><br />
+	<label>Observação: </label> <br />		
+	<input type="text" name="observacao" id="observacao"/><br />
 
-	<label>Slogan: </label> <br />		
-	<input type="text" name="slogan" id="slogan"/><br/>
-
-	<label>Descontos: </label> <br />		
-	<input type="text" name="desconto" id="desconto"/><br/>
-
-	<label>Serviços: </label> <br />		
-	<input type="text" name="servico" id="servico"/><br/>
-
-	<label>CEP: </label> <br />		
-	<input type="text" name="cep" id="cep"/><br/>
-
-	<label>Endereço: </label> <br />		
-	<input type="text" name="endereco" id="endereco"/><br/>
-
-	<label>Bairro: </label> <br />		
-	<input type="text" name="bairro" id="bairro"/><br/>
-
-	<label>Cidade: </label> <br />		
-	<input type="text" name="cidade" id="cidade"/><br/>
-
-	<label>UF: </label> <br />		
-	<input type="text" name="uf" id="uf"/><br/>			
-
-	<label>Observacao: </label> <br />		
-	<input type="text" name="observacao" id="observacao"/><br/>						
+	<label>Quantidade de Aula: </label> <br />		
+	<input type="text" name="qtd_aula" id="qtd_aula"/><br/>
 
 	<input type="submit" value="Enviar" />
 </form>
