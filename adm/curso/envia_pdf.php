@@ -1,15 +1,22 @@
 <?php
 
+include '../../config.php';
+include '../header.php';
+// Recebe o nome do curso
+$curso =  $_POST['curso'];
+// Recebe a aula do curso
+$aula = $_POST['aula'];
+// Recebe o ID do curso
+$curso_id = $_POST['curso_id'];
 
-// VERIFICA SE O CAMPO PDF ESTÁ VAZIO
-if ($_FILES['pdf']['name'] != "") {
-// SE O CAMPO NÃO ESTIVER VAZIO MOVE O ARQUIVO PARA UMA PASTA
- move_uploaded_file($_FILES['pdf']['tmp_name'],"c:/teste/".$_FILES['pdf']['name']);
- // $PDF_PATH É A VARIAVEL Q GUARDA O ENDEREÇO DO PDF(pra adicionar na base de dados)
- $pdf_path = "c:/teste/".$_FILES['pdf']['name'];
-} else {
-//CASO SEJA FALSO RETORNA ERRO
- echo "Não foi possível enviar o arquivo";
-}
-
-?>
+$nome_temporario=$_FILES["pdf"]["tmp_name"];
+$nome_real=$_FILES["pdf"]["name"];
+$pasta = $curso."/".$aula."/".$nome_real;
+copy($nome_temporario,$pasta);
+echo "<div id='conteudo_curso'>";
+echo "<h3>Arquivo enviado com sucesso! </h3>";
+echo "<a href='lista_dados_curso.php?curso=".$curso_id."'>Lista de aulas.</a>";
+echo "<p>Todos os direitos reservados - Instituto Onyx 2013</p>";
+echo "</div>";
+include '../footer.php';
+?>	

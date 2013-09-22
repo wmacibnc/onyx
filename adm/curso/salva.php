@@ -14,6 +14,7 @@ $nome = $_POST['nome'];
 $descricao = $_POST['descricao'];
 $ementa = $_POST['ementa'];
 $valor = $_POST['valor'];
+$nome_pasta = $_POST['nome_pasta'];
 $observacao = $_POST['observacao'];
 $qtd_aula = $_POST['qtd_aula'];
    // Insere os dados no banco 
@@ -23,7 +24,8 @@ INSERT INTO curso(
   nome, 
   descricao, 
   ementa, 
-  valor, 
+  valor,
+  nome_pasta,
   observacao, 
   qtd_aula)
 VALUES (
@@ -32,6 +34,7 @@ VALUES (
   '$descricao',
   '$ementa',
   '$valor',
+  '$nome_pasta',
   '$observacao',
   '$qtd_aula')
 QUERY;
@@ -41,11 +44,11 @@ $nao_continuar = 0;
 if ($nao_continuar == 0){ 
   echo "Dados cadastrados com sucesso!". "<br />"; 
     // Cria a pasta do curso
-  mkdir($nome);
+  mkdir($nome_pasta);
 
     // Cria as pastas das aulas
     for ($i=1; $i <= $qtd_aula; $i++) { 
-    $diretorio = $nome."/".$i;
+    $diretorio = $nome_pasta."/".$i;
     mkdir($diretorio);
   }
 } 
@@ -57,6 +60,6 @@ if (count($error) != 0) {
  } 
 } 
 
-echo "<a href='lista.php'> Lista Geral</a>";
+echo "<a href='lista_curso.php'> Lista Geral</a>";
 include("../footer.php"); 
 ?>
