@@ -33,6 +33,7 @@ include("../header.php");
 
 		while($arquivo = $diretorio -> read()){
    			if($arquivo != '.' && $arquivo !='..'){
+   			echo " <embed src='".$path.$arquivo."' width='100%'></embed>";	
       			echo "<a href='".$path.$arquivo."'target='_blank'>".$arquivo."</a><br />";
   			}
   		}

@@ -1,5 +1,17 @@
 <?php 
-session_start();
+// A sessão precisa ser iniciada em cada página diferente
+if (!isset($_SESSION)) session_start();
+
+$nivel_necessario = 1;
+
+// Verifica se não há a variável da sessão que identifica o usuário
+if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necessario)) {
+  // Destrói a sessão por segurança
+  session_destroy();
+  // Redireciona o visitante de volta pro login
+  header("Location: ../login.php?mensagem=4"); exit;
+}
+
 ?>
 <html>
 <head>
@@ -27,7 +39,7 @@ session_start();
 <div id="logo"><a href="index.php"><img src="../../imagens/logo.png" class="logo"></a></div>
 <div id="titulo_principal">
   <p class="titulo_principal" align="center">Área Administrativa</p>
-  <a href="#"><img src="../../imagens/icone/logoff.png" class="imagem_logoff"></a>
+  <a href="../../logoff.php"><img src="../../imagens/icone/logoff.png" class="imagem_logoff"></a>
 </div>
 </div>
 

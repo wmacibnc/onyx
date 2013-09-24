@@ -45,14 +45,30 @@ include("config.php");
       </div>
     </div>
 
-    <div id="menu">
-      menu
+    <div id="menu" align="center">
+      <div id='cssmenu' align="center">
+<ul>
+   <li class='active'><a href='index.php'><span>Home</span></a></li>
+   <li><a href='institucional.php'><span>Institucional</span></a></li>
+   <li><a href='consultoria.php'><span>Consultoria</span></a></li>
+   <li class='has-sub'><a href='#'><span>Cursos</span></a>
+      <ul>
+         <li><a href='#'><span>Pós-Graduação</span></a></li>
+         <li><a href='#'><span>Profissionalizantes</span></a></li>
+         <li class='last'><a href='#'><span>Graduação</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Biblioteca</span></a></li>
+   <li class='has-sub'><a href='#'><span>Parceiros</span></a></li>
+   <li class='last'><a href='#'><span>Contato</span></a></li>
+</ul>
+</div>
     </div>
 
     <div id="sub_centro">
       <!-- centro -->
 
-      <div id="banner">
+      <div id="banner" align="center">
         <img src="imagens/banner/banner1.png" class="imagens_banner1">
       </div>
 
