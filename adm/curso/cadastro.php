@@ -3,7 +3,7 @@ include("../../config.php");
 include("../header.php");
 ?>
 <div id="conteudo_curso">
-<form method="post" action="salva.php" enctype="multipart/form-data">
+<form method="post" action="curso/salva.php" enctype="multipart/form-data">
 
 	<label>Cadastro de Curso: </label>
 	<br /><br />

@@ -20,7 +20,7 @@ include("../../config.php");
   while($arquivo = $diretorio -> read()){
     if($arquivo != '.' && $arquivo !='..'){
       
-      echo "<td><a href='adiciona_conteudo.php?curso=".$curso['nome_pasta']."&aula=".$arquivo."&curso_id=".$curso['id']."&curso_nome=".$curso['nome']."'>Aula ".$arquivo."</a></td>";
+      echo "<td><a href='curso/adiciona_conteudo.php?curso=".$curso['nome_pasta']."&aula=".$arquivo."&curso_id=".$curso['id']."&curso_nome=".$curso['nome']."'>Aula ".$arquivo."</a></td>";
       if( $i%3 == 0 ) {
        echo "</tr><tr>";
      }

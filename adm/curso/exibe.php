@@ -40,7 +40,7 @@ include("../header.php");
   echo "<table width='100%'><tr>";
   while($arquivo = $diretorio -> read()){
     if($arquivo != '.' && $arquivo !='..'){
-      echo "<td align='center'><a href='conteudo.php?curso=".$row2['id']."&aula=".$arquivo."'><img src='../../imagens/icone/pasta.png'/> Aula ".$arquivo."</a></td>";
+      echo "<td align='center'><a href='curso/conteudo.php?curso=".$row2['id']."&aula=".$arquivo."'><img src='../imagens/icone/pasta.png'/> Aula ".$arquivo."</a></td>";
       if( $i%3 == 0 ) {
        echo "</tr><tr>";
      }

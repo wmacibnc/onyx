@@ -7,7 +7,7 @@ include("../../config.php");
 	<?php 
 	$res = mysql_query("select * from curso"); 
 
-  		echo "<a href='cadastro.php'> Novo </a>";
+  		echo "<a href='curso/cadastro.php'> Novo </a>";
   		echo "<table cellpadding='0' cellspacing='0' border='0' class='display' id='example'>
     <thead>
       <tr>
@@ -33,9 +33,10 @@ include("../../config.php");
     <td>".$curso['nome'] ."</td>
     <td>".$curso['qtd_aula'] ."</td>
 
-    <td><a href='lista_dados_curso.php?curso=".$curso['id']."'>Contéudo</a></td></tr>";
+    <td><a href='curso/lista_dados_curso.php?curso=".$curso['id']."'>Contéudo</a></td></tr>";
   }
   ?>
 </tbody>
     </table>
+</div>
 <?php include("../footer.php"); ?>

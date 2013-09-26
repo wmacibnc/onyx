@@ -31,6 +31,7 @@ if (mysql_num_rows($query) != 1) {
 	$_SESSION['UsuarioID'] = $resultado['id'];
 	$_SESSION['UsuarioNome'] = $resultado['nome'];
 	$_SESSION['UsuarioNivel'] = $resultado['nivel'];
+	$_SESSION['id_user'] = $resultado['id'];
 
 	// Redireciona o visitante
 	header("Location: adm/index.php"); exit;

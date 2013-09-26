@@ -1,5 +1,5 @@
 <?php 
-session_start();
+if (!isset($_SESSION)) session_start();
 include("config.php"); 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,19 +22,19 @@ include("config.php");
       <div id="matricula"><a href="matricula.php"><img src="imagens/icone/icone_caderneta.png" class="imagens_icone_caderneta"> Faça sua Matricula</a></div>
       <div id="box_login">
         <h2>Área Administrativa</h2>
-        <form>
+        <form action="validacao.php" method="post">
           <table>
             <tr>
               <td><label>Login: </label></td>
               <td><label>Senha: </label></td>
             </tr>
             <tr>
-              <td><input type="text"name="login" value="login"/></td>
-              <td><input type="password"name="senha" value="senha"/>
+              <td><input type="text"name="usuario" value="login" onfocus="this.value = ''"/></td>
+              <td><input type="password"name="senha" value="senha" onfocus="this.value = ''"/>
               </td>
             </tr>
             <tr>
-              <td><input type="button" name="entrar" value="Entrar"></td>
+              <td><input type="submit" value="Entrar" /></td>
             </tr>
           </table>
         </form>
@@ -50,7 +50,12 @@ include("config.php");
 <ul>
    <li class='active'><a href='index.php'><span>Home</span></a></li>
    <li><a href='institucional.php'><span>Institucional</span></a></li>
-   <li><a href='consultoria.php'><span>Consultoria</span></a></li>
+   <li><a href='consultoria.php'><span>Consultoria</span></a>
+    <ul>
+      <li><a href='consultoria_escola.php'><span>Consultorias Para Escolas</span></a></li>
+      <li><a href='consultoria_empresa.php'><span>Consultorias Para Empresas</span></a></li>
+    </ul>
+   </li>
    <li class='has-sub'><a href='#'><span>Cursos</span></a>
       <ul>
          <li><a href='#'><span>Pós-Graduação</span></a></li>
@@ -58,9 +63,9 @@ include("config.php");
          <li class='last'><a href='#'><span>Graduação</span></a></li>
       </ul>
    </li>
-   <li class='has-sub'><a href='#'><span>Biblioteca</span></a></li>
-   <li class='has-sub'><a href='#'><span>Parceiros</span></a></li>
-   <li class='last'><a href='#'><span>Contato</span></a></li>
+   <li class='has-sub'><a href='bibiloteca.php'><span>Biblioteca</span></a></li>
+   <li class='has-sub'><a href='parceiros.php'><span>Parceiros</span></a></li>
+   <li class='last'><a href='contato.php'><span>Contato</span></a></li>
 </ul>
 </div>
     </div>

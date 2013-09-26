@@ -21,7 +21,7 @@ $resultado2 = mysql_query("select * from curso where id=".$curso['curso_id']."")
 
     	$aula = ($aula_atual*($porcetagem)) / ($aula_total);
 		
-    	echo "<p class='texto_curso'> <a href='exibe.php?curso=".$dados_curso['id']."'>Curso: ".$dados_curso['nome']."</a></p>";
+    	echo "<p class='texto_curso'> <a href='curso/exibe.php?curso=".$dados_curso['id']."'>Curso: ".$dados_curso['nome']."</a></p>";
     	
 		echo "<div id='progressbar_box'> ";
 		echo "&nbsp;".number_format($aula, 2, ',', '')." % concluído.";

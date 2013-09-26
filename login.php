@@ -1,5 +1,14 @@
+<html>
+<head>
+	<title>Área Restrita</title>
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<div id="conteudo">
+</head>
+<body>
+
+<div id="login-fundo">
+<div id="login" align="center">
 	<?php $mensagem='';
 	if (!empty($_GET['mensagem'])){
 		$mensagem = $_GET['mensagem'];
@@ -30,13 +39,14 @@
 		<fieldset>
 			<legend>Login</legend>
 			<?php if(!empty($novaMensagem)){
-				echo "Erro: ".$novaMensagem."<br />";
+				echo "<div id='erro'>".$novaMensagem."</div><br />";
 			}?>
-			<label for="txUsuario">Usuário</label>
-			<input type="text" name="usuario" id="txUsuario" maxlength="25" />
-			<label for="txSenha">Senha</label>
-			<input type="password" name="senha" id="txSenha" />
-
+			<input type="text" value="Login" onfocus="this.value = ''" name="usuario" id="txUsuario" maxlength="25" /></br />
+			<input type="password" value="Senha" onfocus="this.value = ''" name="senha" id="txSenha" /></br />
+</br />
 			<input type="submit" value="Entrar" />
 		</fieldset>
 	</div>
+</div>
+</body>
+</html>

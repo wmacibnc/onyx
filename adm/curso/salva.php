@@ -60,6 +60,6 @@ if (count($error) != 0) {
  } 
 } 
 
-echo "<a href='lista_curso.php'> Lista Geral</a>";
+echo "<a href='curso/lista_curso.php'> Lista Geral</a>";
 include("../footer.php"); 
 ?>

@@ -1,20 +1,10 @@
 <?php 
 
-// A sessão precisa ser iniciada em cada página diferente
-if (!isset($_SESSION)) session_start();
-
-$nivel_necessario = 1;
-
-// Verifica se não há a variável da sessão que identifica o usuário
-if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necessario)) {
-	// Destrói a sessão por segurança
-	session_destroy();
-	// Redireciona o visitante de volta pro login
-	header("Location: ../login.php?mensagem=4"); exit;
-}
+include('header.php');
 
 echo "Página Restrita <br />";
 		echo $_SESSION['UsuarioNome'];
 echo "<br /><a href='curso/lista_curso.php'>Cursos</a>";
 echo "<br /><a href='../logoff.php'>Sair</a>";
-		?>
+?>
+<?php include('footer.php'); ?>

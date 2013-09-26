@@ -11,7 +11,7 @@ include("../header.php");
 	<h3>Upload de Arquivo</h3>
 	<h4>Curso: <?php echo $curso_nome; ?>  Aula: <?php echo $aula; ?></h4>
 
-<form name="teste" method="post" action="envia_pdf.php" enctype="multipart/form-data">
+<form name="teste" method="post" action="curso/envia_pdf.php" enctype="multipart/form-data">
 	<input type='hidden' name='curso' value='<?php echo $curso; ?>' />
 	<input type='hidden' name='aula' value='<?php echo $aula; ?>' />
 	<input type='hidden' name='curso_id' value='<?php echo $curso_id; ?>' />
@@ -25,7 +25,7 @@ include("../header.php");
 
 	$resultado = mysql_query("select * from curso where id=".$curso_id."");
     $row = mysql_fetch_array($resultado);
-    $path = $row['nome_pasta']."/".$aula_id."/";
+    $path =$row['nome_pasta']."/".$aula_id."/";
 
     echo "<h4>Conteúdo já disponível</h4>";
 
