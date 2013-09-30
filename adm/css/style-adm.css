@@ -35,9 +35,9 @@ h4{color: #000000;}
 	#rodape_central{height: 150px;width: 20%;float: left;padding: 1% 0 0 0;}
 	#rodape_direita{height: 150px;width: 20%;float: left;padding: 1% 0 0 7%;}
 
-#progressbar_box{width: 50%;}
-#progressbar100{background-color: #ffffff;border-width: medium; border-style: solid; border-color: #077CC4;-moz-border-radius: 100px;-webkit-border-radius: 100px;border-radius: 100px; color: #FFFFFF;}
-#progressbar{background-color: #1A1412;-moz-border-radius: 100px;-webkit-border-radius: 100px;border-radius: 100px;}
+#progressbar_box{width: 50%;margin: -20px 0 0 0;}
+#progressbar100{background-color: #ffffff;border-width: medium; border-style: solid; border-color: #077CC4;-moz-border-radius: 100px;-webkit-border-radius: 100px;border-radius: 100px; color: #FFFFFF;height: 5px;}
+#progressbar{background-color: #1A1412;-moz-border-radius: 100px;-webkit-border-radius: 100px;border-radius: 100px;height: 5px;}
 
 /*ul*/
 ul{list-style-image: url(../../imagens/icone/rodape_li.png);}

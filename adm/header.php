@@ -59,7 +59,7 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
       <p class="btn"><a href="curso/detalhe.php">Meus Cursos</a></p>
       <p class="btn"><a href="#">Certificados</a></p>
       <p class="btn"><a href="#">Chat</a></p>
-      <p class="btn"><a href="#">Fórum</a></p>
+      <p class="btn"><a href="forum/">Fórum</a></p>
       <p class="btn"><a href="#">Promoções</a></p>
       <p class="btn"><a href="#">Inscrições</a></p>
       <p class="btn"><a href="#">Contato</a></p>

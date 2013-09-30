@@ -17,6 +17,12 @@ $valor = $_POST['valor'];
 $nome_pasta = $_POST['nome_pasta'];
 $observacao = $_POST['observacao'];
 $qtd_aula = $_POST['qtd_aula'];
+
+$ativo = $_POST['ativo'];
+$tipo = $_POST['tipo'];
+$validade = $_POST['validade'];
+
+
    // Insere os dados no banco 
 $query = <<<QUERY
 INSERT INTO curso(
@@ -27,7 +33,11 @@ INSERT INTO curso(
   valor,
   nome_pasta,
   observacao, 
-  qtd_aula)
+  qtd_aula,
+  validade,
+  tipo,
+  ativo
+  )
 VALUES (
   '$grupo_id',
   '$nome',
@@ -36,7 +46,11 @@ VALUES (
   '$valor',
   '$nome_pasta',
   '$observacao',
-  '$qtd_aula')
+  '$qtd_aula',
+  '$validade',
+  '$tipo',
+  '$ativo'
+  )
 QUERY;
 mysql_query($query) or die ('ERRO: '.mysql_error());
 $nao_continuar = 0;
