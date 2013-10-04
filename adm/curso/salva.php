@@ -21,7 +21,7 @@ $qtd_aula = $_POST['qtd_aula'];
 $ativo = $_POST['ativo'];
 $tipo = $_POST['tipo'];
 $validade = $_POST['validade'];
-
+$valideAula = $_POST['validadeAula'];
 
    // Insere os dados no banco 
 $query = <<<QUERY
@@ -36,7 +36,8 @@ INSERT INTO curso(
   qtd_aula,
   validade,
   tipo,
-  ativo
+  ativo,
+  validadeAula
   )
 VALUES (
   '$grupo_id',
@@ -49,7 +50,8 @@ VALUES (
   '$qtd_aula',
   '$validade',
   '$tipo',
-  '$ativo'
+  '$ativo',
+  '$validadeAula'
   )
 QUERY;
 mysql_query($query) or die ('ERRO: '.mysql_error());
@@ -61,18 +63,18 @@ if ($nao_continuar == 0){
   mkdir($nome_pasta);
 
     // Cria as pastas das aulas
+    // Se curso por módulo
+    if(isset($tipo))  {
     for ($i=1; $i <= $qtd_aula; $i++) { 
     $diretorio = $nome_pasta."/".$i;
     mkdir($diretorio);
+    }
+    }else{
+      $diretorio = $nome_pasta."/1";
+      mkdir($diretorio);
+    }
   }
-} 
 
-   // Se houver mensagens de erro, exibe-as 
-if (count($error) != 0) { 
-  foreach ($error as $erro) { 
-   echo $erro . ""; 
- } 
-} 
 
 echo "<a href='curso/lista_curso.php'> Lista Geral</a>";
 include("../footer.php"); 

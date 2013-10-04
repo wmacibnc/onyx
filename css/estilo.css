@@ -30,7 +30,7 @@ body{
 	#logo{height:200px; width: 34%;  float: left;}
 	#matricula{height:200px; width: 33%; float: left;}
 	#box_login{height:200px; width: 33%; float: left;}
-#menu{height: 60px; width: 100%;}
+#menu{height: 60px; width: 100%;font-size:12px;font-weight:Bold;}
 #banner{height: 350px;width: 100%;}
 #destaque{height: 150px; width: 100%;}
 	#destaque_titulo{height: 150px; width: 25%;float: left;}
@@ -77,12 +77,16 @@ h4{color: #077CC4;}
   font-family: Arial;
 }
 #cssmenu > ul li {
+  text-align: center;
   margin: 0;
   padding: 0;
+  font-size: 14px;
   display: block;
   float: left;
   position: relative;
   width: 148px;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
 }
 #cssmenu > ul li a:link,
 #cssmenu > ul li a:visited {
@@ -102,12 +106,10 @@ h4{color: #077CC4;}
   display: block;
   text-align: center;
   text-decoration: none;
-  background: #99C9E7;
   color: #ffffff;
   width: 146px;
   height: 22px;
-  border-left: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
+  
 }
 #cssmenu > ul li ul {
   margin: 0;
@@ -143,13 +145,13 @@ h4{color: #077CC4;}
 #cssmenu > ul li ul li a:active,
 #cssmenu > ul li ul li a:hover {
   clear: left;
-  background: #99C9E7;
   padding: 4px 0;
   border-bottom: 1px solid #ffffff;
   position: relative;
   z-index: 1000;
   line-height: 100%;
   height: 22px;
+  color:gray;
 }
 #cssmenu > ul li ul li ul.navigation-3 {
   display: none;

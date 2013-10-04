@@ -9,7 +9,7 @@ include("../header.php");
 		<table>
 			<tr>
 				<td width="70%"><input type="checkbox" name="tipo" value="1"/> Curso por Módulos<td>
-					<td width="20%"><input type="checkbox" name="ativo" value="1"/> Ativo<td>
+					<td width="20%"><input type="checkbox" name="ativo" value="1" checked/> Ativo<td>
 					</tr>
 				</table>
 				<br />
@@ -47,11 +47,13 @@ include("../header.php");
 						<table>
 							<tr>
 								<td><label>Valor: </label> <br />		
-									<input type="text" name="valor" id="valor" size="10px" maxlength="10" /></td>
+									<input type="text" name="valor" id="valor" size="12px" maxlength="10" /></td>
 								<td><label>Quant. Aulas: </label> <br />		
-									<input type="text" name="qtd_aula" id="qtd_aula" size="10px" maxlength="3" /></td>
-								<td><label>Validade: </label> <br />		
-										<input type="text" name="validade" id="qtd_aula" size="30px"/></td>
+									<input type="text" name="qtd_aula" id="qtd_aula" size="12px" maxlength="3" /></td>
+								<td><label>Validade Curso: </label> <br />		
+										<input type="text" name="validade" id="validade" size="15px"/></td>
+								<td><label>Validade Módulo: </label> <br />		
+									<input type="text" name="validadeAula" id="validadeAula" size="15px"/></td>
 							</tr>
 						</table>
 

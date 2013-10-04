@@ -45,9 +45,9 @@ include("config.php");
       </div>
     </div>
 
-    <div id="menu" align="center">
-      <div id='cssmenu' align="center">
-<ul>
+    <div id="menu">
+      <div id='cssmenu'>
+<ul align="center">
    <li class='active'><a href='index.php'><span>Home</span></a></li>
    <li><a href='institucional.php'><span>Institucional</span></a></li>
    <li><a href='consultoria.php'><span>Consultoria</span></a>

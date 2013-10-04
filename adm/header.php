@@ -65,6 +65,7 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
       <p class="btn"><a href="#">Contato</a></p>
       <p class="btn"><a href="curso/cadastro.php">Novo Curso</a></p>
       <p class="btn"><a href="curso/lista_curso.php">Adm Cursos</a></p>
+      <p class="btn"><a href="turma/lista.php">Turma</a></p>
     <div id="banner_institucional">
       <h4 align='center'>Bate-Papo</h4>
       <ul>

@@ -7,12 +7,13 @@ include("../header.php");
 	<h3>Cursos em Andamento</h3>
 
 	<?php 
-	 $usuario_id = 1;    
+	 $usuario_id = $_SESSION['UsuarioID'];    
 
     	$resultado = mysql_query("select * from modulo_usuario_curso where usuario_id=".$usuario_id."");
 		while($curso=mysql_fetch_array($resultado)){
 		$resultado2 = mysql_query("select * from curso where id=".$curso['curso_id']."");
-		$resultado3 = mysql_query("select * from turma");
+		$resultado3 = mysql_query("select * from turma_usuario where usuario_id=".$usuario_id."");
+
 
 		$dados_curso = mysql_fetch_array($resultado2);
     	$aula_atual = $curso['aula_atual'];
@@ -22,15 +23,19 @@ include("../header.php");
 		// Se tipo
 		// 1 - Por módulos - Data de vinculo = DataInicio Turma
 		// 0 - Por Aula - Data de Vinculo = DataVinculo no curso
-		$turma = mysql_fetch_array($resultado3);
+		$turma_usuario = mysql_fetch_array($resultado3);
+		$turma_id = 1;//$turma_usuario['turma_id'];
+		$resultado4 = mysql_query("select * from turma_curso where turma_id=".$turma_id."");
+
+		$turma_curso = mysql_fetch_array($resultado4);
 
 		$tipo = $dados_curso['tipo'];
 		$dataVinculo = date('d/m/Y');	
 
 		if($tipo==1){
-		$dataVinculo = $turma['dataInicio'];	
+		$dataVinculo = $turma_curso['dataInicio'];	
 		}else{
-		$dataVinculo = $curso['DataVinculo'];	
+		$dataVinculo = $curso['dataVinculo'];	
 		}
 		
 		$inicio = strftime("%d/%m/%Y", strtotime($dataVinculo));

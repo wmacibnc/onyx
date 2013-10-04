@@ -25,7 +25,7 @@ include("../header.php");
 
 	$resultado = mysql_query("select * from curso where id=".$curso_id."");
     $row = mysql_fetch_array($resultado);
-    $path =$row['nome_pasta']."/".$aula_id."/";
+    $path = $row['nome_pasta']."/".$aula_id."/";
 
     echo "<h4>Conteúdo já disponível</h4>";
 
@@ -33,8 +33,7 @@ include("../header.php");
 
 		while($arquivo = $diretorio -> read()){
    			if($arquivo != '.' && $arquivo !='..'){
-   			echo " <embed src='".$path.$arquivo."' width='100%'></embed>";	
-      			echo "<a href='".$path.$arquivo."'target='_blank'>".$arquivo."</a><br />";
+      			echo "<a href='curso/".$path.$arquivo."'target='_blank'>".$arquivo."</a><br />";
   			}
   		}
 

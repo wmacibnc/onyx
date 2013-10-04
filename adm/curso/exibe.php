@@ -6,7 +6,7 @@ include("../header.php");
   <?php
 // Listando os arquivos da aula
   
-  $usuario_id = 1;
+  $usuario_id = $_SESSION['UsuarioID'];
   $curso_id =$_GET['curso'];
 
 
@@ -20,6 +20,7 @@ include("../header.php");
   $resultado2 = mysql_query("select * from curso where id=".$curso_id."");
   $row2 = mysql_fetch_array($resultado2);
   $aula_total = $row2['qtd_aula'];
+  $validadeAula = $row2['validadeAula'];
   $path = $row2['nome_pasta']."/";
   $diretorio = dir($path);
 
@@ -33,7 +34,27 @@ $mes_atual = $data_atual[1];
 $ano_atual = $data_atual[2];
 
 $dias = $row2['validade'];
-$dataVinculo = $row['DataVinculo'];
+
+
+    // Se tipo
+    // 1 - Por módulos - Data de vinculo = DataInicio Turma
+    // 0 - Por Aula - Data de Vinculo = DataVinculo no curso
+    $resultado3 = mysql_query("select * from turma_usuario where usuario_id=".$usuario_id."");
+    $turma_usuario = mysql_fetch_array($resultado3);
+    $turma_id = $turma_usuario['turma_id'];
+    $resultado4 = mysql_query("select * from turma_curso where turma_id=".$turma_id."");
+
+    $turma_curso = mysql_fetch_array($resultado4);
+
+    $tipo = $row2['tipo'];
+    $dataVinculo = date('d/m/Y'); 
+
+    if($tipo==1){
+    $dataVinculo = $turma_curso['dataInicio'];  
+    }else{
+    $dataVinculo = $row['dataVinculo']; 
+    }
+
 $validade = date('d/m/Y', strtotime("+".$dias." days",strtotime($dataVinculo)));
 $data_validade = explode("/", $validade);
 $dia_validade = $data_validade[0];
@@ -42,7 +63,7 @@ $ano_validade = $data_validade[2];
 
 //COMPARANDO
 
-if (($dia_atual > $dia_validade) && ($mes_atual >= $mes_validade) && ($ano_atual >= $ano_validade)) {
+if (($dia_atual > $dia_validade) and ($mes_atual >= $mes_validade) and ($ano_atual >= $ano_validade)) {
     $validade = date('d/m/Y', strtotime("+".$dias." days",strtotime($dataVinculo)));
     $inicio = strftime("%d/%m/%Y", strtotime($dataVinculo));
 
@@ -96,6 +117,10 @@ if (($dia_atual > $dia_validade) && ($mes_atual >= $mes_validade) && ($ano_atual
  $diretorio -> close();
     }else{
   $porcetagem = 100;
+  $hoje = date('Y/m/d');
+  $diff =  strtotime($hoje) - strtotime($dataVinculo);
+   //  24 horas * 60 Min * 60 seg = 86400
+  $totalDias = ceil($diff/86400);
 
   $aula = ($aula_atual*($porcetagem)) / ($aula_total);
   echo "<div id='direita' align='right'>";
@@ -111,14 +136,18 @@ if (($dia_atual > $dia_validade) && ($mes_atual >= $mes_validade) && ($ano_atual
 
   $i=1; 
   echo "<table width='100%'><tr>";
+
   while($arquivo = $diretorio -> read()){
     if($arquivo != '.' && $arquivo !='..'){
+      if ((($arquivo*$validadeAula)-$validadeAula) < $totalDias) {
+            
       echo "<td align='center'><a href='curso/conteudo.php?curso=".$row2['id']."&aula=".$arquivo."'><img src='../imagens/icone/pasta.png'/> Aula ".$arquivo."</a></td>";
       if( $i%3 == 0 ) {
        echo "</tr><tr>";
      }
      $i++;
    }
+ }
  }
 
  $diretorio -> close();

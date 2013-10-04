@@ -7,8 +7,24 @@ include("../header.php");
 <?php   
 
 	$curso_id =$_GET['curso'];
-	$usuario_id=1;
+	$usuario_id=$_SESSION['UsuarioID'];;
 	$aula_id = $_GET['aula'];
+
+  // Verifica se a aula atual é maior 
+  $consulta = mysql_query("select * from modulo_usuario_curso where usuario_id=".$usuario_id." and curso_id=".$curso_id."");
+  $row=mysql_fetch_array($consulta);
+  $aula_atual = $row['aula_atual'];
+  $id = $row['id'];
+
+if($aula_atual<$aula_id){
+      $editar = "UPDATE `modulo_usuario_curso` SET 
+      `aula_atual` = '".$aula_id."'
+      WHERE (`id` = ".$id.")";
+
+/* Faço a inserção no banco de dados e caso haja algum erro na inserção, será retornado através da função mysql_error() */
+mysql_query($editar) or die ('ERRO: '.mysql_error());
+}
+
 
 	$resultado = mysql_query("select * from curso where id=".$curso_id."");
     $row = mysql_fetch_array($resultado);

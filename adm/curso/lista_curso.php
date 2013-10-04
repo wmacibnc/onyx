@@ -13,7 +13,6 @@ include("../../config.php");
       <tr>
         <th>Cod.</th>
         <th>Grupo</th>
-        <th>Turma</th>
         <th>Nome</th>
         <th>Aulas</th>
         <th>Contéudo</th>
@@ -26,15 +25,10 @@ include("../../config.php");
   while($curso=mysql_fetch_array($res)){
 
  $grupo_id = $curso['grupo_id'];
- $turma_id = $curso['turma_id'];
 
   $resultado = mysql_query("select * from grupo_curso where id=".$grupo_id."");
   $row = mysql_fetch_array($resultado);
   $grupo = $row['nome'];
-
-  $resultado2 = mysql_query("select * from turma where id=".$turma_id."");
-  $row2 = mysql_fetch_array($resultado2);
-  $turma = $row2['nome'];
 
     /*Escreve cada linha da tabela*/
     echo "  
@@ -43,7 +37,6 @@ include("../../config.php");
 
     <td>".$curso['id'] ."</td>
     <td>".$grupo."</td>
-    <td>".$turma."</td>
     <td>".$curso['nome'] ."</td>
     <td>".$curso['qtd_aula'] ."</td>
 
