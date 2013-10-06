@@ -12,7 +12,22 @@ include("../header.php");
 	<br /> <br />
 
 	<label>Capacidade de Alunos: </label> <br />		
-	<input type="text" name="quantidade" id="quantidade" maxlength="3"/><br/>
+	<input type="text" name="quantidade" id="quantidade" maxlength="3"/><br />
+
+	<br />
+	<label>Curso</label><br />
+		<select name="curso_id">
+			<?php 
+				$resultado = mysql_query("select * from curso");
+					while($curso=mysql_fetch_array($resultado)){
+						echo "<option value='".$curso['id'] ."'>".$curso['nome'] ."</option>";
+					}
+			?>			
+		</select><br />
+<br />
+	<label>Data de Inicio da Turma</label><br />
+	<input type="text" name="dataInicio" id="dataInicio" maxlength="10"/><br/>	
+
 
 	<br />
 	<input type="submit" value="Salvar" />

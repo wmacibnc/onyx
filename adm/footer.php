@@ -2,6 +2,7 @@
 			</div>
 	<!--geral -->
 		</div>
+	</div>
 
 		<div id="rodape">
 

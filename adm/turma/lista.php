@@ -10,7 +10,7 @@ include("../../config.php");
 
   /*Enquanto houver dados na tabela para serem mostrados será executado tudo que esta dentro do while */
   echo "<h3>Turmas Cadastradas</h3>";
-  echo "<a href='turma/cadastro.php'> Novo </a>";
+  echo "<a href='turma/cadastro.php'><img src='../imagens/icone/curso_adiciona-icone.png'></a>";
   echo "<table cellpadding='0' cellspacing='0' border='0' class='display' id='example'>
     <thead>
       <tr>

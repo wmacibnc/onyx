@@ -3,6 +3,7 @@ include("../../config.php");
 include("../header.php");
 ?>
 <div id="conteudo_curso">
+
   <?php
 // Listando os arquivos da aula
   
@@ -76,41 +77,80 @@ if (($dia_atual > $dia_validade) and ($mes_atual >= $mes_validade) and ($ano_atu
     // 1 - Por módulo
     // 0 - Por aula
     if($tipo==0){
-      $j= 0;
-  echo "<table width='100%'><tr>";
+
+
   $path2 = $row2['nome_pasta']."/1";
   $diretorio2 = dir($path2);
+
+       
+//listar arquivos     
+  $files = glob($path2."/*.*") or die("Erro ao acessar " . $path2);     
+  //permorre a lista
+  $i = 1;
+  foreach($files as $file) {         
+    $i++;
+    if (!is_dir($file)){
+    echo $file."<br />";
+    echo basename($file)."<br />";
+
+    echo "<img src='../imagens/icone/pdf.png' /> <br />";
+    
+    echo "<form method='GET' name='forme' action='curso/mostra.php'>";
+    echo "<input type='hidden' name='arquivo' value='".$file."' />";
+    echo '<a href="javascript:document.forms["forme"].submit();">'.basename($file).'</a>';
+    //echo "<a href='curso/".$path2."/".$arquivo."' target='_blank' class='link-curso'> <img src='../imagens/icone/marcador.png'/> ".$arquivo."</a><br />";
+    echo "</form>";
+ echo "
+ <script>
+ window.onload = function".$i."() {
+    document.getElementById('hiperligacao".$i."').onclick = function".$i."() {
+        document.getElementById('formulario".$i."').submit();
+        return false;
+    };
+};
+</script>";
+    echo "<br /> <br />";
+
+    }
+    } 
   while($arquivo = $diretorio2 -> read()){
     if($arquivo != '.' && $arquivo !='..'){
       $caminho = $path2.$arquivo;
+
       $extensao = pathinfo($caminho, PATHINFO_EXTENSION);
       
       switch ($extensao) {
         case 'pdf':
-          echo "pdf";
-          echo "<td align='center'><a href='curso/conteudo.php?curso=".$row2['id']."&aula=".$arquivo."'><img src='../imagens/icone/pasta.png'/> Aula ".$arquivo."</a></td>";
+          echo "<img src='../imagens/icone/pdf.png' /> <br /> <br />";
+          echo "<a href='curso/".$path2."/".$arquivo."' target='_blank' class='link-curso'> <img src='../imagens/icone/marcador.png'/> ".$arquivo."</a><br />";
+          echo "<br /> <br />";
           break;
 
           case 'txt':
-          echo "txt";
-          echo "<td align='center'><a href='curso/conteudo.php?curso=".$row2['id']."&aula=".$arquivo."'><img src='../imagens/icone/pasta.png'/> Aula ".$arquivo."</a></td>";
+          echo "<img src='../imagens/icone/txt.png' /> <br /> <br />";
+          echo "<a href='curso/".$path2."/".$arquivo."' target='_blank' class='link-curso'> <img src='../imagens/icone/marcador.png'/> ".$arquivo."</a><br />";
+          echo "<br /> <br />";
           break;
 
           case '3gp':
-          echo "Vídeo";
-          echo "<td align='center'><a href='curso/conteudo.php?curso=".$row2['id']."&aula=".$arquivo."'><img src='../imagens/icone/pasta.png'/> Aula ".$arquivo."</a></td>";
+          echo "<img src='../imagens/icone/video.png' /> <br /> <br />";
+          echo "<a href='curso/".$path2."/".$arquivo."' target='_blank' class='link-curso'> <img src='../imagens/icone/marcador.png'/> ".$arquivo."</a><br />";
+          echo "<br /> <br />";
+          break;
+
+          case 'swf':
+          echo "<img src='../imagens/icone/apresentacao.png' /> <br /> <br />";
+          echo "<a href='curso/".$path2."/".$arquivo."' target='_blank' class='link-curso'> <img src='../imagens/icone/marcador.png'/> ".$arquivo."</a><br />";
+          echo "<br /> <br />";
           break;
         
         default:
-          echo "Outros";
-          echo "<td align='center'><a href='curso/conteudo.php?curso=".$row2['id']."&aula=".$arquivo."'><img src='../imagens/icone/pasta.png'/> Aula ".$arquivo."</a></td>";
+          echo "<img src='../imagens/icone/outros.png' /> <br /> <br />";
+          echo "<a href='curso/".$path2."/".$arquivo."' target='_blank' class='link-curso'> <img src='../imagens/icone/pasta.png'/> ".$arquivo."</a><br />";
+          echo "<br /> <br />";
           break;
       }
       
-      if( $j%3 == 0 ) {
-       echo "</tr><tr>";
-     }
-     $j++;
    }
  }
 
@@ -141,7 +181,7 @@ if (($dia_atual > $dia_validade) and ($mes_atual >= $mes_validade) and ($ano_atu
     if($arquivo != '.' && $arquivo !='..'){
       if ((($arquivo*$validadeAula)-$validadeAula) < $totalDias) {
             
-      echo "<td align='center'><a href='curso/conteudo.php?curso=".$row2['id']."&aula=".$arquivo."'><img src='../imagens/icone/pasta.png'/> Aula ".$arquivo."</a></td>";
+      echo "<td align='center'><a href='curso/conteudo.php?curso=".$row2['id']."&aula=".$arquivo."'><img src='../imagens/icone/pasta.png'/> Módulo ".$arquivo."</a></td>";
       if( $i%3 == 0 ) {
        echo "</tr><tr>";
      }

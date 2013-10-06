@@ -3,6 +3,8 @@
 include('../../config.php');
 include("../header.php");
 
+echo "<div id='conteudo_curso'>";
+
 $tbl_name="forum_question"; // Table name 
 
 // get data that sent from form 
@@ -18,13 +20,15 @@ $sql="INSERT INTO $tbl_name(topic, detail, name, email, datetime)VALUES('$topic'
 $result=mysql_query($sql);
 
 if($result){
-echo "Salvo com sucesso!<br />";
-echo "<a href='forum/index.php'>Lista de Tópicos</a>";
+echo "<h3>Salvo com sucesso!</h3><br />";
+echo "<a href='forum/index.php'><img src='../imagens/icone/curso-icone.png'><br />Lista</a>";
 }
 else {
  echo mysql_error();
 echo "ERROR";
 }
 mysql_close();
+echo "<div>";
+echo "<p align='center'> Instituto Onyx - Todos os direitos reservados. </p>";
 include("../footer.php");
 ?>

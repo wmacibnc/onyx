@@ -7,7 +7,7 @@ include("../../config.php");
 	<?php 
 	$res = mysql_query("select * from curso"); 
 
-  		echo "<a href='curso/cadastro.php'> Novo </a>";
+  		echo "<a href='curso/cadastro.php'> <img src='../imagens/icone/curso_adiciona-icone.png'> </a>";
   		echo "<table cellpadding='0' cellspacing='0' border='0' class='display' id='example'>
     <thead>
       <tr>

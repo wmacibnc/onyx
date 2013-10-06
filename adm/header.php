@@ -41,34 +41,29 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
     });
   });
   </script>
+  <script type="text/javascript">
+  function fcSubmeter(){     
+    
+         document.forms['mostrar'].submit();     
+         alert('Call me');  
+     }    
+  </script>
 </head>
 <body>
 <div id="geral">
 <div id="centro">
-  <div id="topo">
 <div id="logo"><a href="index.php"><img src="../imagens/logo.png" class="logo"></a></div>
 <div id="titulo_principal">
-  <p class="titulo_principal" align="center">Área Administrativa</p>
-  <a href="../logoff.php"><img src="../imagens/icone/logoff.png" class="imagem_logoff"></a>
-</div>
-</div>
-
-<div id="conteudo">
-  <div id="menu">
-      <p class="btn"><a href="#">Home</a></p>
-      <p class="btn"><a href="curso/detalhe.php">Meus Cursos</a></p>
-      <p class="btn"><a href="#">Certificados</a></p>
-      <p class="btn"><a href="#">Chat</a></p>
-      <p class="btn"><a href="forum/">Fórum</a></p>
-      <p class="btn"><a href="#">Promoções</a></p>
-      <p class="btn"><a href="#">Inscrições</a></p>
-      <p class="btn"><a href="#">Contato</a></p>
-      <p class="btn"><a href="curso/cadastro.php">Novo Curso</a></p>
-      <p class="btn"><a href="curso/lista_curso.php">Adm Cursos</a></p>
-      <p class="btn"><a href="turma/lista.php">Turma</a></p>
-    <div id="banner_institucional">
-      <h4 align='center'>Bate-Papo</h4>
-      <ul>
+  <table>
+    <tr>
+      <td><a href="curso/detalhe.php"><img src="../imagens/icone/curso.png"></a></td>
+      <td><a href="#"><img src="../imagens/icone/certificado.png"></a></td>
+      <td><a href="#"><img src="../imagens/icone/secretaria.png"></a></td>
+      <td><a href="#"><img src="../imagens/icone/matricula.png"></a></td>
+      <td><a href="../logoff.php"><img src="../imagens/icone/sair.png"></a></td>
+    </tr>
+  </table>
+<ul>
   <?php
     $id = $_SESSION['id_user'];
     $resultado = mysql_query("select * from usuario where id != ".$id."");
@@ -83,10 +78,15 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
   
     }
 ?>   
+  </ul> 
+</div>  
+<div id="menu"align="center">
+  <nav id="menu">
+  <ul>
+    <li><a href="curso/index.php">Cursos</a></li>
+    <li><a href="turma/lista.php">Turmas</a></li>
+    <li><a href="grupo/">Grupos</a></li>
+    <li><a href="forum/">Forum</a></li>
   </ul>
- </div></div>
-
-
-  
- 
-
+</nav>
+  </div>

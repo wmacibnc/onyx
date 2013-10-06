@@ -29,18 +29,33 @@ mysql_query($editar) or die ('ERRO: '.mysql_error());
 	$resultado = mysql_query("select * from curso where id=".$curso_id."");
     $row = mysql_fetch_array($resultado);
     $path = $row['nome_pasta']."/".$aula_id."/";
+    $porcetagem = 100;
+    $aula_total = $row['qtd_aula'];
 
     echo "<h3>Curso: ".$row['nome']."</h3>";
-    echo "<h4>Aula: ".$aula_id."</h4>";
-    echo "<h4>Conteúdo </h4>";
 
-    $diretorio = dir($path);
+  $aula = ($aula_atual*($porcetagem)) / ($aula_total);
+  echo "<div id='direita' align='right'>";
+  echo "<h4 class='aqui'>Você está aqui!</h4>";
+  echo "<div id='progressbar_box' align='left'>&nbsp;".number_format($aula, 2, ',', '')." % concluído.";
+  echo "<div id='progressbar100' style='width=100%'>";
+  echo "
+  <div id='progressbar' style='width:".$aula."%;'> &nbsp;
+  </div>";
+  echo "</div>";
+  echo "</div>";
+  echo "</div>";
 
-		while($arquivo = $diretorio -> read()){
-   			if($arquivo != '.' && $arquivo !='..'){
-      			echo "<a href='curso/".$path.$arquivo."'target='_blank'>".$arquivo."</a><br />";
-  			}
-  		}
+  echo "<h4>Aula: ".$aula_id."</h4>";
+  echo "<h4>Conteúdo </h4>";
+
+  $diretorio = dir($path);
+
+	 while($arquivo = $diretorio -> read()){
+   	if($arquivo != '.' && $arquivo !='..'){
+      echo "<a href='curso/".$path.$arquivo."'target='_blank'>".$arquivo."</a><br />";
+  	}
+  }
 
    $diretorio -> close(); ?>
    <p align="center">Todos os direitos reservados - Instituto Onyx 2013</p>

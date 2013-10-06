@@ -75,7 +75,6 @@ if ($nao_continuar == 0){
     }
   }
 
-
 echo "<a href='curso/lista_curso.php'> Lista Geral</a>";
 include("../footer.php"); 
 ?>

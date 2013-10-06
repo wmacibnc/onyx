@@ -3,6 +3,7 @@
 include('../../config.php');
 include('../header.php');
 
+echo "<div id='conteudo_curso'>";
 $tbl_name="forum_question"; // Table name 
 $tbl_name2="forum_answer"; // Switch to table "forum_answer"
 
@@ -129,5 +130,7 @@ mysql_close();
 </form>
 </tr>
 </table>
+<img src='../imagens/icone/curso-icone.png'>
 <a href='forum/index.php'>Tópicos</a>
+</div>
 <?php include("../footer.php"); ?>

@@ -48,7 +48,7 @@ include("../header.php");
 							<tr>
 								<td><label>Valor: </label> <br />		
 									<input type="text" name="valor" id="valor" size="12px" maxlength="10" /></td>
-								<td><label>Quant. Aulas: </label> <br />		
+								<td><label>Quant. Módulos: </label> <br />		
 									<input type="text" name="qtd_aula" id="qtd_aula" size="12px" maxlength="3" /></td>
 								<td><label>Validade Curso: </label> <br />		
 										<input type="text" name="validade" id="validade" size="15px"/></td>

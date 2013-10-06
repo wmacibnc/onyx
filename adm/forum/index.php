@@ -12,7 +12,7 @@ $result=mysql_query($sql);
 ?>
 
 <div id="conteudo_curso">
-<p class="btn"><a href="forum/create_topic.php"><strong>Novo Tópico</strong> </a></p>
+<a href="forum/create_topic.php"><strong><img src='../imagens/icone/curso_adiciona-icone.png'>
 <table class='display' id='example'>
 <thead>
 <tr>

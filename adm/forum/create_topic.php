@@ -30,7 +30,7 @@
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><input type="submit" name="Submit" value="Submit" /> <input type="reset" name="Submit2" value="Reset" /></td>
+<td><input type="submit" name="Submit" value="Enviar" /> <input type="reset" name="Submit2" value="Limpar" /></td>
 </tr>
 </table>
 </td>
