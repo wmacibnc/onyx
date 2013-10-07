@@ -51,11 +51,99 @@ mysql_query($editar) or die ('ERRO: '.mysql_error());
 
   $diretorio = dir($path);
 
-	 while($arquivo = $diretorio -> read()){
-   	if($arquivo != '.' && $arquivo !='..'){
-      echo "<a href='curso/".$path.$arquivo."'target='_blank'>".$arquivo."</a><br />";
-  	}
-  }
+//listar arquivos     
+  $i=1;
+  // Livros e Artigos => PDF - WORD - TXT - EPUB
+  if($files = glob($path."/*.{pdf,txt,doc,epub}",GLOB_BRACE)){
+  //permorre a lista
+  // PDF
+      echo "<img src='../imagens/icone/pdf.png' /> <br />";
+      foreach($files as $file) {         
+        $i++;
+        if (!is_dir($file)){
+          echo "<script> 
+          function enviar_formulario".$i."(){ 
+            document.forme".$i.".submit() 
+          } 
+          </script>";
+          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
+          echo "<input type='hidden' name='arquivo' value='".$file."' />";
+          echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
+          echo "</form>";
+        }
+      }
+      }else{
+}
+
+    // Aulas => swf
+  if($files = glob($path."/*.{swf}",GLOB_BRACE)){
+
+  //permorre a lista
+      echo "<img src='../imagens/icone/apresentacao.png' /> <br />";
+      foreach($files as $file) {         
+        $i++;
+        if (!is_dir($file)){
+          echo "<script> 
+          function enviar_formulario".$i."(){ 
+            document.forme".$i.".submit() 
+          } 
+          </script>";
+          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
+          echo "<input type='hidden' name='arquivo' value='".$file."' />";
+          echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
+          echo "</form>";
+        }
+      } 
+      }else{
+}
+
+
+  // Videos => flv, avi, wmv, mpeg4, wma, MP3, RM, 3gp
+  if($files = glob($path."/*.{flv,avi,wmv,mpeg4,mp3,rm,3gp}",GLOB_BRACE)){
+
+  //permorre a lista
+      echo "<img src='../imagens/icone/video.png' /> <br />";
+      foreach($files as $file) {         
+        $i++;
+        if (!is_dir($file)){
+          echo "<script> 
+          function enviar_formulario".$i."(){ 
+            document.forme".$i.".submit() 
+          } 
+          </script>";
+          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
+          echo "<input type='hidden' name='arquivo' value='".$file."' />";
+          echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
+          echo "</form>";
+        }
+      } 
+      }else{
+}
+
+
+
+
+// EXE - Executabel
+  if($files = glob($path."/*.exe")){
+  //permorre a lista
+  // PDF
+      echo "<img src='../imagens/icone/outros.png' /> <br />";
+      foreach($files as $file) {         
+        $i++;
+        if (!is_dir($file)){
+          echo "<script> 
+          function enviar_formulario".$i."(){ 
+            document.forme".$i.".submit() 
+          } 
+          </script>";
+          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
+          echo "<input type='hidden' name='arquivo' value='".$file."' />";
+          echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
+          echo "</form>";
+        }
+      } 
+}else{
+}
 
    $diretorio -> close(); ?>
    <p align="center">Todos os direitos reservados - Instituto Onyx 2013</p>

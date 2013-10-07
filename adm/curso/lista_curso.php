@@ -24,7 +24,7 @@ include("../../config.php");
   
   while($curso=mysql_fetch_array($res)){
 
- $grupo_id = $curso['grupo_id'];
+  $grupo_id = $curso['grupo_id'];
 
   $resultado = mysql_query("select * from grupo_curso where id=".$grupo_id."");
   $row = mysql_fetch_array($resultado);
