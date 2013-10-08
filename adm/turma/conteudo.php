@@ -4,56 +4,53 @@ include("../header.php");
 ?>
 <div id="conteudo_curso">
 
-  <?php
-// Listando os arquivos da aula
-  
-  $usuario_id = $_SESSION['UsuarioID'];
-  $curso_id =$_GET['curso'];
+<?php   
 
-  $resultado = mysql_query("select * from curso c left join usuario_curso uc on c.id = uc.curso_id where c.id=".$curso_id."");
-  $row2 = mysql_fetch_array($resultado);
+	$turma_id =$_GET['turma'];
+	$usuario_id=$_SESSION['UsuarioID'];;
+	$aula_id = $_GET['aula'];
 
-  echo "<h3>Curso em ".$row2['nome']."</h3>";
+  // Verifica se a aula atual é maior 
+  $consulta = mysql_query("select * from turma_usuario where usuario_id=".$usuario_id." and turma_id=".$turma_id."");
+  mysql_num_rows($consulta);
+  $row=mysql_fetch_array($consulta);
+  $aula_atual = $row['aula_atual'];
+  $id = $row['id'];
 
- // Verifica se o curso está vencido.
-  $hoje = date("d/m/Y");
-  $data_atual = explode("/", $hoje);
-  $dia_atual = $data_atual[0];
-  $mes_atual = $data_atual[1];
-  $ano_atual = $data_atual[2];
+    if($aula_atual<$aula_id){
+      $query = mysql_query("UPDATE turma_usuario SET aula_atual='$aula_id' WHERE id='$id' ") or die(mysql_error());
+    }
 
-  $dias = $row2['validade'];
 
-  $dataVinculo = date('d/m/Y'); 
-  $dataVinculo = $row2['dataVinculo']; 
+	  $resultado = mysql_query("select * from turma where id=".$turma_id."");
+    $row = mysql_fetch_array($resultado);
+    $path = $row['nome_pasta']."/".$aula_id."/";
+    $porcetagem = 100;
+    $aula_total = $row['qtd_mod'];
+    $aula_atual;
+    echo "<h3>Turma: ".$row['nome']."</h3>";
 
-  $validade = date('d/m/Y', strtotime("+".$dias." days",strtotime($dataVinculo)));
-  $data_validade = explode("/", $validade);
-  $dia_validade = $data_validade[0];
-  $mes_validade = $data_validade[1];
-  $ano_validade = $data_validade[2];
+  $aula = ($aula_atual*($porcetagem)) / ($aula_total);
+  echo "<div id='direita' align='right'>";
+  echo "<h4 class='aqui'>Você está aqui!</h4>";
+  echo "<div id='progressbar_box' align='left'>&nbsp;".number_format($aula, 2, ',', '')." % concluído.";
+  echo "<div id='progressbar100' style='width=100%'>";
+  echo "
+  <div id='progressbar' style='width:".$aula."%;'> &nbsp;
+  </div>";
+  echo "</div>";
+  echo "</div>";
+  echo "</div>";
 
-//COMPARANDO
- $validade = date('d/m/Y', strtotime("+".$dias." days",strtotime($dataVinculo)));
-    $inicio = strftime("%d/%m/%Y", strtotime($dataVinculo));
-  if (($dia_atual > $dia_validade) and ($mes_atual >= $mes_validade) and ($ano_atual >= $ano_validade)) {
-   
+  echo "<h4>Aula: ".$aula_id."</h4>";
+  echo "<h4>Conteúdo </h4>";
 
-    echo "Curso expirado! <br />";
-    echo "Inicio " . $inicio." <br />";
-    echo "Validade " . $validade." <br />";
-  }else{
-
-  echo "Início: ". $inicio ." Valido até ".$validade."<br /><br />";
-    
-  $path = $row2['nome_pasta']."/";
   $diretorio = dir($path);
 
-
 //listar arquivos     
-$i=1;
+  $i=1;
   // Livros e Artigos => PDF - WORD - TXT - EPUB
-  if($files = glob($path."/*.{pdf,txt,doc,epub}",GLOB_BRACE)){
+  if($files = glob($path."/*.{pdf,txt,doc,epub,docx}",GLOB_BRACE)){
   //permorre a lista
   // PDF
       echo "<img src='../imagens/icone/pdf.png' /> <br />";
@@ -65,7 +62,7 @@ $i=1;
             document.forme".$i.".submit() 
           } 
           </script>";
-          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
+          echo "<form method='POST' name='forme".$i."' action='turma/mostra.php'>";
           echo "<input type='hidden' name='arquivo' value='".$file."' />";
           echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
           echo "</form>";
@@ -87,7 +84,7 @@ $i=1;
             document.forme".$i.".submit() 
           } 
           </script>";
-          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
+          echo "<form method='POST' name='forme".$i."' action='turma/mostra.php'>";
           echo "<input type='hidden' name='arquivo' value='".$file."' />";
           echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
           echo "</form>";
@@ -110,7 +107,7 @@ $i=1;
             document.forme".$i.".submit() 
           } 
           </script>";
-          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
+          echo "<form method='POST' name='forme".$i."' action='turma/mostra.php'>";
           echo "<input type='hidden' name='arquivo' value='".$file."' />";
           echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
           echo "</form>";
@@ -135,7 +132,7 @@ $i=1;
             document.forme".$i.".submit() 
           } 
           </script>";
-          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
+          echo "<form method='POST' name='forme".$i."' action='turma/mostra.php'>";
           echo "<input type='hidden' name='arquivo' value='".$file."' />";
           echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
           echo "</form>";
@@ -144,15 +141,7 @@ $i=1;
 }else{
 }
 
-
-
-      $diretorio -> close();
-
- }
- ?>
-</tr>
-</table>
-<p align="center"> Todos os direitos reservados - Instituto Onyx 2013</p>
+   //$diretorio -> close(); ?>
+   <p align="center">Todos os direitos reservados - Instituto Onyx 2013</p>
 </div>
-<?php include('../footer.php') ?>
-
+<?php include("../footer.php"); ?>

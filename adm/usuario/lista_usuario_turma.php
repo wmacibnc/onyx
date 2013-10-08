@@ -37,7 +37,7 @@
 					<td align="center"><?php echo $rows['login']; ?></td>
 					<td align="center"> 
 						<?php
-							$resulta2=mysql_query("select * from curso c left join modulo_usuario_curso mode on c.id = mode.curso_id where mode.usuario_id=".$aluno_id."");
+							$resulta2=mysql_query("select * from curso c left join usuario_curso uc on c.id = uc.curso_id where uc.usuario_id=".$aluno_id."");
 								while($cursos=mysql_fetch_array($resulta2)){
 									echo $cursos['nome']."<br />";
 								} 

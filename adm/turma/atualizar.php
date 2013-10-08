@@ -10,11 +10,31 @@ include("../header.php");
  <?php
  $id = $_POST['id'];
  $nome = $_POST['nome'];
- $quantidade = $_POST['quantidade'];
+$descricao = $_POST['descricao'];
+$ementa = $_POST['ementa'];
+$quantidade = $_POST['quantidade'];
+$dataInicio = $_POST['dataInicio'];
+$valor = $_POST['valor'];
+$observacao = $_POST['observacao'];
+$nome_pasta = $_POST['nome_pasta'];
+$qtd_mod = $_POST['qtd_mod'];
+$validade = $_POST['validade'];
+$validadeModulo = $_POST['validadeModulo'];
+$ativo = $_POST['ativo'];
 
 /* Crio a SQL que irá ser alterado no banco de dados   */
 $editar = "UPDATE `turma` SET `nome` = '".$nome."',
-`quantidade` = '".$quantidade."'
+`descricao` = '".$descricao."',
+`ementa` = '".$ementa."',
+`quantidade` = '".$quantidade."',
+`dataInicio` = '".$dataInicio."',
+`valor` = '".$valor."',
+`observacao` = '".$observacao."',
+`nome_pasta` = '".$nome_pasta."',
+`qtd_mod` = '".$qtd_mod."',
+`validade` = '".$validade."',
+`validadeModulo` = '".$validadeModulo."',
+`ativo` = '".$ativo."'
 WHERE (`id` = ".$id.")";
 
 /* Faço a alteração no banco de dados e caso haja algum erro na inserção, será retornado através da função mysql_error() */

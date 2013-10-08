@@ -16,7 +16,12 @@ include("../../config.php");
       <tr>
         <th>Cod.</th>
         <th>Nome</th>
-        <th>Capacidade</th>
+        <th>Cap.</th>
+        <th>Inicio</th>
+        <th>Mod.</th>
+        <th>Val.Mod.</th>
+        <th>Val.</th>
+        <th>Cont.</th>
         <th>Editar</th>
         <th>Excluir</th>
       </tr>
@@ -31,10 +36,20 @@ include("../../config.php");
 
     <tr>
 
-    <td>".$turma['id'] ."</td>
-    <td>".$turma['nome'] ."</td>
-    <td>".$turma['quantidade'] ."</td>
+    <td align='center'>".$turma['id'] ."</td>
+    <td align='center'>".$turma['nome'] ."</td>
+    <td align='center'>".$turma['quantidade'] ."</td>
+    <td align='center'>".$turma['dataInicio'] ."</td>
+    <td align='center'>".$turma['qtd_mod'] ."</td>
+    <td align='center'>".$turma['validadeModulo'] ."</td>
+    <td align='center'>".$turma['validade'] ."</td>
 
+    <td>
+    <form method='get' action='turma/lista_dados_turma.php'> 
+    <input type='hidden' name='turma' value='".$turma['id']."'/>
+    <input name='Lista' type='submit' value='Lista' />
+    </form>
+    </td>
     <td>
     <form method='post' action='turma/editar.php'> 
     <input type='hidden' name='id' value='".$turma['id']."'/>

@@ -74,6 +74,10 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
 ?>   
   </ul> 
 </div>  
+<div id="menu">
+    <a href='javascript:history.back()'><img src="../imagens/icone/voltar.png" align="left"/></a>
+    <a href="javascript:history.forward()"><img src="../imagens/icone/avancar.png" align="right"/></a>
+  </div>
 <div id="menu"align="center">
   <nav id="menu">
   <ul>

@@ -6,13 +6,6 @@ include("../header.php");
 	<form method="post" action="curso/salva.php" enctype="multipart/form-data">
 
 		<label> <h3 align="center">Cadastro de Curso</h3></label>
-		<table>
-			<tr>
-				<td width="70%"><input type="checkbox" name="tipo" value="1"/> Curso por Módulos<td>
-					<td width="20%"><input type="checkbox" name="ativo" value="1" checked/> Ativo<td>
-					</tr>
-				</table>
-				<br />
 				<table>
 					<tr>
 						<td width="60%"><label>Grupo Curso</label><br />
@@ -41,23 +34,23 @@ include("../header.php");
 						<label>Pasta: </label> <br />		
 						<input type="text" name="nome_pasta" id="nome_pasta" size="75px" maxlength="255"/><br/>
 
-						<label>Observação: </label> <br />		
-						<input type="text" name="observacao" id="observacao" size="75px" maxlength="255"/><br />
+						<label>Observação: </label> <br />
+						<textarea name="observacao" cols="58"></textarea>		
 
 						<table>
 							<tr>
-								<td><label>Valor: </label> <br />		
+								<td width="60%"><label>Valor: </label> <br />		
 									<input type="text" name="valor" id="valor" size="12px" maxlength="10" /></td>
-								<td><label>Quant. Módulos: </label> <br />		
-									<input type="text" name="qtd_aula" id="qtd_aula" size="12px" maxlength="3" /></td>
-								<td><label>Validade Curso: </label> <br />		
+								<td ><label>Validade Curso: </label> <br />		
 										<input type="text" name="validade" id="validade" size="15px"/></td>
-								<td><label>Validade Módulo: </label> <br />		
-									<input type="text" name="validadeAula" id="validadeAula" size="15px"/></td>
 							</tr>
 						</table>
-
-						<input type="submit" value="Enviar" />
+						<br />
+						<input type="checkbox" name="ativo" value="1" checked/> Ativo
+						<br /><br />
+						<input type="submit" value="Salvar" />
+						<input type="reset" value="Limpar" />
 					</form>
+					<p align="center">Instituto Onyx - Todos os direitos reservados.</p>
 				</div>
 				<?php include("../footer.php"); ?>
