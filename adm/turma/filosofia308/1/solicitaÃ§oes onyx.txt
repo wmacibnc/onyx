@@ -1,0 +1,38 @@
+﻿- Validade do curso - OK
+
+Criar campo na tabela de curso validade
+Fazer vinculo com a tabela de curso_aluno _OK
+
+- Flag de curso ativo e inativo - OK
+
+- Curso por módulo ou por tipo de aula - ok
+ 
+- Trocar a palavra aula por módulo na exibição de curso por página. - OK
+
+- Replicar layout da tela inicial do metaverso no adm do aluno. - OK
+
+- Diretor Secretária e Professor serão os perfis do site. -> Ajustar
+
+- Mostrar os topicos somente do curso em que o usuario tem matricula ativa. ->
+
+- Por enquanto o aluno não pode criar tópicos no forum.
+-Incluir abaixo do banner as logos dos parceiros.
+
+- Ver a possibilidade de incluir a data de vencimento do primeiro curso.
+
+- Faça sua incrição no canto de todas as telas do site.
+
+- Links / Referencias e Donwloands serão criados na etapa 2 do site.
+
+- Certificado a0958j093mt0m98iw9ujt
+valida certificado a0958j0
+
+Matricula + code.
+
+Gerar numero de matricula
+
+certificado valido para Rafael da curso Administraçõ 96 horas.
+
+---------------->>> 
+
+centrodeestudoseformacao.com.br

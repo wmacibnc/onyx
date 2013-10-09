@@ -8,31 +8,21 @@ Site: www.institutoonyx.com.br
 
 body{ 
 	font-family: Arial;
-	/*background-color:white;*/
+	background: url('../imagens/topo.png') repeat-x;
 }
 #centro{
 	margin-left: auto;
-	margin-right: auto;
-	/*background-color: white;*/
-	width:100%;
-	height:auto;
+  margin-right: auto;
+  width:768px;
+  height:auto;
 }
 
-#sub_centro{
-	margin-left: auto;
-	margin-right: auto;
-	/*background-color: white;*/
-	width:80%;
-	height:auto;
-}
-
-#topo{height: 200px; width: 100%; background: url('../imagens/topo.png') repeat-x; }
-	#logo{height:200px; width: 34%;  float: left;}
-	#matricula{height:200px; width: 33%; float: left;}
-	#box_login{height:200px; width: 33%; float: left;}
-#menu{height: 60px; width: 100%;font-size:12px;font-weight:Bold;}
-#banner{height: 350px;width: 100%;}
-#destaque{height: 150px; width: 100%;}
+  #logo{height:100px; width: 34%;  float: left;margin:3% 0 0 0;}
+	#matricula{height:100px; width: 33%; float: left;margin: 10px 0 0 -20px;}
+	#box_login{height:100px; width: 33%; float: left;line-height: 94%;}
+#menu{height: 60px; font-weight:bold;float: left;padding: 0 0 0 2%;}
+#banner{height: 350px;width: 100%;float: left;}
+#destaque{height: 150px; width: 100%;float: left;}
 	#destaque_titulo{height: 150px; width: 25%;float: left;}
 	#destaque_banner1{height: 150px; width: 15%;float: left;}
 	#destaque_banner2{height: 150px; width: 15%;float: left;}
@@ -44,19 +34,14 @@ body{
 	#box_central{height: 200px;width: 34%; float: left;}
 	#box_direita{height: 200px;width: 33%; float: left;}
 #rodape{height: 150px;width: 100%;background: url(../imagens/fundo_rodape.png) repeat-x; float: left;}
-	#rodape_esquerda{height: 150px;width: 27%;float: left;padding: 1% 0 0 15%;}
-	#rodape_central{height: 150px;width: 20%;float: left;padding: 1% 0 0 0;}
-	#rodape_direita{height: 150px;width: 20%;float: left;padding: 1% 0 0 7%;}
+	#rodape_esquerda{height: 150px;width: 33%;float: left;}
+	#rodape_central{height: 150px;width: 34%;float: left;}
+	#rodape_direita{height: 150px;width: 33%;float: left;}
 h3{color: #077CC4;}
 h4{color: #077CC4;}
-/*Imaffffff
-.imagens_logo{margin: 7% 0 0 33%;}
-.imagens_icone_caderneta{margin: 14% 0 0 20%;}
-.imagens_banner1{margin: 3% 0 0 14%;}
-.imagens_box_destaque{margin: 21% 0 0 18%;}
 
 /*Titulos*/
-.titulo_destaque{padding: 5% 0 0 0; text-align: center;}
+.titulo_destaque{padding: 0 0 0 0; text-align: center;}
 
 /* Tag */
 
@@ -64,115 +49,156 @@ h4{color: #077CC4;}
 #rodape ul{list-style-image: url(../imagens/icone/rodape_li.png);}
 
 /*Menu*/
-#cssmenu {
-  border: 1px solid #077CC4;
-  background: #077CC4;
-}
-#cssmenu > ul {
-  padding: 1px 0;
-  margin: 0px;
-  list-style: none;
-  width: 100%;
-  height: 28px;
-  font-family: Arial;
-}
-#cssmenu > ul li {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  display: block;
-  float: left;
-  position: relative;
-  width: 148px;
-  border-left: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
-}
-#cssmenu > ul li a:link,
-#cssmenu > ul li a:visited {
-  padding: 4px 0;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  background: #077CC4;
-  color: #ffffff;
-  width: 148px;
-  height: 22px;
-}
-#cssmenu > ul li:hover a,
-#cssmenu > ul li a:hover,
-#cssmenu > ul li a:active {
-  padding: 4px 0;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  color: #ffffff;
-  width: 146px;
-  height: 22px;
-  
-}
-#cssmenu > ul li ul {
-  margin: 0;
-  padding: 1px 1px 0;
-  list-style: none;
-  display: none;
-  position: absolute;height: 28px;
-  left: -1px;
-  border: 1px solid #077CC4;
-  border-top: none;
-  height: 22px;
-}
-#cssmenu > ul li:hover ul {
-  display: block;
-}
-#cssmenu > ul li ul li {
-  clear: left;
-  height: 32px;
-}
-#cssmenu > ul li ul li a:link,
-#cssmenu > ul li ul li a:visited {
-  clear: left;
-  background: #077CC4;
-  padding: 4px 0;
-  width: 146px;
-  border: none;
-  border-bottom: 1px solid #ffffff;
-  position: relative;
-  z-index: 1000;
- 
-}
-#cssmenu > ul li ul li:hover a,
-#cssmenu > ul li ul li a:active,
-#cssmenu > ul li ul li a:hover {
-  clear: left;
-  padding: 4px 0;
-  border-bottom: 1px solid #ffffff;
-  position: relative;
-  z-index: 1000;
-  line-height: 100%;
-  height: 22px;
-  color:gray;
-}
-#cssmenu > ul li ul li ul.navigation-3 {
-  display: none;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-    position: absolute;
-  left: 145px;
-  top: -2px;
-  padding: 1px 1px 0 1px;
-  border: 1px solid #077CC4;
-  border: none;
-  border-left: 1px solid #077CC4;
-  background: #ffffff;
-  z-index: 900;
-  height: 22px;
-}
-#cssmenu > ul li ul li:hover ul.navigation-3 {
-  display: block;
+.menu{list-style:none;float:left;font-size: 17px;}
+
+.menu li{position:relative; float:left; border-right:1px solid #077CC4; }
+
+.menu li a{color:#077CC4; text-decoration:none; padding:5px 10px; display:block;}
+
+.menu li a:hover{background:#077CC4; color:#fff; -moz-box-shadow:0 3px 10px 0 #CCC; -webkit-box-shadow:0 3px 10px 0 #ccc; text-shadow:0px 0px 5px #fff; }
+
+.menu li   ul{position:absolute; top:25px; left:0; background-color:#fff; display:none; }
+
+.menu li:hover ul, .menu li.over ul{display:block;}
+
+.menu li ul li{border:1px solid #077CC4; display:block; width:180px;}
+
+#login{background-color: #ffffff;margin: 15% auto;width: 400px;height: auto;}
+#erro{background-color: #FFDAB9;}
+
+.jDiaporama{
+	position:relative;
 }
 
-#login-fundo{background-color:#00688B; width: 100%;height: 100%; }
-#login{background-color: #00688B;margin: 15% auto;width: 400px;height: auto;}
-#erro{background-color: #FFDAB9;}
+.jDiaporama ul{
+	-moz-box-shadow:1px 1px 0.5em #222;
+	overflow:hidden;
+}
+
+.jDiaporama li{
+	list-style-type:none;
+	overflow:hidden;
+	position:absolute
+}
+
+.jDiaporama li img{
+	display:block
+}
+
+.jDiaporama li .desc{
+	position:absolute;
+	bottom: 0; left: 0;
+	display:none;
+	margin:0;
+	color:#fff;
+	font-size:12px;
+	font-family: Arial;
+	padding:5px;
+	background:url(img/back_desc.png) repeat;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/back_desc.png',sizingMethod='scale');  _background-image:none;
+	width:100%;
+	height:30px
+}
+
+.jDiaporama li .title{
+	position:absolute;
+	top: 0; left: 0;
+	display:none;
+	margin:0;
+	color:#fff;
+	font-size:12px;
+	font-family: Arial;
+	padding:5px;
+}
+
+.jDiaporama li .count{
+	position:absolute;
+	top: 0; right: 0;
+	display:none;
+	margin:0;
+	color:#fff;
+	font-size:12px;
+	font-family: Arial;
+	padding:5px;
+}
+
+.jDiaporama_controls{
+	display:none;
+}
+
+.jDiaporama_controls a{
+	font-weight:normal;
+	width:10px;
+	height:13px;
+	text-indent:-9999px;
+	display:block;
+	margin:0 3px;
+	position:absolute;
+}
+
+.jDiaporama_controls .prev{
+	background:url(img/controls2.png) no-repeat bottom;
+	_background:url(img/controls.gif) no-repeat bottom;
+	top:50%;
+	margin-top:-16px;
+	height:32px;
+	width:32px;
+	left: 0px
+}
+
+.jDiaporama_controls .next{
+	background:url(img/controls2.png) no-repeat top;
+	_background:url(img/controls.gif) no-repeat top;
+	top:50%;
+	margin-top:-16px;
+	height:32px;
+	width:32px;
+	right: 0px
+}
+
+.jDiaporama_controls .pause{
+	background:url(img/playpause.png) no-repeat top;
+	_background:url(img/playpause.gif) no-repeat top;
+	width:64px;
+	height:48px;
+	left:50%;
+	top:50%;
+	margin-left:-32px;
+	margin-top:-24px;
+}
+
+.jDiaporama_controls .play{
+	background:url(img/playpause.png) no-repeat bottom;
+	_background:url(img/playpause.gif) no-repeat bottom;
+	width:64px;
+	height:48px;
+	left:50%;
+	top:50%;
+	margin-left:-32px;
+	margin-top:-24px;
+}
+
+/**** Status ****/
+
+.jDiaporama_status{
+	text-align:center;
+	margin-top:10px;
+	position:absolute;
+	left:50%;
+	display:none
+}
+
+.jDiaporama_status a{
+	background:url(img/bullets.png) no-repeat left;
+	_background:url(img/bullets.gif) no-repeat left;
+	float:left;
+	width:10px;
+	height:10px;
+	text-indent:-9999px;
+	margin-right:5px;
+}
+
+.jDiaporama_status a.active, .jDiaporama_status a:hover{
+	background:url(img/bullets.png) no-repeat right;
+	_background:url(img/bullets.gif) no-repeat right;
+}

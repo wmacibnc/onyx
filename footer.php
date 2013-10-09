@@ -2,6 +2,7 @@
 			</div>
 
 			<div id="rodape">
+				<div id="centro">
 				<div id="rodape_esquerda">
 				<ul>
 					<li>Cursos Profissionalizantes</li>
@@ -23,6 +24,7 @@
 					<li>Encontre-nos</li>
 				</ul>
 				</div>
+			</div>
 			</div>
 
 			<!-- /centro -->

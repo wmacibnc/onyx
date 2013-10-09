@@ -46,13 +46,13 @@ include("../header.php");
   echo "<h4>Conteúdo </h4>";
 
   $diretorio = dir($path);
-
 //listar arquivos     
   $i=1;
   // Livros e Artigos => PDF - WORD - TXT - EPUB
   if($files = glob($path."/*.{pdf,txt,doc,epub,docx}",GLOB_BRACE)){
   //permorre a lista
   // PDF
+    echo "<div id='sombra_curso'>";
       echo "<img src='../imagens/icone/pdf.png' /> <br />";
       foreach($files as $file) {         
         $i++;
@@ -66,8 +66,10 @@ include("../header.php");
           echo "<input type='hidden' name='arquivo' value='".$file."' />";
           echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
           echo "</form>";
+          
         }
       }
+      echo "</div>";
       }else{
 }
 
@@ -75,6 +77,7 @@ include("../header.php");
   if($files = glob($path."/*.{swf}",GLOB_BRACE)){
 
   //permorre a lista
+    echo "<div id='sombra_curso'>";
       echo "<img src='../imagens/icone/apresentacao.png' /> <br />";
       foreach($files as $file) {         
         $i++;
@@ -88,8 +91,10 @@ include("../header.php");
           echo "<input type='hidden' name='arquivo' value='".$file."' />";
           echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
           echo "</form>";
+          
         }
       } 
+      echo "</div>";
       }else{
 }
 
@@ -98,6 +103,7 @@ include("../header.php");
   if($files = glob($path."/*.{flv,avi,wmv,mpeg4,mp3,rm,3gp}",GLOB_BRACE)){
 
   //permorre a lista
+    echo "<div id='sombra_curso'>";
       echo "<img src='../imagens/icone/video.png' /> <br />";
       foreach($files as $file) {         
         $i++;
@@ -111,8 +117,10 @@ include("../header.php");
           echo "<input type='hidden' name='arquivo' value='".$file."' />";
           echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
           echo "</form>";
+          
         }
       } 
+      echo "</div>";
       }else{
 }
 
@@ -123,6 +131,7 @@ include("../header.php");
   if($files = glob($path."/*.exe")){
   //permorre a lista
   // PDF
+    echo "<div id='sombra_curso'>";
       echo "<img src='../imagens/icone/outros.png' /> <br />";
       foreach($files as $file) {         
         $i++;
@@ -136,8 +145,10 @@ include("../header.php");
           echo "<input type='hidden' name='arquivo' value='".$file."' />";
           echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
           echo "</form>";
+
         }
       } 
+      echo "</div>";
 }else{
 }
 

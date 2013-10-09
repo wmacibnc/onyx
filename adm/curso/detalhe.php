@@ -21,6 +21,8 @@ $usuario_id = $_SESSION['UsuarioID'];
 			<a href='curso/exibe.php?curso=".$curso['id']."'>Curso: ".$curso['nome']."</a> Validade: ".$curso['validade']." dias.</p>";
 			
 			echo "Início: ". $inicio ." Valido até ".$validade."";
+			echo "<br />";
+			echo "<a href='curso/avaliacao.php?curso_id=".$curso['id']."'>Avaliação Online.</a>";
 		}
 	}
 

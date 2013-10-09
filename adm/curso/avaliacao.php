@@ -1,23 +1,43 @@
 <?php
 include("../header.php");
 include("../../config.php");
-
-$consulta = mysql_query("select * from questionario");
-
 ?>
 <div id='conteudo_curso'>
 <h3>Avalia&ccedil;&atilde;o</h3>
 
-<form method="POST" action="curso/valida_questionario.php">
 <?php 
-$questionario = mysql_fetch_array($consulta);
-echo "<h3>".$consulta['pergunta']."</h3>";
-for ($i=1; $i <=4 ; $i++) { 
-echo "<input type='radio' name='questionario' value='".$i."'>".$questionario['resposta'.$i]."<br>";
+$curso_id = $_GET['curso_id'];
+$usuario = $_SESSION['UsuarioID'];
+// Verifica se o usuário já fez a avaliação
+$consultaVerifica = mysql_query("select * from usuario_curso where usuario_id=".$usuario." AND curso_id=".$curso_id." AND certificado = 0");
+$verifica = mysql_num_rows($consultaVerifica);
+if($verifica == 1){
+// Seta aluno como reprovado - 2
+$query = mysql_query("UPDATE usuario_curso SET certificado=0
+	WHERE usuario_id='$usuario' AND curso_id='$curso_id' ") or die(mysql_error());
+
+$consulta = mysql_query("select * from questionario where curso_id=".$curso_id."");
+
+?>
+
+<form method="POST" action="curso/valida_questionario.php">
+<?php
+
+while($questionario=mysql_fetch_array($consulta)){
+echo "<h4>".$questionario['pergunta']." ?</h4>";
+for ($j=1; $j <=4 ; $j++) { 
+	echo "<input type='radio' name='questionario' value='".$j."'>".$questionario['resposta'.$j]."<br>";
+}
+}
+
+echo "<input type='submit' value='Responder' />
+</form>";
+}else{
+	echo "<h4>Você já efetuo essa avaliação anteriormente!</h4>";
+	echo "<p>Contate o Administrador do sistema!</p>";
 }
 ?>
-<input type="submit" value="responder" />
-</form>
+
 </div>
 
 <?php include ("../footer.php"); ?>

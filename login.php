@@ -7,7 +7,6 @@
 </head>
 <body>
 
-<div id="login-fundo">
 <div id="login" align="center">
 	<?php $mensagem='';
 	if (!empty($_GET['mensagem'])){
@@ -47,6 +46,5 @@
 			<input type="submit" value="Entrar" />
 		</fieldset>
 	</div>
-</div>
 </body>
 </html>

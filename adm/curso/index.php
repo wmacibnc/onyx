@@ -16,6 +16,7 @@ include("../../config.php");
         <th>Nome</th>
         <th>Validade</th>
         <th>Contéudo</th>
+        <th>Avaliação</th>
       </tr>
   </thead>
 
@@ -40,7 +41,8 @@ include("../../config.php");
     <td align='center'>".$curso['nome'] ."</td>
     <td align='center'>".$curso['validade'] ." dias</td>
 
-    <td><a href='curso/adiciona_conteudo.php?curso=".$curso['id']."'>Contéudo</a></td></tr>";
+    <td><a href='curso/adiciona_conteudo.php?curso=".$curso['id']."'>Contéudo</a></td>
+    <td><a href='curso/lista_avaliacao.php?curso_id=".$curso['id']."'>Listar</a></td></tr>";
   }
   ?>
 </tbody>

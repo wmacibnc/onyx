@@ -49,7 +49,7 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
   <table>
     <tr>
       <td><a href="curso/detalhe.php"><img src="../imagens/icone/curso.png" class="btn-curso"></a></td>
-      <td><a href="#"><img src="../imagens/icone/certificado.png" class="btn-certificado"></a></td>
+      <td><a href="certificado/index.php"><img src="../imagens/icone/certificado.png" class="btn-certificado"></a></td>
       <td><a href="#"><img src="../imagens/icone/secretaria.png" class="btn-secretaria"></a></td>
       <td><a href="#"><img src="../imagens/icone/matricula.png" class="btn-novo-curso"></a></td>
       <td><a href="forum/index.php"><img src="../imagens/icone/forum.png" class="btn-forum"></a></td>
@@ -74,6 +74,13 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
 ?>   
   </ul> 
 </div>  
+<div id="dados_usuario">
+  <?php include("dados_usuario.php"); ?>
+</div>
+<div id="banner_usuario">
+  
+  <img src="../imagens/testebanner.png" height='250px' width='auto'>
+</div>
 <div id="menu">
     <a href='javascript:history.back()'><img src="../imagens/icone/voltar.png" align="left"/></a>
     <a href="javascript:history.forward()"><img src="../imagens/icone/avancar.png" align="right"/></a>

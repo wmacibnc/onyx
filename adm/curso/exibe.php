@@ -56,6 +56,7 @@ $i=1;
   if($files = glob($path."/*.{pdf,txt,doc,epub}",GLOB_BRACE)){
   //permorre a lista
   // PDF
+     echo "<div id='sombra_curso'>";
       echo "<img src='../imagens/icone/pdf.png' /> <br />";
       foreach($files as $file) {         
         $i++;
@@ -71,6 +72,7 @@ $i=1;
           echo "</form>";
         }
       }
+      echo "</div>";
       }else{
 }
 
@@ -78,6 +80,7 @@ $i=1;
   if($files = glob($path."/*.{swf}",GLOB_BRACE)){
 
   //permorre a lista
+     echo "<div id='sombra_curso'>";
       echo "<img src='../imagens/icone/apresentacao.png' /> <br />";
       foreach($files as $file) {         
         $i++;
@@ -93,6 +96,7 @@ $i=1;
           echo "</form>";
         }
       } 
+      echo "</div>";
       }else{
 }
 
@@ -101,6 +105,7 @@ $i=1;
   if($files = glob($path."/*.{flv,avi,wmv,mpeg4,mp3,rm,3gp}",GLOB_BRACE)){
 
   //permorre a lista
+     echo "<div id='sombra_curso'>";
       echo "<img src='../imagens/icone/video.png' /> <br />";
       foreach($files as $file) {         
         $i++;
@@ -116,6 +121,7 @@ $i=1;
           echo "</form>";
         }
       } 
+      echo "</div>";
       }else{
 }
 
@@ -126,6 +132,7 @@ $i=1;
   if($files = glob($path."/*.exe")){
   //permorre a lista
   // PDF
+     echo "<div id='sombra_curso'>";
       echo "<img src='../imagens/icone/outros.png' /> <br />";
       foreach($files as $file) {         
         $i++;
@@ -141,6 +148,7 @@ $i=1;
           echo "</form>";
         }
       } 
+      echo "</div>";
 }else{
 }
 
