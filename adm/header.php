@@ -3,7 +3,7 @@
 // A sessão precisa ser iniciada em cada página diferente
 if (!isset($_SESSION)) session_start();
 
-$nivel_necessario = 1;
+$nivel_necessario = 0;
 
 // Verifica se não há a variável da sessão que identifica o usuário
 if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necessario)) {
@@ -51,7 +51,7 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
       <td><a href="curso/detalhe.php"><img src="../imagens/icone/curso.png" class="btn-curso"></a></td>
       <td><a href="certificado/index.php"><img src="../imagens/icone/certificado.png" class="btn-certificado"></a></td>
       <td><a href="#"><img src="../imagens/icone/secretaria.png" class="btn-secretaria"></a></td>
-      <td><a href="#"><img src="../imagens/icone/matricula.png" class="btn-novo-curso"></a></td>
+      <td><a href="../curso.php"><img src="../imagens/icone/matricula.png" class="btn-novo-curso"></a></td>
       <td><a href="forum/index.php"><img src="../imagens/icone/forum.png" class="btn-forum"></a></td>
       <td><a href="../logoff.php"><img src="../imagens/icone/sair.png" class="btn-sair"></a></td>
     </tr>
@@ -74,17 +74,11 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
 ?>   
   </ul> 
 </div>  
-<div id="dados_usuario">
-  <?php include("dados_usuario.php"); ?>
-</div>
-<div id="banner_usuario">
-  
-  <img src="../imagens/testebanner.png" height='250px' width='auto'>
-</div>
 <div id="menu">
     <a href='javascript:history.back()'><img src="../imagens/icone/voltar.png" align="left"/></a>
     <a href="javascript:history.forward()"><img src="../imagens/icone/avancar.png" align="right"/></a>
   </div>
+  <?php if($_SESSION['UsuarioNivel'] == 1){ ?>
 <div id="menu"align="center">
   <nav id="menu">
   <ul>
@@ -96,3 +90,4 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
   </ul>
 </nav>
   </div>
+  <?php } ?>

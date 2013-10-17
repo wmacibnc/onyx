@@ -5,6 +5,7 @@ include("config.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br" >
 <head>
+  <base href="/onyx/" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="Instituto Onyx" />
@@ -13,17 +14,44 @@ include("config.php");
   <title>Instituto Onyx</title>
   <link href="css/estilo.css" rel="stylesheet" type="text/css" />
 <!-- Banner -->
- <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery.jDiaporama.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.jDiaporama.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
   <!-- Banner -->
 
+<!--  CEP -->
+
+<!-- API de consulta de CEP - correio control -->
+<script>
+function atualizacep(cep){
+  cep = cep.replace(/\D/g,"")
+  url="http://cep.correiocontrol.com.br/"+cep+".js"
+  s=document.createElement('script')
+  s.setAttribute('charset','utf-8')
+  s.src=url
+  document.querySelector('head').appendChild(s)
+}
+
+function correiocontrolcep(valor){
+  if (valor.erro) {
+    alert('Cep não encontrado');
+    return;
+  };
+  document.getElementById('endereco').value=valor.logradouro
+  document.getElementById('bairro').value=valor.bairro
+  document.getElementById('cidade').value=valor.localidade
+  document.getElementById('uf').value=valor.uf
+  $('#cidade-bairro').html(valor.bairro + "-" + valor.uf);
+  $('#UF_SEPARADA').attr('value', valor.uf);
+}
+</script>
+<!-- API de consulta de CEP - correio control CEP -->
 </head>
 <body>
   <div id="centro">
 
     <div id="logo"><a href="index.php"><img src="imagens/logo.png" class="imagens_logo"></a></div>
-    <div id="matricula"><a href="matricula.php"><img src="imagens/icone/faca-matricula.png" class="imagens_icone_caderneta"></a>
+    <div id="matricula"><a href="curso.php"><img src="imagens/icone/faca-matricula.png" class="imagens_icone_caderneta"></a>
     </div>
     <div id="box_login">
       <h2>Área Administrativa</h2>
@@ -53,13 +81,7 @@ include("config.php");
           <li><a href='consultoria_empresa.php'>Consultorias Para Empresas</a></li>
         </ul>
       </li>
-      <li><a href='#'>Cursos</a>
-        <ul>
-         <li><a href='#'>Pós-Graduação</a></li>
-         <li><a href='#'>Profissionalizantes</a></li>
-         <li><a href='#'>Graduação</a></li>
-       </ul>
-     </li>
+      <li><a href='curso.php'>Cursos</a></li>
      <li><a href='bibiloteca.php'>Biblioteca</a></li>
      <li><a href='parceiros.php'>Parceiros</a></li>
      <li><a href='contato.php'>Contato</a></li>

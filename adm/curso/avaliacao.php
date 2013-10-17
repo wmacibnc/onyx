@@ -11,6 +11,17 @@ $usuario = $_SESSION['UsuarioID'];
 // Verifica se o usuário já fez a avaliação
 $consultaVerifica = mysql_query("select * from usuario_curso where usuario_id=".$usuario." AND curso_id=".$curso_id." AND certificado = 0");
 $verifica = mysql_num_rows($consultaVerifica);
+
+$consultaPergunta = mysql_query("select * from questionario where curso_id=".$curso_id);
+while($array = mysql_fetch_array($consultaPergunta)){
+	$pergunta[] = $array['id'];
+}
+$total = mysql_num_rows($consultaPergunta);
+for ($i=0; $i < $total; $i++) { 
+echo $pergunta[$i];
+}
+
+
 if($verifica == 1){
 // Seta aluno como reprovado - 2
 $query = mysql_query("UPDATE usuario_curso SET certificado=0

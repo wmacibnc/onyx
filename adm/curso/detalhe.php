@@ -7,7 +7,7 @@ $usuario_id = $_SESSION['UsuarioID'];
 <div id="conteudo_curso">
 	<?php 
 
-	$resultado = mysql_query("select * from usuario_curso uc left join curso c on uc.curso_id = c.id where uc.usuario_id=".$usuario_id."");
+	$resultado = mysql_query("select * from usuario_curso uc left join curso c on uc.curso_id = c.id where uc.usuario_id=".$usuario_id." AND situacao=1");
 	if(!mysql_num_rows($resultado) == 0){
 		echo "<h3>Cursos em Andamento</h3>";
 		while($curso=mysql_fetch_array($resultado)){
@@ -22,8 +22,10 @@ $usuario_id = $_SESSION['UsuarioID'];
 			
 			echo "Início: ". $inicio ." Valido até ".$validade."";
 			echo "<br />";
-			echo "<a href='curso/avaliacao.php?curso_id=".$curso['id']."'>Avaliação Online.</a>";
+			echo "<a href='curso/avaliacao.php?curso_id=".$curso['id']."'><img src='../imagens/icone/avaliacao.png'/></a>";
 		}
+	}else{
+		echo "<h3> Não existe cursos ativos.</h3>";
 	}
 
 	$resultado2 = mysql_query("select * from turma_usuario tu left join turma t on tu.turma_id = t.id where usuario_id=".$usuario_id."");

@@ -40,7 +40,7 @@
 			<?php if(!empty($novaMensagem)){
 				echo "<div id='erro'>".$novaMensagem."</div><br />";
 			}?>
-			<input type="text" value="Login" onfocus="this.value = ''" name="usuario" id="txUsuario" maxlength="25" /></br />
+			<input type="text" value="Login" onfocus="this.value = ''" name="usuario" id="txUsuario" maxlength="255" /></br />
 			<input type="password" value="Senha" onfocus="this.value = ''" name="senha" id="txSenha" /></br />
 </br />
 			<input type="submit" value="Entrar" />

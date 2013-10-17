@@ -6,7 +6,7 @@ $aluno_id = $_POST['aluno_id'];
 $curso_id = $_POST['curso_id'];
 $dataVinculo = $_POST['dataVinculo'];
 $matricula1 = str_pad( $aluno_id, 4, '0', STR_PAD_LEFT );
-$matricula2 = rand(1,10000);
+$matricula2 = str_pad(rand(1,10000), 4, '0', STR_PAD_LEFT );
 $matricula = $matricula1 . $matricula2;
 
 
@@ -16,14 +16,16 @@ INSERT INTO usuario_curso(
   curso_id, 
   dataVinculo, 
   aula_atual,
-  matricula
+  matricula,
+  situacao
   )
 VALUES (
   '$aluno_id',
   '$curso_id',
   '$dataVinculo',
   '0',
-  '$matricula'
+  '$matricula',
+  '1'
   )
 QUERY;
 mysql_query($query) or die ('ERRO: '.mysql_error());

@@ -10,7 +10,7 @@ include("../header.php");
   $usuario_id = $_SESSION['UsuarioID'];
   $curso_id =$_GET['curso'];
 
-  $resultado = mysql_query("select * from curso c left join usuario_curso uc on c.id = uc.curso_id where c.id=".$curso_id."");
+  $resultado = mysql_query("select * from curso c left join usuario_curso uc on c.id = uc.curso_id where c.id=".$curso_id." AND uc.usuario_id=".$usuario_id);
   $row2 = mysql_fetch_array($resultado);
 
   echo "<h3>Curso em ".$row2['nome']."</h3>";
@@ -53,7 +53,7 @@ include("../header.php");
 //listar arquivos     
 $i=1;
   // Livros e Artigos => PDF - WORD - TXT - EPUB
-  if($files = glob($path."/*.{pdf,txt,doc,epub}",GLOB_BRACE)){
+  if($files = glob($path."/*.{pdf,txt,doc,epub,docx}",GLOB_BRACE)){
   //permorre a lista
   // PDF
      echo "<div id='sombra_curso'>";
