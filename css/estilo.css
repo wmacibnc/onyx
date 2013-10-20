@@ -13,22 +13,16 @@ body{
 #centro{
 	margin-left: auto;
   margin-right: auto;
-  width:80%;
+  width:980px;
   height:auto;
 }
-
-  #logo{height:100px; width: 34%;  float: left;margin:3% 0 0 0;}
-	#matricula{height:100px; width: 33%; float: left;margin: 10px 0 0 -20px;}
-	#box_login{height:100px; width: 33%; float: left;line-height: 94%;}
-#menu{height: 60px; font-weight:bold;float: left;padding: 0 0 0 2%;}
+#logo{height:140px; width: 300px;  float: left;margin:3% 0 0 0;}
+#box_login{height:140px; float: right;line-height: 180%;color:#999999;letter-spacing: 1px;margin: 20px 0 0 0;}
+#menu{height: 60px; font-weight:bold;float: left; width: 100%;}
 #banner{height: 350px;width: 100%;float: left;}
 #destaque{height: 150px; width: 100%;float: left;}
-	#destaque_titulo{height: 150px; width: 25%;float: left;}
-	#destaque_banner1{height: 150px; width: 15%;float: left;}
-	#destaque_banner2{height: 150px; width: 15%;float: left;}
-	#destaque_banner3{height: 150px; width: 15%;float: left;}
-	#destaque_banner4{height: 150px; width: 15%;float: left;}
-	#destaque_banner5{height: 150px; width: 15%;float: left;}
+	#destaque_titulo{height: 150px; width: 200px;float: left;}
+	#banner-rotativo{height: 50px;width: 780px;float: left;}
 #conteudo{height: auto; width: 100%;}
 	#box_esquerda{height: 220px;width: 33%;float: left;}
 	#box_central{height: 200px;width: 34%; float: left;}
@@ -47,158 +41,33 @@ h4{color: #077CC4;}
 
 /*ul*/
 #rodape ul{list-style-image: url(../imagens/icone/rodape_li.png);}
-
-/*Menu*/
-.menu{list-style:none;float:left;font-size: 17px;}
-
-.menu li{position:relative; float:left; border-right:1px solid #077CC4; }
-
-.menu li a{color:#077CC4; text-decoration:none; padding:5px 10px; display:block;}
-
-.menu li a:hover{background:#077CC4; color:#fff; -moz-box-shadow:0 3px 10px 0 #CCC; -webkit-box-shadow:0 3px 10px 0 #ccc; text-shadow:0px 0px 5px #fff; }
-
-.menu li   ul{position:absolute; top:25px; left:0; background-color:#fff; display:none; }
-
-.menu li:hover ul, .menu li.over ul{display:block;}
-
-.menu li ul li{border:1px solid #077CC4; display:block; width:180px;}
-
 #login{background-color: #ffffff;margin: 15% auto;width: 400px;height: auto;}
 #erro{background-color: #FFDAB9;}
+.btn-curso{}
+.btn-pesquisa-curso{margin: -21px 0 0 0; vertical-align: middle; line-height: 24px; text-align: center;border-style:inset; border-width:2; border-color:#B5B5B5;}
+.btn-matricula{margin: 25px 0 0 30px;}
+.matricule{color: #000000; font-weight: bold; text-decoration: none;}
+.esqueci{color:#666666;text-decoration: none; font-size: 10px;}
+.titulo-areas{margin: 5px 0 0 20px;}
 
-.jDiaporama{
-	position:relative;
+#menu ul {
+	padding:0px;
+	margin:0px;
+	background-color:#077CC4;
+	list-style:none;
 }
-
-.jDiaporama ul{
-	-moz-box-shadow:1px 1px 0.5em #222;
-	overflow:hidden;
+#menu ul li { display: inline;}
+#menu ul li a {
+	padding: 6px 10px;
+	display: inline-block;
+  	height: 20px;
+	/* visual do link */
+	background-color:#077CC4;
+	color: #FFFFFF;
+	text-decoration: none;
 }
-
-.jDiaporama li{
-	list-style-type:none;
-	overflow:hidden;
-	position:absolute
+#menu ul li a:hover {
+	background-color:#077CC4;
+	color: #8AC1E3;
 }
-
-.jDiaporama li img{
-	display:block
-}
-
-.jDiaporama li .desc{
-	position:absolute;
-	bottom: 0; left: 0;
-	display:none;
-	margin:0;
-	color:#fff;
-	font-size:12px;
-	font-family: Arial;
-	padding:5px;
-	background:url(img/back_desc.png) repeat;
-	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/back_desc.png',sizingMethod='scale');  _background-image:none;
-	width:100%;
-	height:30px
-}
-
-.jDiaporama li .title{
-	position:absolute;
-	top: 0; left: 0;
-	display:none;
-	margin:0;
-	color:#fff;
-	font-size:12px;
-	font-family: Arial;
-	padding:5px;
-}
-
-.jDiaporama li .count{
-	position:absolute;
-	top: 0; right: 0;
-	display:none;
-	margin:0;
-	color:#fff;
-	font-size:12px;
-	font-family: Arial;
-	padding:5px;
-}
-
-.jDiaporama_controls{
-	display:none;
-}
-
-.jDiaporama_controls a{
-	font-weight:normal;
-	width:10px;
-	height:13px;
-	text-indent:-9999px;
-	display:block;
-	margin:0 3px;
-	position:absolute;
-}
-
-.jDiaporama_controls .prev{
-	background:url(img/controls2.png) no-repeat bottom;
-	_background:url(img/controls.gif) no-repeat bottom;
-	top:50%;
-	margin-top:-16px;
-	height:32px;
-	width:32px;
-	left: 0px
-}
-
-.jDiaporama_controls .next{
-	background:url(img/controls2.png) no-repeat top;
-	_background:url(img/controls.gif) no-repeat top;
-	top:50%;
-	margin-top:-16px;
-	height:32px;
-	width:32px;
-	right: 0px
-}
-
-.jDiaporama_controls .pause{
-	background:url(img/playpause.png) no-repeat top;
-	_background:url(img/playpause.gif) no-repeat top;
-	width:64px;
-	height:48px;
-	left:50%;
-	top:50%;
-	margin-left:-32px;
-	margin-top:-24px;
-}
-
-.jDiaporama_controls .play{
-	background:url(img/playpause.png) no-repeat bottom;
-	_background:url(img/playpause.gif) no-repeat bottom;
-	width:64px;
-	height:48px;
-	left:50%;
-	top:50%;
-	margin-left:-32px;
-	margin-top:-24px;
-}
-
-/**** Status ****/
-
-.jDiaporama_status{
-	text-align:center;
-	margin-top:10px;
-	position:absolute;
-	left:50%;
-	display:none
-}
-
-.jDiaporama_status a{
-	background:url(img/bullets.png) no-repeat left;
-	_background:url(img/bullets.gif) no-repeat left;
-	float:left;
-	width:10px;
-	height:10px;
-	text-indent:-9999px;
-	margin-right:5px;
-}
-
-.jDiaporama_status a.active, .jDiaporama_status a:hover{
-	background:url(img/bullets.png) no-repeat right;
-	_background:url(img/bullets.gif) no-repeat right;
-}
+#titulo-areas{background:url("../imagens/fundo-areas.png") repeat-x;width: 980px;height:50px;float: left;margin:0 0 15px 0;color:#333333;font-weight: bold;}
