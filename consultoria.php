@@ -1,15 +1,14 @@
 <?php include("header.php");  ?>
 <div id="conteudo">
-<br /><br /><br /><br /><br /><br /><br /><br />
-	<h3>Consultoria</h3>
+	<h1>Consultoria</h1>
 	<img src="imagens/consultoria_escola.jpeg" align="left" style="margin:25px;" />
 	<h4>Para Escola</h4>
 	<p>Conheça as soluções ONYX que auxiliam na criação e na implantação
 ou na atualização da sua Instituição de Ensino na perspectiva de uma
 Instituição de Ensino: Eficaz e Eficiente.</p>
 
-<br /><br /><br /><br />
-<h3>Consultoria para Escola</h3> 
+<br /><br /><br /><br /><br /><br /><br /><br />
+<h3 align="center">Consultoria para Escola</h3> 
 <h4>Criação da Escola e construção da documentação oficial</h4>
 
 <p>Definir processos de desenvolvimento da competência organizacional da sua escola para
@@ -63,7 +62,7 @@ Básica;</p>
 <p>- Workshop: Pedagogia Empresarial;</p>
 
 <br /><br />
-	<h3>Para Empresa</h3>
+	<h3 align="center">Consultoria Para Empresa</h3>
 	<p>Conheça as soluções ONYX que auxiliam na atualização dos processos
 de Gestão de Pessoas da empresa na perspectiva da organização de aprendizagem.</p>
  

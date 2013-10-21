@@ -1,34 +1,41 @@
 <!-- /sub_centro -->
-			</div>
+</div>
 
-			<div id="rodape">
-				<div id="centro">
-				<div id="rodape_esquerda">
-				<ul>
-					<li>Cursos Profissionalizantes</li>
-					<li>Extensão Universitária</li>
-					<li>Pós-Graduação</li>
-				</ul>
-			</div>
-				<div id="rodape_central">
-				<ul>
-					<li>Sobre nós</li>
-					<li>Parcerios</li>
-					<li>Trabalhe Conosco</li>
-				</ul>
-				</div>
-				<div id="rodape_direita">
-				<ul>
-					<li>Atendimento</li>
-					<li>Redes Sociais</li>
-					<li>Encontre-nos</li>
-				</ul>
-				</div>
-			</div>
-			</div>
-
-			<!-- /centro -->
+<div id="rodape">
+	<div id="centro">
+		<form method="post" action="curso.php">
+			<input type="text" name="curso" value="O que você quer aprender ?" onfocus="this.value = ''" onblur="this.value='O que você quer aprender ?'" size="30px" class="btn-pesquisa-curso" />
+			<input type="image" src="imagens/icone/pesquisar.png" alt="Buscar curso" class="btn-curso" align="botton" />
+		</form>
+		<div id="rodape_esquerda">
+			<ul>
+				<li><a href="index.php">Página Inicial</a></li>
+				<li><a href="bibiloteca.php">Biblioteca Virtual</a></li>
+				<li><a href="consultoria.php">Consultoria</a></li>
+			</ul>
 		</div>
+		<div id="rodape_central">
+			<ul>
+				<li><a href="institucional.php">Sobre nós</a></li>
+				<li><a href="parceiros.php">Parcerios</a></li>
+				<li><a href="contato.php">Trabalhe Conosco</a></li>
+			</ul>
+		</div>
+		<div id="rodape_direita">
+			<ul>
+				<li><a href="contato.php">Atendimento</a></li>
+				<li><a href="#">Redes Sociais</a></li>
+				<li><a href="#">Encontre-nos</a></li>
+			</ul>
+		</div>
+		<div id="rodape_misterw">
+			<a href="http://www.misterwinformatica.com.br" target="_blank"><img src="imagens/logomisterw.png" /></a>
+		</div>
+	</div>
+</div>
 
-	</body>
-	</html>
+<!-- /centro -->
+</div>
+
+</body>
+</html>

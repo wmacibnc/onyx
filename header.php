@@ -84,8 +84,8 @@ jQuery(document).ready(function() {
           </tr>
           <tr>
             <td><label style="margin: 0 0 0 -24px;color:#333333;">Área do Aluno</label></td>
-            <td><input type="text"name="usuario" value="E-mail" onfocus="this.value = ''" size="8" onblur="this.value='E-mail'"/></td>
-            <td><input type="password"name="senhasenha" value="senha" onfocus="this.value = ''" size="8" onblur="this.value='senhasenha'"/></td>
+            <td><input type="text"name="usuario" value="E-mail" onfocus="this.value = ''" size="8" /></td>
+            <td><input type="password"name="senhasenha" value="senha" onfocus="this.value = ''" size="8" /></td>
             <td><input type="submit" value="ok" /></td>
             <td><a href="curso.php" class="matricule"><label>Matricule-se</label></a></td>
           </tr>
@@ -96,9 +96,12 @@ jQuery(document).ready(function() {
           </tr>
         </table>
       </form>
+      <div data-href="https://www.facebook.com/institutoonyx" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-show-faces="false" data-send="true" class="fb-like fb_edge_widget_with_comment fb_iframe_widget" fb-xfbml-state="rendered"><span style="height: 24px; width: 450px;"><iframe id="f171c13634" name="f14d813348" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="https://www.facebook.com/plugins/like.php?api_key=113869198637480&amp;channel_url=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D27%23cb%3Df51e52608%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff3f6004914%26relation%3Dparent.parent&amp;colorscheme=light&amp;extended_social_context=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Finstitutoonyx&amp;layout=standard&amp;locale=pt_BR&amp;node_type=link&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=450" style="border: none; overflow: hidden; height: 24px; width: 450px;"></iframe></span></div>
+            
     </div>
   </div>
   <div id="menu" align='center'>
+    <div id="menu_fundo">
     <nav id="menu"> 
       <ul>
        <li><a href='index.php'>Home</a></li>
@@ -110,6 +113,7 @@ jQuery(document).ready(function() {
        <li><a href='contato.php'>Contato</a></li>
      </ul>
    </nav>
+ </div>
  </div> 
  <div id="centro">
    <div id="banner" align="center">

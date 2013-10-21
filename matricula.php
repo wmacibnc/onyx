@@ -5,9 +5,8 @@ include("lib/PagSeguroLibrary.php");
 ?>
 
 <div id="conteudo">
-	<br /><br /><br /><br /><br /><br />
-	<br /><br /><br /><br /><br /><br />
-	<h3>Matricula</h3>
+
+	<h1>Matricula</h1>
 	<?php
 
 if (!empty($_GET['mensagem'])){

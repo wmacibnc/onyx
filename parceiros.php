@@ -1,7 +1,6 @@
 <?php include("header.php");  ?>
 <div id="conteudo" align="center">
-	<br /><br /><br /><br /><br />
-	<h3>Parceiros</h3>
+	<h1 align="left">Parceiros</h1>
 	
 	<img src="imagens/team.jpg">
 

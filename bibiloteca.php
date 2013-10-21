@@ -1,7 +1,6 @@
 <?php include("header.php");  ?>
 <div id="conteudo">
-	<br /><br /><br /><br /><br /><br />
-	<h3>Biblioteca</h3>
+	<h1>Biblioteca</h1>
 	<table>
 		<tr>
 			<td width="50%"><a href="http://www.dominiopublico.gov.br/pesquisa/PesquisaObraForm.jsp" target="_blank"><img src="imagens/dominio_publico.jpg"></a></td>

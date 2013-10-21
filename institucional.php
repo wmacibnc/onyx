@@ -1,8 +1,10 @@
 <?php include("header.php");  ?>
 <div id="conteudo">
-	<br /><br /><br /><br /><br /><br />
-	<h3>Institucional</h3>
+	
+	<h1>Institucional</h1>
+	<div id="imagem" align="center">
 	<img src="imagens/empresa.jpg" width="768px" height="auto">
+	</div>
 	<h4>Quem somos</h4>
 	<p>O Instituto de educação e pesquisa Onyx é um centro de Excelência em Ensino Virtual, que oferece aprendizado contínuo, com qualidade, agilidade e compromisso de constante melhoria nos cursos.<p/>
 		<p>O Instituto Onyx está sempre disponibilizando cursos que abordam temas interessantes e atuais e todos os meses são lançados cursos novos nas diversas áreas do conhecimento, oferecendo oportunidade de crescimento intelectual e profissional.</p>

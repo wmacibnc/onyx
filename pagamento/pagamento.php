@@ -112,7 +112,7 @@ $credentials = new PagSeguroAccountCredentials(
 // fazendo a requisição a API do PagSeguro pra obter a URL de pagamento  
 $url = $paymentRequest->register($credentials);
 
-echo "<a href='".$url."'><img src='imagens/icone/pagseguro.png'</a>";
+echo "<a href='".$url."' target='_blank'><img src='imagens/icone/pagseguro.png'</a>";
 
 include("../footer.php");
 ?>

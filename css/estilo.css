@@ -23,14 +23,15 @@ body{
 #destaque{height: 150px; width: 100%;float: left;}
 	#destaque_titulo{height: 150px; width: 200px;float: left;}
 	#banner-rotativo{height: 50px;width: 780px;float: left;}
-#conteudo{height: auto; width: 100%;}
+#conteudo{height: auto; width: 100%;float: left;}
 	#box_esquerda{height: 220px;width: 33%;float: left;}
 	#box_central{height: 200px;width: 34%; float: left;}
 	#box_direita{height: 200px;width: 33%; float: left;}
-#rodape{height: 150px;width: 100%;background: url(../imagens/fundo_rodape.png) repeat-x; float: left;}
-	#rodape_esquerda{height: 150px;width: 33%;float: left;}
-	#rodape_central{height: 150px;width: 34%;float: left;}
-	#rodape_direita{height: 150px;width: 33%;float: left;}
+#rodape{height: 180px;width: 100%;background: url(../imagens/fundo_rodape.png) repeat-x; float: left;margin-top: 60px;}
+	#rodape_esquerda{height: 150px;width: 250px;float: left;}
+	#rodape_central{height: 150px;width: 220px;float: left;}
+	#rodape_direita{height: 150px;width: 220px;float: left;}
+	#rodape_misterw{height: 200px;width: 100px;float: left;}
 h3{color: #077CC4;}
 h4{color: #077CC4;}
 
@@ -49,7 +50,15 @@ h4{color: #077CC4;}
 .matricule{color: #000000; font-weight: bold; text-decoration: none;}
 .esqueci{color:#666666;text-decoration: none; font-size: 10px;}
 .titulo-areas{margin: 5px 0 0 20px;}
-
+.grupo_curso{text-decoration: none; font-size: 16px;color: #666666;text-align: left;line-height: 200%;margin-left: 20px;}
+#grupo_curso{border-bottom-width:thin; border-bottom-style:solid;border-bottom-color:#D6D6D6;width: 220px;}
+#recomenda{margin:30px 0 0 0 ;float:left; width: 400px; height: 360px;padding: 165px 0 0 50px; text-align: justify;background: url("../imagens/fundo-comentario.png") no-repeat;}
+#texto-recomenda{width: 300px;}
+#verificar_certificado{margin:30px 0 0 0 ;float:right;width: 430px;height: 360px;text-align: justify;background: url("../imagens/fundo-validar.png") no-repeat;font-family: arial;font-weight: bold;}
+.verificar_certificado{padding: 360px 0 0 0;}
+#facebook{width: 980px;height: 300px;float: left;}
+#nome_curso{background: url("../imagens/fundo-curso.png") no-repeat; height: 120px;padding: 2px 0 0 35px;font-size: 22px;}
+#menu_fundo{background-color: red;}
 #menu ul {
 	padding:0px;
 	margin:0px;
