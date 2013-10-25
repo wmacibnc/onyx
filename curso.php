@@ -12,18 +12,18 @@ include("config.php");
    $grupo_id = $grupo['id'];
    echo "<div id='nome_curso'>";
    echo '
-   <div id="elemento'.$grupo['id'].'"><h4>'.$grupo['nome'].'</h4></div>
+   <div id="elemento'.$grupo['id'].'" style="width:300px;"><h4>'.$grupo['nome'].'</h4></div>
    </div>
    <div id="hiddenEl'.$grupo['id'].'" style="display:none">';
    $resultado2 = mysql_query("select * from curso where grupo_id = ".$grupo_id);
    while($curso=mysql_fetch_array($resultado2)){
-    echo "<label><font size='5px' color='#1D1D1D'>".$curso['nome']."</font></label>";
+    echo "<label><font size='5px' color='#1D1D1D' style='margin:0 0 0 25px;'>".$curso['nome']."</font></label><br /><br />";
     echo "<a href='tenho_duvidas.php?curso_id=".$curso['id']."'><img hspace='20px'src='imagens/icone/tenho-duvidas.png'/></a>";
     echo "<a href='mais_informacoes.php?curso_id=".$curso['id']."'><img hspace='20px'src='imagens/icone/ementa.png'/></a>";
-    echo "<a href='matricula.php?curso_id=".$curso['id']."'><img hspace='20px'src='imagens/icone/inscrever.png'/></a></a>";
+    echo "<a href='matricula.php?curso_id=".$curso['id']."'><img hspace='20px' src='imagens/icone/inscrever.png'/></a></a><br /><br /><br />";
   }
 
-  echo '<div id="fechar'.$grupo['id'].'"><img src="imagens/icone/seta_para_cima.png"></div>  
+  echo '<div id="fechar'.$grupo['id'].'" style="width:50px;margin:0 0 0 25px;"><img src="imagens/icone/seta_para_cima.png"></div>  
   </div>  
   <script>  
   function showElement'.$grupo['id'].'() {  

@@ -11,8 +11,8 @@ include("PagSeguroLibrary.php"); ?>
 	echo $codigo = $_GET['codigo'];
 
 	$credentials = new PagSeguroAccountCredentials(  
-    'wmacibnc@hotmail.com',   
-    'E8FDD1B9F64442FFB01DE4B77145A919'  
+    'institutoonyx@hotmail.com',   
+    '1A3E146F20ED42C1A9E95D462FD2CD27'  
 );  
 
 /* Código identificador da transação  */    

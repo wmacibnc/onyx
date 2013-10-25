@@ -85,7 +85,7 @@ jQuery(document).ready(function() {
           <tr>
             <td><label style="margin: 0 0 0 -24px;color:#333333;">Área do Aluno</label></td>
             <td><input type="text"name="usuario" value="E-mail" onfocus="this.value = ''" size="8" /></td>
-            <td><input type="password"name="senhasenha" value="senha" onfocus="this.value = ''" size="8" /></td>
+            <td><input type="password"name="senha" value="senha" onfocus="this.value = ''" size="8" /></td>
             <td><input type="submit" value="ok" /></td>
             <td><a href="curso.php" class="matricule"><label>Matricule-se</label></a></td>
           </tr>

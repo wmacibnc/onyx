@@ -1,7 +1,6 @@
 <?php 
 include("header.php");  
 include("config.php");
-include("lib/PagSeguroLibrary.php");
 ?>
 
 <div id="conteudo">
