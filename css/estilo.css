@@ -80,3 +80,5 @@ h4{color: #077CC4;}
 	color: #8AC1E3;
 }
 #titulo-areas{background:url("../imagens/fundo-areas.png") repeat-x;width: 980px;height:50px;float: left;margin:0 0 15px 0;color:#333333;font-weight: bold;}
+.visivel { display:inline; }	
+.invisivel { display:none;	}

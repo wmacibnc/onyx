@@ -5,15 +5,10 @@ if (!empty($_POST) AND (empty($_POST['usuario']) OR empty($_POST['senha']))) {
 	header("Location: login.php?mensagem=1"); exit;
 }
 
-// Tenta se conectar ao servidor MySQL
-mysql_connect('localhost', 'root', '') or trigger_error(mysql_error());
-// Tenta se conectar a um banco de dados MySQL
-mysql_select_db('onyx') or trigger_error(mysql_error());
-
 $usuario = mysql_real_escape_string($_POST['usuario']);
 $senha = mysql_real_escape_string($_POST['senha']);
 
-$sql = "SELECT `id`, `nome`, `nivel` FROM `usuario` WHERE (`login` = '". $usuario ."') AND (`senha` = '". $senha ."') AND (`ativo` = 1) LIMIT 1";
+$sql = "SELECT `id`, `nome`, `nivel`,`ativo` FROM `usuario` WHERE (`login` = '". $usuario ."') AND (`senha` = '". $senha ."') LIMIT 1";
 
 $query = mysql_query($sql);
 if (mysql_num_rows($query) != 1) {
@@ -33,6 +28,11 @@ if (mysql_num_rows($query) != 1) {
 	$_SESSION['UsuarioNivel'] = $resultado['nivel'];
 	$_SESSION['id_user'] = $resultado['id'];
 
+	// Verifica se o usuário está com o cadastro completo
+	if($resultado['ativo'] == 1){
 	// Redireciona o visitante
 	header("Location: adm/index.php"); exit;
+	}else{
+	header("Location: adm/usuario/completa_cadastro.php"); exit;
+	}
 }

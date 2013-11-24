@@ -1,11 +1,10 @@
 <?php
-include("../../config.php");
 include("../header.php");
 ?>
-<form method="post" action="salva.php" enctype="multipart/form-data">
+<div id="conteudo_curso">
+<form method="post" action="grupocurso/salva.php" enctype="multipart/form-data">
 
-	<label>Cadastro de Grupo de Curso: </label>
-	<br />
+	<h3>Cadastro de Grupo de Curso: </h3>
 
 	<label>Nome: </label> <br />		
 	<input type="text" name="nome" id="nome"/><br/>
@@ -15,4 +14,5 @@ include("../header.php");
 
 	<input type="submit" value="Enviar" />
 </form>
+</div>
 <?php include("../footer.php"); ?>

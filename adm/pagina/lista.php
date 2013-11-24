@@ -2,54 +2,39 @@
 include("../header.php");
 include("../../config.php"); 
 ?>
-<div id="conteudo">
+<div id="conteudo_curso">
 
   <?php
 
-  $res = mysql_query("select * from convenio"); /*Executa o comando SQL, no caso para pegar todos os usuarios do sistema e retorna o valor da consulta em uma variavel ($res)  */
+  $res = mysql_query("select * from paginas"); /*Executa o comando SQL, no caso para pegar todos os usuarios do sistema e retorna o valor da consulta em uma variavel ($res)  */
 
   /*Enquanto houver dados na tabela para serem mostrados será executado tudo que esta dentro do while */
-  echo "<h3>Conv&ecirc;nios Cadastrados</h3>";
-  echo "<a href='cadastra_convenio.php'> Novo </a>";
-  echo "<table cellpadding='0' cellspacing='0' border='0' class='display' id='example'>
+  echo "<h3>P&aacute;ginas Cadastradas</h3>";
+    echo "<table cellpadding='0' cellspacing='0' border='0' class='display' id='example' align='center'>
     <thead>
       <tr>
         <th>Cod.</th>
-        <th>Logo</th>
-        <th>Categoria</th>
-        <th>Nome</th>
-        <th>Resumo</th>
-        <th>Editar</th>
-        <th>Remover</th>
+        <th>Nome P&aacute;gina</th>
+        <th>Atualizar</th>
       </tr>
   </thead>
 
   <tbody>";
 
-  while($convenio=mysql_fetch_array($res)){
+  while($pagina=mysql_fetch_array($res)){
 
     /*Escreve cada linha da tabela*/
     echo "  
 
-    <tr>
+    <tr align='center'>
 
-    <td>".$convenio['id'] ."</td>
-    <td><img src='../uploads/convenio/". $convenio['logo']."' width='50px' height='auto'/> </td>
-    <td>".$convenio['categoria_id'] ."</td>
-    <td>".$convenio['nome'] ."</td>
-    <td>".$convenio['resumo'] ."</td>
+    <td>".$pagina['id'] ."</td>
+    <td>".$pagina['nomePagina'] ."</td>
 
     <td>
-    <form method='post' action='editar.php'> 
-    <input type='hidden' name='id' value='".$convenio['id']."'/>
-    <input name='Editar' type='submit' value='Editar' />
-    </form>
-    </td>
-
-    <td>
-    <form method='post' action='deletar.php'> 
-    <input type='hidden' name='id' value='".$convenio['id']."'/>
-    <input name='Excluir' type='submit' value='Excluir' />
+    <form method='post' action='pagina/editar.php'> 
+    <input type='hidden' name='id' value='".$pagina['id']."'/>
+    <input name='Atualizar' type='submit' value='Atualizar' />
     </form>
     </td>
 

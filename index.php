@@ -82,7 +82,8 @@
   <form action="verifica_certificado.php" method="POST">
     <div class="verificar_certificado">
     <label>Código </label>
-    <input type="text" name="numero" />
+    <input type="text" name="certificado" />
+    <input type="image" name="imagem"src="imagens/icone/pesquisar.jpg" alt="Buscar curso" class="btn-curso" align="botton" />
   </div>
   </div>
   </form>

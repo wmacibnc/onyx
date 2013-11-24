@@ -1,11 +1,12 @@
+<head>
+  <base href="/onyx/" />
+</head>
 <?php 
 include ("../header.php");
 include ("../config.php");
 include("PagSeguroLibrary.php"); ?>
 
 <div id="conteudo">
-    <br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br />
 
 <?php
 

@@ -9,7 +9,7 @@ if (!empty($_POST) AND (empty($_POST['usuario']) OR empty($_POST['senha']))) {
 $usuario = mysql_real_escape_string($_POST['usuario']);
 $senha = mysql_real_escape_string($_POST['senha']);
 
-echo $sql = "SELECT `id`, `nome` FROM `usuario` WHERE (`login` = '". $usuario ."') AND (`senha` = '". $senha ."') AND (`ativo` = 1) LIMIT 1";
+$sql = "SELECT `id`, `nome` FROM `usuario` WHERE (`login` = '". $usuario ."') AND (`senha` = '". $senha ."') AND (`ativo` = 1) LIMIT 1";
 
 $query = mysql_query($sql);
 if (mysql_num_rows($query) != 1) {

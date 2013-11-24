@@ -3,8 +3,9 @@
 
 <div id="rodape">
 	<div id="centro">
-		<form method="post" action="curso.php">
-			<input type="text" name="curso" value="O que você quer aprender ?" onfocus="this.value = ''" onblur="this.value='O que você quer aprender ?'" size="30px" class="btn-pesquisa-curso" />
+	
+		<form method="GET" action="curso.php">
+			<input type="text" name="curso" value="O que você quer aprender ?" onfocus="this.value = ''" size="30px" class="btn-pesquisa-curso" />
 			<input type="image" src="imagens/icone/pesquisar.png" alt="Buscar curso" class="btn-curso" align="botton" />
 		</form>
 		<div id="rodape_esquerda">

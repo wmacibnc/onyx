@@ -3,7 +3,9 @@
 	include("../../config.php");
  ?>
 <div id="conteudo_curso">
+
 	<h3>Lista de Usuários</h3>
+		<a href="usuario/novo.php">Novo</a>
 	<table class='display' id='example'>
 		<thead>
 			<tr>

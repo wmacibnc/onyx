@@ -5,7 +5,18 @@ include("config.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br" >
 <head>
-  <base href="/onyx/" />
+  <script>
+function changeDisplay(id) {
+Se estiver visivel inverte ou vice-versa
+var div = document.getElementById(id);
+
+if (div.className=='invisivel')
+div.className='visivel';
+else
+div.className='invisivel';
+}
+</script>
+
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="Instituto Onyx" />
@@ -17,6 +28,32 @@ include("config.php");
   <link rel="stylesheet" href="css/liquid-slider.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <!-- Banner -->
+
+  <!-- tabs -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+  
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="js/jquery.ui.css.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script>
+  $(function() {
+   $('#myTabs').tabs();
+  });
+
+  $('.next-product').click(function(){ 
+  var $tabs = $('#myTabs').tabs();
+  var selected = $tabs.tabs('option', 'selected');
+  $tabs.tabs('select', selected+1);
+});
+
+$('.previous-product').click(function(){ 
+  var $tabs = $('#myTabs').tabs();
+  var selected = $tabs.tabs('option', 'selected');
+  $tabs.tabs('select', selected-1);
+});
+  </script>
+  <!-- tabs -->
 
   <!--  CEP -->
 
@@ -68,9 +105,9 @@ jQuery(document).ready(function() {
 <body>
   <div id="centro">
     <div id="logo"><a href="index.php"><img src="imagens/logo.png" class="imagens_logo"></a>
-      <form method="post" action="curso.php">
-        <input type="text" name="curso" value="O que você quer aprender ?" onfocus="this.value = ''" onblur="this.value='O que você quer aprender ?'" size="30px" class="btn-pesquisa-curso" />
-        <input type="image" src="imagens/icone/pesquisar.jpg" alt="Buscar curso" class="btn-curso" align="botton" />
+      <form method="GET" action="curso.php" enctype="multipart/form-data">
+        <input type="text" name="curso" value="O que você quer aprender ?" onfocus="this.value = ''" size="30px" class="btn-pesquisa-curso" />
+        <input type="image" name="imagem"src="imagens/icone/pesquisar.jpg" alt="Buscar curso" class="btn-curso" align="botton" />
       </form>
     </div>
     <div id="box_login">

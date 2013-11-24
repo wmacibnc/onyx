@@ -1,12 +1,11 @@
-<?php include("header.php");  ?>
-<div id="conteudo" align="center">
-	<h1 align="left">Parceiros</h1>
-	
-	<img src="imagens/team.jpg">
-
-	<p><a href="http://www.ineib.com.br/" target="_blank"><img src="imagens/ineb.png"></a></p>
-
-	<p><a href="http://www.colegioananeri.com/site/" target="_blank"><img src="imagens/ananeri.png"></a></p>
-
+<?php 
+include("header.php");
+?>
+<div id="conteudo">
+	<?php 
+	$consulta = mysql_query("select * from paginas where nomePagina='PARCEIROS'");
+	$resultado = mysql_fetch_array($consulta);
+	echo $resultado['conteudo'];
+	 ?>
 </div>
-<?php include("footer.php");  ?>
+<?php include('footer.php'); ?>

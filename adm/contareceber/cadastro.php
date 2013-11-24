@@ -1,63 +1,27 @@
 <?php
-session_start();
-include("../../config.php");
 include("../header.php");
 ?>
-<form method="post" action="salva_convenio.php" enctype="multipart/form-data">
+<div id="conteudo_curso">
+<form method="post" action="contareceber/salva.php" enctype="multipart/form-data">
 
-	<label>Categoria: </label>
-	<br />
-	<select name="categoria_id">
-		<?php 
-		$resultado = mysql_query("select * from categoria");
-		while($categoria=mysql_fetch_array($resultado)){
-			echo "<option value='".$categoria['id'] ."'>".$categoria['nome'] ."</option>";
-		}
-		?>			
-	</select>
-	<br />
+	<h3>Cadastro de Contas a Receber: </h3>
+
 	<label>Nome: </label> <br />		
 	<input type="text" name="nome" id="nome"/><br/>
-
-	<label>Telefone: </label> <br />		
-	<input type="text" name="telefone" id="telefone"/><br/>
-
-	<label>E-mail: </label> <br />		
-	<input type="text" name="email" id="email"/><br/>
-
-	<label>Resumo: </label> <br />		
-	<input type="text" name="resumo" id="resumo"/><br/>
-
-	<label>Logo: </label> <br />		
-	<input type="file" name="logo" id="logo"/><br />
-
-	<label>Slogan: </label> <br />		
-	<input type="text" name="slogan" id="slogan"/><br/>
-
-	<label>Descontos: </label> <br />		
-	<input type="text" name="desconto" id="desconto"/><br/>
-
-	<label>Servi√ßos: </label> <br />		
-	<input type="text" name="servico" id="servico"/><br/>
-
-	<label>CEP: </label> <br />		
-	<input type="text" name="cep" id="cep"/><br/>
-
-	<label>Endere√ßo: </label> <br />		
-	<input type="text" name="endereco" id="endereco"/><br/>
-
-	<label>Bairro: </label> <br />		
-	<input type="text" name="bairro" id="bairro"/><br/>
-
-	<label>Cidade: </label> <br />		
-	<input type="text" name="cidade" id="cidade"/><br/>
-
-	<label>UF: </label> <br />		
-	<input type="text" name="uf" id="uf"/><br/>			
-
-	<label>Observacao: </label> <br />		
-	<input type="text" name="observacao" id="observacao"/><br/>						
-
+	
+	<label>Valor: </label> <br />		
+	<input type="text" name="valor" id="valor"/><br/>
+	
+	<label>Data de Vencimento: </label> <br />		
+	<input type="text" name="datavencimento" id="datavencimento"/><br/>
+	
+	<label>Data de Pagamento: </label> <br />		
+	<input type="text" name="datapagamento" id="datapagamento"/><br/>
+	
+	<label>ObservaÁ„o: </label> <br />		
+	<input type="text" name="observacao" id="observacao"/><br/>
+	
 	<input type="submit" value="Enviar" />
 </form>
+</div>
 <?php include("../footer.php"); ?>

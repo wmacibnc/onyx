@@ -1,83 +1,87 @@
+<head>
+	<base href="/onyx/" />
+</head>
 <?php 
 include("../config.php"); 
 include("../header.php");
-include("PagSeguroLibrary.php"); ?>
+
+include("PagSeguroLibrary.php"); 
 ?>
+
 <div id="conteudo">
-<br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br />
-	<?php 
-	
-	echo $codigo = $_GET['codigo'];
+    <h3> Estamos quase chegando ao final.</h3>
+    <?php
 
-	$credentials = new PagSeguroAccountCredentials(  
-    'institutoonyx@hotmail.com',   
-    '1A3E146F20ED42C1A9E95D462FD2CD27'  
-);  
+    $type = $_GET['codigo'];    
+    
+    /* Definindo as credenciais  */    
+    $credentials = new PagSeguroAccountCredentials(      
+      'institutoonyx@hotmail.com',       
+      '1A3E146F20ED42C1A9E95D462FD2CD27'      
+      );  
 
-/* Código identificador da transação  */    
-$transaction_id = $codigo;  
-  
-/*  
+    /* Código identificador da transação  */    
+    $transaction_id = $type;  
+
+	/*  
     Realizando uma consulta de transação a partir do código identificador  
     para obter o objeto PagSeguroTransaction 
-*/   
-$transaction = PagSeguroTransactionSearchService::searchByCode(  
-    $credentials,  
-    $transaction_id  
-);  
+	*/   
+    $transaction = PagSeguroTransactionSearchService::searchByCode(  
+    	$credentials,  
+    	$transaction_id  
+    	);  
+    
+    $status = $transaction->getStatus()->getValue();
+    $matricula = $transaction->getReference();
 
-	$status = $transaction->getStatus()->getValue();
-	echo "Status: ".$status;
-	//echo "Referência: ".$transaction->getReference->getValue();
+    $consulta = mysql_query("select * from usuario_curso where matricula='".$matricula."'");
+    $resultado = mysql_fetch_array($consulta);
 
-	/*
-1 - Aguardando Pagamento
-2 - Em análise
-3 - Paga
-4 - Disponível
-5 - Em disputa
-6 - Devolvida
-7 - Cancelada
+    $id = $resultado['id'];
 
-*/
-switch ($status) {
-	case '1':
-	echo "Aguardando Pagamento";
-	break;
+    $editar = "UPDATE `usuario_curso` SET `codigoPagseguro` = '".$transaction_id."'
+    WHERE (`id` = ".$id.")";
 
-	case '2':
-	echo "Em análise";
-	break;
-
-	case '3':
-	echo "Paga";
-	break;
-
-	case '4':
-	echo "Disponível";
-	break;
-
-	case '5':
-	echo "Em disputa";
-	break;
-
-	case '6':
-	echo "Devolvida";
-	break;
-
-	case '7':
-	echo "Cancelada";
-	break;
-	
-	default:
-	echo "Aguarde processamento manual.";
-	break;
-}
-	?>
+    /* Faço a inserção no banco de dados e caso haja algum erro na inserção, será retornado através da função mysql_error() */
+    mysql_query($editar) or die ('ERRO: '.mysql_error());
 
 
 
+    switch ($status) {
+    	case '1':
+    	echo "Aguardando Pagamento";
+    	break;
 
+    	case '2':
+    	echo "Em análise";
+    	break;
+
+    	case '3':
+    	echo "Paga";
+    	break;
+
+    	case '4':
+    	echo "Disponível";
+    	break;
+
+    	case '5':
+    	echo "Em disputa";
+    	break;
+
+    	case '6':
+    	echo "Devolvida";
+    	break;
+
+    	case '7':
+    	echo "Cancelada";
+    	break;
+
+    	default:
+    	echo " Aguarde Processamento Manual";
+    	break;
+    }
+
+    ?>
 </div>
 <?php include("../footer.php");  ?>	

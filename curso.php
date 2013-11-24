@@ -7,6 +7,16 @@ include("config.php");
     <img src="imagens/banner-curso.png">
   </div>
   <?php 
+  if(isset($_GET['curso'])){
+    $sql = "select * from curso where nome like '%".$_GET['curso']."%'";
+   $resultado2 = mysql_query($sql);
+   while($curso=mysql_fetch_array($resultado2)){
+    echo "<label><font size='5px' color='#1D1D1D' style='margin:0 0 0 25px;'>".$curso['nome']."</font></label><br /><br />";
+    echo "<a href='tenho_duvidas.php?curso_id=".$curso['id']."'><img hspace='20px'src='imagens/icone/tenho-duvidas.png'/></a>";
+    echo "<a href='mais_informacoes.php?curso_id=".$curso['id']."'><img hspace='20px'src='imagens/icone/ementa.png'/></a>";
+    echo "<a href='matricula.php?curso_id=".$curso['id']."'><img hspace='20px' src='imagens/icone/inscrever.png'/></a></a><br /><br /><br />";
+  }
+  }else{
   $resultado = mysql_query("select * from grupo_curso");
   while($grupo=mysql_fetch_array($resultado)){
    $grupo_id = $grupo['id'];
@@ -35,6 +45,7 @@ include("config.php");
   document.getElementById("elemento'.$grupo['id'].'").addEventListener("mouseover", showElement'.$grupo['id'].', false);  
   document.getElementById("fechar'.$grupo['id'].'").addEventListener("mouseover", hideElement'.$grupo['id'].', false);  
   </script> ';
+}
 }
 ?>
 

@@ -22,7 +22,11 @@ $usuario_id = $_SESSION['UsuarioID'];
 			
 			echo "Início: ". $inicio ." Valido até ".$validade."";
 			echo "<br />";
+			if($curso['certificado']!=1){
 			echo "<a href='curso/avaliacao.php?curso_id=".$curso['id']."'><img src='../imagens/icone/avaliacao.png'/></a>";
+			}else{
+			echo "<a href='certificado/index.php'><img src='../imagens/icone/certificado.png'/></a>";
+			}
 		}
 	}else{
 		echo "<h3> Não existe cursos ativos.</h3>";

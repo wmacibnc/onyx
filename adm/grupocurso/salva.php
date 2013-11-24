@@ -2,7 +2,7 @@
 include("../../config.php"); 
 include("../header.php"); 
 ?>
-
+<div id="conteudo_curso">
 <?php
 
 // Retirando os warning
@@ -35,6 +35,9 @@ $nao_continuar = 0;
    	} 
    } 
 
-echo "<a href='lista.php'> Lista Geral</a>";
+echo "<a href='grupocurso/lista.php'> Lista Geral</a>";
+?>
+</div>
+<?php
 include("../footer.php"); 
 ?>

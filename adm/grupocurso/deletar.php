@@ -3,14 +3,18 @@
   include("../../config.php");
   include("../header.php");
 ?>
+<div id="conteudo_curso">
+
 <?php
 
 $id = $_POST['id'];
-// A instrução delete irá apagar o registro com do id recebido 
-$sql = 'DELETE FROM convenio WHERE id='. $id;
+// A instrução delete irá apagar o registro com do id recebido
+ 
+$sql = 'DELETE FROM grupo_curso WHERE id='. $id;
 mysql_query($sql); 
 echo "Removido com sucesso!";
 ?>
 
-<p><a href="lista.php">Lista Geral</a></p>
+<p><a href="grupocurso/lista.php">Lista Geral</a></p>
+</div>
 <?php   include("../footer.php"); ?>

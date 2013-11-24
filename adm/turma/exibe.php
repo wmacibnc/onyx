@@ -10,7 +10,7 @@ include("../header.php");
   $usuario_id = $_SESSION['UsuarioID'];
   $turma_id =$_GET['turma'];
 
-  $resultado = mysql_query("select * from turma t left join turma_usuario tu on t.id = tu.usuario_id where t.id=".$turma_id."");
+  $resultado = mysql_query("select * from turma t left join turma_usuario tu on t.id = tu.turma_id where t.id=".$turma_id."");
 
   $row = mysql_fetch_array($resultado);
 
