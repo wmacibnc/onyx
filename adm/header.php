@@ -85,6 +85,7 @@ tinyMCE.init({
 
 </head>
 <body>
+  <div id="site"><a href="../index.php"><img src="../imagens/site.jpg" width="60px" heigth="auto" /></a></div>
 <div id="geral">
 <div id="centro">
 <div id="logo"><a href="index.php"><img src="../imagens/logo.png" class="logo"></a></div>
@@ -131,7 +132,7 @@ tinyMCE.init({
     <li><a href="turma/lista.php">Turmas</a></li>
     <li><a href="grupocurso/lista.php">Grupos</a></li>
     <li><a href="forum/">Fórum</a></li>
-    <li><a href="pagina/lista.php">Páginas</a></li>
+    <li><a href="../lista_pagina.php">Páginas</a></li>
     <li><a href="usuario/lista_usuario_turma.php">Usuários</a></li>
   </ul>
 </nav>

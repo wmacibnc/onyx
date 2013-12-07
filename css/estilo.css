@@ -5,6 +5,40 @@ wesley@misterwinformatica.com.br
 www.misterwinformatica.com.br
 Site: www.institutoonyx.com.br
 */
+#abas{
+  margin: -10px;
+  padding: 0;
+  width: 100%;
+}
+ 
+#abas li{
+  display: inline;
+}
+#abas li a{
+  display: block;
+  width: auto;
+  padding: 3px 8px;
+  margin: 0 1px 0 0;
+  width: 200px;
+  float: left;
+  background: url(images/bullet.gif) no-repeat left center;
+  color: #797979;
+  text-decoration: none;
+  text-indent: 5px;
+}
+#abas li a.selected{
+  background: url(images/bullet.gif) no-repeat left center;
+  cursor: default;
+  font-weight: bold;
+  text-decoration: underline;
+}
+ 
+ 
+.contaba{
+  clear: both;
+}
+
+#matricula{ position: fixed;_position:absolute;_margin-bottom:0;_margin-right:0;right:0;bottom:0;z-index:100;}
 
 body{ 
 	font-family: Arial;

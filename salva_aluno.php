@@ -12,6 +12,8 @@ include("header.php");
 	$rg = $_POST['rg'];
 
 	$endereco = $_POST['endereco'];
+	$numero = $_POST['numero'];
+	$complemento = $_POST['complemento'];
 	$bairro = $_POST['bairro'];
 	$cidade = $_POST['cidade'];
 	$uf = $_POST['uf'];
@@ -78,6 +80,8 @@ include("header.php");
 		cpf,
 		rg,
 		endereco,
+		numero,
+		complemento,
 		bairro,
 		cidade,
 		uf,
@@ -101,6 +105,8 @@ VALUES (
 	'$cpf',
 	'$rg',
 	'$endereco',
+	'$numero',
+	'$complemento',
 	'$bairro',
 	'$cidade',
 	'$uf',
@@ -127,7 +133,7 @@ if(mysql_query($query)){
    // Se os dados forem inseridos com sucesso 
 if ($nao_continuar == 0 or $erro!=null){ 
 	echo "<h3>Dados cadastrados com sucesso!</h3>". "<br />";
-	header("Location: matricula.php?mensagem=4");
+	echo "<a href='matricula.php'>Continue sua matricula</a>";
 }else{
 	echo "<h3>Aconteceu um erro no processamento!</h3>";
 	echo "<h4>Tente Novamente!</h4>";
@@ -135,9 +141,10 @@ if ($nao_continuar == 0 or $erro!=null){
 	 // Se houver mensagens de erro, exibe-as 
 
 		foreach ($error as $erro) { 
-			echo "ERRO: <br />";
-			echo $erro . "" . "<br />"; 
+			// echo "ERRO: <br />";
+			// echo $erro . "" . "<br />"; 
 			echo "Os dados não foram cadastrados." . "<br />";
+			echo "<a href='matricula.php'>Continue sua matricula</a>";
 		} 
 	 
 }

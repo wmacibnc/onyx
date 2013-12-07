@@ -57,12 +57,13 @@ $aluno_nome = $aluno['nome'];
 $aluno_email = $aluno['email'];
 $aluno_cep = $aluno['cep'];
 $aluno_endereco = $aluno['endereco'];
+$aluno_complemento = $aluno['complemento'];
+$aluno_numero = $aluno['numero'];
 $aluno_bairro = $aluno['bairro'];
 $aluno_cidade = $aluno['cidade'];
 $aluno_uf = $aluno['uf'];
 $aluno_dd = $aluno['ddtelefone'];
 $aluno_telefone = $aluno['telefone'];
-$aluno_matricula = $aluno_nome." Matricula: ".$matricula;
 
 // Cria o objeto Pagsegguro de pagamento
 $paymentRequest = new PagSeguroPaymentRequest();  
@@ -72,7 +73,7 @@ $paymentRequest->addItem('0001', "Acesso ao curso Online de ".$curso_nome, 1, $c
 // Dados do comprador
 $paymentRequest->setSender(  
 
-    $aluno_matricula,   
+    $aluno_nome,   
     $aluno_email,   
     $aluno_dd,   
     $aluno_telefone  
@@ -83,8 +84,8 @@ $paymentRequest->setShippingAddress(
 
     $aluno_cep,   
     $aluno_endereco,       
-    '',       
-    '',       
+    $aluno_numero,       
+    $aluno_complemento,       
     $aluno_bairro,      
     $aluno_cidade,      
     $aluno_uf,     

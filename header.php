@@ -5,9 +5,19 @@ include("config.php");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br" >
 <head>
+  <script type="text/javascript">
+  function SomenteNumero(e){
+    var tecla=(window.event)?event.keyCode:e.which;   
+    if((tecla>47 && tecla<58)) return true;
+    else{
+      if (tecla==8 || tecla==0) return true;
+  else  return false;
+    }
+} 
+  </script>
   <script>
 function changeDisplay(id) {
-Se estiver visivel inverte ou vice-versa
+// Se estiver visivel inverte ou vice-versa
 var div = document.getElementById(id);
 
 if (div.className=='invisivel')
@@ -36,24 +46,7 @@ div.className='invisivel';
   <script src="js/jquery.ui.css.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css" />
-  <script>
-  $(function() {
-   $('#myTabs').tabs();
-  });
-
-  $('.next-product').click(function(){ 
-  var $tabs = $('#myTabs').tabs();
-  var selected = $tabs.tabs('option', 'selected');
-  $tabs.tabs('select', selected+1);
-});
-
-$('.previous-product').click(function(){ 
-  var $tabs = $('#myTabs').tabs();
-  var selected = $tabs.tabs('option', 'selected');
-  $tabs.tabs('select', selected-1);
-});
-  </script>
-  <!-- tabs -->
+     
 
   <!--  CEP -->
 
@@ -101,8 +94,14 @@ jQuery(document).ready(function() {
 
 </script>
 
+
+
+<link rel="stylesheet" type="text/css" href="css/tabcontent.css" />
+<script type="text/javascript" src="js/tabcontent.js"> </script>
+
 </head>
 <body>
+  <div id="matricula"><a href="curso.php"><img src="imagens/matricula.jpg"></a></div>
   <div id="centro">
     <div id="logo"><a href="index.php"><img src="imagens/logo.png" class="imagens_logo"></a>
       <form method="GET" action="curso.php" enctype="multipart/form-data">
@@ -112,6 +111,8 @@ jQuery(document).ready(function() {
     </div>
     <div id="box_login">
       <form action="validacao.php" method="post">
+         
+        <?php if(!isset($_SESSION['UsuarioID'])){ ?>
         <table>
           <tr>
             <td> </td>
@@ -132,6 +133,12 @@ jQuery(document).ready(function() {
             <td><label><a href="#" class="esqueci">esqueci a senha</a></label></td>
           </tr>
         </table>
+        <?php }else{
+          echo "Olá, ".$_SESSION['UsuarioNome'];
+          echo "<br />";
+          echo "<a href='adm/index.php'>Área Administrativa</a>";
+          echo "<a href='logoff.php'>Sair</a>";
+        } ?>
       </form>
       <div data-href="https://www.facebook.com/institutoonyx" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-show-faces="false" data-send="true" class="fb-like fb_edge_widget_with_comment fb_iframe_widget" fb-xfbml-state="rendered"><span style="height: 24px; width: 450px;"><iframe id="f171c13634" name="f14d813348" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="https://www.facebook.com/plugins/like.php?api_key=113869198637480&amp;channel_url=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D27%23cb%3Df51e52608%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff3f6004914%26relation%3Dparent.parent&amp;colorscheme=light&amp;extended_social_context=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Finstitutoonyx&amp;layout=standard&amp;locale=pt_BR&amp;node_type=link&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=450" style="border: none; overflow: hidden; height: 24px; width: 450px;"></iframe></span></div>
             

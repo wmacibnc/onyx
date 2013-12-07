@@ -39,9 +39,9 @@
 					<td align="center"><?php echo $rows['login']; ?></td>
 					<td align="center"> 
 						<?php
-							$resulta2=mysql_query("select * from curso c left join usuario_curso uc on c.id = uc.curso_id where uc.usuario_id=".$aluno_id."");
+							$resulta2=mysql_query("select * from usuario_curso uc left join curso c on c.id = uc.curso_id where uc.usuario_id=".$aluno_id."");
 								while($cursos=mysql_fetch_array($resulta2)){
-									echo $cursos['nome']."<br />";
+									echo "<a href='usuariocurso/editar.php?curso_id=".$cursos['id']."&usuario_id=".$aluno_id."'>".$cursos['nome']."</a><br />";
 								} 
 						?>
 					</td>
@@ -49,7 +49,7 @@
 						<?php
 							$resulta3=mysql_query("select * from turma t LEFT JOIN turma_usuario tu ON t.id = tu.turma_id WHERE tu.usuario_id =".$aluno_id."");
 								while($turma=mysql_fetch_array($resulta3)){
-									echo $turma['nome']."<br />";
+									echo "<a href='#'>".$turma['nome']."</a><br />";
 								} 
 						?>
 					</td>
