@@ -74,6 +74,7 @@ if (!empty($_GET['mensagem'])){
       <tr>
         <td><input type="text"name="usuario" value="login" onfocus="this.value = ''" size="8"/></td>
         <td><input type="password"name="senha" value="senha" onfocus="this.value = ''" size="8"/></td>
+        <td><input type="text" name="cupom" size="8"/></td>
         <td><input type="submit" value="Entrar" /></td>
       </tr>
     </table>

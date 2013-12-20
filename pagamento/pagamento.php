@@ -13,6 +13,7 @@ include("PagSeguroLibrary.php"); ?>
 
 $aluno_id = $_SESSION['UsuarioID'];
 $curso_id = $_SESSION['curso_id'];
+$cupom = $_SESSION['cupom'];
 $dataVinculo = 'null';
 $matricula1 = str_pad( $aluno_id, 4, '0', STR_PAD_LEFT );
 $matricula2 = str_pad(rand(1,10000), 4, '0', STR_PAD_LEFT );
@@ -39,19 +40,33 @@ VALUES (
 QUERY;
 mysql_query($query) or die ('ERRO: '.mysql_error());
 
-$resultado = mysql_query("select * from usuario where id=".$aluno_id);
+  $resultado = mysql_query("select * from usuario where id=".$aluno_id);
   $aluno = mysql_fetch_array($resultado);
 
   $resultado2 = mysql_query("select * from curso where id=".$curso_id);
   $curso = mysql_fetch_array($resultado2);
 
+  $sql = "select * from cupom";
+  $resultado3 = mysql_query($sql);
+  $cupons = mysql_fetch_array($resultado3);
+
   echo "<h4>Usuário: ".$aluno['nome']."</h4>";
   echo "<h4>Curso: ".$curso['nome']."</h4>";
   echo "<h4>Investimento: ".$curso['valor'].",00</h4>";
+  if(!isset($cupom_id)){
+  echo "<h4>Desconto: ".$cupons['desconto']."% - CUPOM: ".$cupons['nome']." </h4>";
+  }
+
+  
+  $valor = $curso['valor']; // valor original
+  $percentual = $cupons['desconto'] / 100.0; // 15%
+  $valor_final = $valor - ($percentual * $valor);
+  
+  echo "<h4>Total Investimento: ".$valor_final.",00</h4>";
   echo "<h4>Matricula: ".$matricula."</h4>";
 
 $curso_nome = $curso['nome'];
-$curso_valor = $curso['valor'].".00";
+$curso_valor = $valor_final.".00";
 
 $aluno_nome = $aluno['nome'];
 $aluno_email = $aluno['email'];

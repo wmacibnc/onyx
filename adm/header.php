@@ -129,6 +129,7 @@ tinyMCE.init({
   <ul>
     <li><a href="comentario/lista.php">Coment&aacute;rio</a></li>
     <li><a href="curso/index.php">Cursos</a></li>
+    <li><a href="cupom/lista.php">Cupom</a></li>
     <li><a href="turma/lista.php">Turmas</a></li>
     <li><a href="grupocurso/lista.php">Grupos</a></li>
     <li><a href="forum/">Fórum</a></li>

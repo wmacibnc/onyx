@@ -17,6 +17,15 @@ include("../header.php");
 	<input type='hidden' name='turma_id' value='<?php echo $turma_id; ?>' />
 <label> Selecione o arquivo que deseja enviar.</label><br /><br />
 <input type="file" name="pdf" id="pdf" /><br /><br />
+	<select name="tipo">
+		<option value="1">Livros/Artigos</option>
+		<option value="2">Aulas Virtuais</option>
+		<option value="3">Arquivos Texto</option>
+		<option value="4">Vídeos</option>
+		<option value="5">Outros</option>
+	</select>
+
+
 <input type="submit" name="envia" value="Enviar" />
 </form>
 <?php 

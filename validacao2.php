@@ -29,6 +29,7 @@ if (mysql_num_rows($query) != 1) {
 	$_SESSION['UsuarioNome'] = $resultado['nome'];
 	$_SESSION['id_user'] = $resultado['id'];
 	$_SESSION['UsuarioNivel'] = $resultado['nivel'];
+	$_SESSION['cupom'] = $_POST['cupom'];
 
 	// Redireciona o visitante
 	header("Location: pagamento/pagamento.php"); 

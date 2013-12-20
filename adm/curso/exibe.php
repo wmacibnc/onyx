@@ -34,133 +34,73 @@ include("../header.php");
   $ano_validade = $data_validade[2];
 
 //COMPARANDO
- $validade = date('d/m/Y', strtotime("+".$dias." days",strtotime($dataVinculo)));
-    $inicio = strftime("%d/%m/%Y", strtotime($dataVinculo));
+  $validade = date('d/m/Y', strtotime("+".$dias." days",strtotime($dataVinculo)));
+  $inicio = strftime("%d/%m/%Y", strtotime($dataVinculo));
   if (($dia_atual > $dia_validade) and ($mes_atual >= $mes_validade) and ($ano_atual >= $ano_validade)) {
-   
+
 
     echo "Curso expirado! <br />";
     echo "Inicio " . $inicio." <br />";
     echo "Validade " . $validade." <br />";
   }else{
 
-  echo "Início: ". $inicio ." Valido até ".$validade."<br /><br />";
+    echo "Início: ". $inicio ." Valido até ".$validade."<br /><br />";
     
-  $path = $row2['nome_pasta']."/";
-  $diretorio = dir($path);
+    
+// Material por tipo
+    $curso_id = $row2['curso_id'];
+
+    $consulta = mysql_query("select * from upload where curso_id=".$curso_id." AND aula=1");
 
 
-//listar arquivos     
-$i=1;
-  // Livros e Artigos => PDF - WORD - TXT - EPUB
-  if($files = glob($path."/*.{pdf,txt,doc,epub,docx}",GLOB_BRACE)){
-  //permorre a lista
-  // PDF
-     echo "<div id='sombra_curso'>";
-      echo "<img src='../imagens/icone/pdf.png' /> <br />";
-      foreach($files as $file) {         
-        $i++;
-        if (!is_dir($file)){
-          echo "<script> 
-          function enviar_formulario".$i."(){ 
-            document.forme".$i.".submit() 
-          } 
-          </script>";
-          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
-          echo "<input type='hidden' name='arquivo' value='".$file."' />";
-          echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
-          echo "</form>";
-        }
+    while ($resultado2 = mysql_fetch_array($consulta)) {
+      $tipo = $resultado2['tipo'];
+      $arquivo = $resultado2['caminho'];
+
+  // Livros e Artigos
+      switch ($tipo) {
+        case '1':
+        echo "<div id='sombra_curso'>";
+        echo "<img src='../imagens/icone/pdf.png' /> <br />";
+        echo '<a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;block&#39;">';
+        echo "curso/".$arquivo."";
+        echo '</a></p>';
+        echo '<div id="white_content" style="display: none;">';
+        echo "<embed src='curso/".$arquivo."' width='850px' height='550px'/>";
+        echo '<br>Para fechar, <a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;none&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;none&#39;">clique aqui</a>.</div>';
+        echo '<div id="black_overlay" style="display: none;"></div>';
+        echo "</div>";
+        break;
+
+        case '2':
+      
+        break;
+
+        case '3':
+      echo "<div id='sombra_curso'>";
+        echo "<img src='../imagens/icone/txt.png' /> <br />";
+        echo '<a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;block&#39;">';
+        echo "curso/".$arquivo."";
+        echo '</a></p>';
+        echo '<div id="white_content" style="display: none;">';
+        echo "<embed src='curso/".$arquivo."' width='850px' height='550px'/>";
+        echo '<br>Para fechar, <a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;none&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;none&#39;">clique aqui</a>.</div>';
+        echo '<div id="black_overlay" style="display: none;"></div>';
+        echo "</div>";
+        break;
+
+        case '4':
+      
+        break;
+
+        default:
+      
+        break;
       }
-      echo "</div>";
-      }else{
-}
+      }
+    }
 
-    // Aulas => swf
-  if($files = glob($path."/*.{swf}",GLOB_BRACE)){
-
-  //permorre a lista
-     echo "<div id='sombra_curso'>";
-      echo "<img src='../imagens/icone/apresentacao.png' /> <br />";
-      foreach($files as $file) {         
-        $i++;
-        if (!is_dir($file)){
-          echo "<script> 
-          function enviar_formulario".$i."(){ 
-            document.forme".$i.".submit() 
-          } 
-          </script>";
-          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
-          echo "<input type='hidden' name='arquivo' value='".$file."' />";
-          echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
-          echo "</form>";
-        }
-      } 
-      echo "</div>";
-      }else{
-}
-
-
-  // Videos => flv, avi, wmv, mpeg4, wma, MP3, RM, 3gp
-  if($files = glob($path."/*.{flv,avi,wmv,mpeg4,mp3,rm,3gp}",GLOB_BRACE)){
-
-  //permorre a lista
-     echo "<div id='sombra_curso'>";
-      echo "<img src='../imagens/icone/video.png' /> <br />";
-      foreach($files as $file) {         
-        $i++;
-        if (!is_dir($file)){
-          echo "<script> 
-          function enviar_formulario".$i."(){ 
-            document.forme".$i.".submit() 
-          } 
-          </script>";
-          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
-          echo "<input type='hidden' name='arquivo' value='".$file."' />";
-          echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
-          echo "</form>";
-        }
-      } 
-      echo "</div>";
-      }else{
-}
-
-
-
-
-// EXE - Executabel
-  if($files = glob($path."/*.exe")){
-  //permorre a lista
-  // PDF
-     echo "<div id='sombra_curso'>";
-      echo "<img src='../imagens/icone/outros.png' /> <br />";
-      foreach($files as $file) {         
-        $i++;
-        if (!is_dir($file)){
-          echo "<script> 
-          function enviar_formulario".$i."(){ 
-            document.forme".$i.".submit() 
-          } 
-          </script>";
-          echo "<form method='POST' name='forme".$i."' action='curso/mostra.php'>";
-          echo "<input type='hidden' name='arquivo' value='".$file."' />";
-          echo '<a href="javascript:enviar_formulario'.$i.'();">'.basename($file).'</a>';
-          echo "</form>";
-        }
-      } 
-      echo "</div>";
-}else{
-}
-
-
-
-      $diretorio -> close();
-
- }
- ?>
-</tr>
-</table>
+?>    
 <p align="center"> Todos os direitos reservados - Instituto Onyx 2013</p>
 </div>
 <?php include('../footer.php') ?>
-

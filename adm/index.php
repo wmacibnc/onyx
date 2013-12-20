@@ -47,7 +47,7 @@ echo $resultado['ddtelefone']." ".$resultado['telefone']." - ".$resultado['ddcel
 			if($curso['certificado']!=1){
 			echo "<a href='curso/avaliacao.php?curso_id=".$curso['id']."'><img src='../imagens/icone/avaliacao.png'/></a>";
 			}else{
-			echo "<a href='certificado/index.php'><img src='../imagens/icone/certificado.png'/></a>";
+			echo "<a href='certificado/index.php'><img src='../imagens/icone/certificado2.png'/></a>";
 			}
 		}
 	}else{
