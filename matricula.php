@@ -15,7 +15,7 @@ if(document.getElementById('visivel').checked == true){
 
 <div id="conteudo">  
   
-  <h1>Matricula</h1>
+  <h2>Matricula</h2>
 
   <?php 
   if(!empty($_GET['curso_id'])){
@@ -66,18 +66,32 @@ if (!empty($_GET['mensagem'])){
 
   <h4>Identifique-se</h4>
   <form action="validacao2.php" method="post">
+
     <table>
+
       <tr>
         <td><label>Login: </label></td>
-        <td><label>Senha: </label></td>
-      </tr>
-      <tr>
         <td><input type="text"name="usuario" value="login" onfocus="this.value = ''" size="8"/></td>
-        <td><input type="password"name="senha" value="senha" onfocus="this.value = ''" size="8"/></td>
-        <td><input type="text" name="cupom" size="8"/></td>
-        <td><input type="submit" value="Entrar" /></td>
       </tr>
+
+      <tr>
+        <td><label>Senha: </label></td>
+        <td><input type="password"name="senha" value="senha" onfocus="this.value = ''" size="8"/></td>
+      </tr>
+
     </table>
+
+<h4> Possui cupom? Informe-o: </h4>
+
+<table>
+  <tr>
+    <td>Cupom: </td>
+    <td><input type="text" name="cupom" size="8"/></td>
+  </tr>
+</table>
+<br />
+<input type="submit" value="Entrar" />
+
   </form>   
   
   <h4>Não tem Login?</h4>
@@ -87,23 +101,19 @@ if (!empty($_GET['mensagem'])){
   <div id="cadastros" style="display:none;">
   <h3>Formulário de Cadastro</h3>
 
-
   <form id="cadastro" action="salva_aluno.php" name="matricula" method="post" enctype="multipart/form-data">
     <ul id="countrytabs" class="shadetabs">
-      <li><a href="#" rel="country1" class="selected">
-        Identificação
-        <img src="imagens/icone/processando.gif" width='40px' height='auto' />
-      </a></li>
+      <li><a href="#" rel="country1" class="selected">Identificação</a></li>
       <li><a href="#" rel="country2">Dados Pessoais</a></li>
       <li><a href="#" rel="country3">Dados do Endereço</a></li>
       <li><a href="#" rel="country4">Dados de Contato</a></li>
     </ul>
 
-    <div style="border:1px solid red; width:600px; margin-bottom: 1em; padding: 10px">
+    <div style="border:1px solid #00006C; width:450px; margin-bottom: 1em; padding: 10px">
 
       <div id="country1" class="tabcontent">
         <label>Nome Completo: </label><br />
-        <input type="text" name="nome" maxlength="200" /><br />
+        <input type="text" name="nome" id="nome" maxlength="200" /><br />
 
         <label>Foto: </label><br />
         <input type="file" name="imagem" id="imagem"/><br />
@@ -175,11 +185,10 @@ if (!empty($_GET['mensagem'])){
     </div>
 
     <script type="text/javascript">
-    var countries=new ddtabcontent("countrytabs")
-    countries.setpersist(true)
-countries.setselectedClassTarget("link") //"link" or "linkparent"
-countries.init()
-
+      var countries=new ddtabcontent("countrytabs")
+      countries.setpersist(true)
+      countries.setselectedClassTarget("link") //"link" or "linkparent"
+      countries.init()
 </script>
 
 <p>

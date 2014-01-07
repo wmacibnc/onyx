@@ -62,5 +62,11 @@ $usuario_curso=mysql_fetch_array($res);
      
 </form>
 
+<form action="usuariocurso/deletar.php" method="post">
+      <input type="hidden" name="usuario_id" value="<?php echo $usuario_id; ?>" />
+      <input type="hidden" name="curso_id" value="<?php echo $curso_id; ?>" />
+      <input type="submit" name="Excluir" value="Excluir Vinculo" />
+      </form>
+
 </div>
 <?php include("../footer.php");  ?>

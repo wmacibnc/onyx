@@ -2,8 +2,28 @@
 include("config.php"); 
 include("header.php"); 
 ?>
+
 <div id="conteudo">
-	<?php 
+	<?php
+// Validação
+	if(
+			empty($_POST['nome']) 
+		AND empty($_POST['email'])    
+		AND empty($_POST['senha'])    
+		AND empty($_POST['cpf'])    
+		AND empty($_POST['rg'])    
+		AND empty($_POST['pai'])    
+		AND empty($_POST['mae'])    
+		AND empty($_POST['cep'])    
+		AND empty($_POST['endereco'])    
+		AND empty($_POST['dd'])    
+		AND empty($_POST['telefone'])    
+		AND empty($_POST['cep'])    
+		){
+		echo "Preencha todos os campos obrigatórios. ";
+		echo "<a href='matricula.php'> Voltar para o formulário</a>";
+	}else{
+
 	$imagem = $_FILES["imagem"];
 	$nome = $_POST['nome'];
 	$senha = $_POST['senha'];
@@ -147,7 +167,8 @@ if ($nao_continuar == 0 or $erro!=null){
 			echo "<a href='matricula.php'>Continue sua matricula</a>";
 		} 
 	 
-}
+	}
+	}
 }
 
 ?>

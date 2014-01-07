@@ -14,6 +14,7 @@ include("PagSeguroLibrary.php"); ?>
 $aluno_id = $_SESSION['UsuarioID'];
 $curso_id = $_SESSION['curso_id'];
 $cupom = $_SESSION['cupom'];
+
 $dataVinculo = 'null';
 $matricula1 = str_pad( $aluno_id, 4, '0', STR_PAD_LEFT );
 $matricula2 = str_pad(rand(1,10000), 4, '0', STR_PAD_LEFT );
@@ -46,20 +47,29 @@ mysql_query($query) or die ('ERRO: '.mysql_error());
   $resultado2 = mysql_query("select * from curso where id=".$curso_id);
   $curso = mysql_fetch_array($resultado2);
 
-  $sql = "select * from cupom";
+  $sql = "select * from cupom where nome like '".$cupom."'";
   $resultado3 = mysql_query($sql);
   $cupons = mysql_fetch_array($resultado3);
 
   echo "<h4>Usuário: ".$aluno['nome']."</h4>";
   echo "<h4>Curso: ".$curso['nome']."</h4>";
   echo "<h4>Investimento: ".$curso['valor'].",00</h4>";
-  if(!isset($cupom_id)){
+
+  if(!empty($cupom)){
+  if(mysql_num_rows($resultado3)>=1){
   echo "<h4>Desconto: ".$cupons['desconto']."% - CUPOM: ".$cupons['nome']." </h4>";
+  $percentual = $cupons['desconto'] / 100.0; // 15%
+  }else{
+    echo "<h4> Cupom informado não localizado/Inválido! </h4>";
+    $percentual = 0.0;
+  }
+  }else{
+    $percentual = 0.0;
+    echo "<h4> Não foi informado cupom na sua compra. </h4>";
   }
 
   
   $valor = $curso['valor']; // valor original
-  $percentual = $cupons['desconto'] / 100.0; // 15%
   $valor_final = $valor - ($percentual * $valor);
   
   echo "<h4>Total Investimento: ".$valor_final.",00</h4>";

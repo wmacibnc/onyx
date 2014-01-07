@@ -6,9 +6,9 @@
 <?php
 
 $usuario_id = $_POST['usuario_id'];
-$curso_id = $_POST['curso_id'];
+$turma_id = $_POST['turma_id'];
 
-$sql = 'DELETE FROM usuario_curso WHERE usuario_id='. $usuario_id." AND curso_id=".$curso_id;
+$sql = 'DELETE FROM turma_usuario WHERE usuario_id='. $usuario_id." AND turma_id=".$turma_id;
 mysql_query($sql); 
 echo "Removido com sucesso!";
 ?>

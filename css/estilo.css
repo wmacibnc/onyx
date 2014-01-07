@@ -44,16 +44,12 @@ body{
 	font-family: Arial;
 	background: url('../imagens/topo.png') repeat-x;
 }
-#centro{
-	margin-left: auto;
-  margin-right: auto;
-  width:980px;
-  height:auto;
-}
+#centro{margin-left: auto;margin-right: auto;width:980px;height:auto;}
+#centro_menu{margin-left: auto;margin-right: auto;width:700px;height:auto;}
 #logo{height:140px; width: 300px;  float: left;margin:3% 0 0 0;}
 #box_login{height:140px; float: right;line-height: 180%;color:#999999;letter-spacing: 1px;margin: 20px 0 0 0;}
-#menu{height: 60px; font-weight:bold;float: left; width: 100%;}
-#banner{height: 350px;width: 100%;float: left;}
+#menu{height: auto; font-weight:bold;float: left; width: 100%;  background:url(../imagens/icone/topo_menu.png);}
+#banner{height: 400px;width: 100%;float: left;}
 #destaque{height: 150px; width: 100%;float: left;}
 	#destaque_titulo{height: 150px; width: 200px;float: left;}
 	#banner-rotativo{height: 50px;width: 780px;float: left;}
@@ -66,8 +62,9 @@ body{
 	#rodape_central{height: 150px;width: 220px;float: left;}
 	#rodape_direita{height: 150px;width: 220px;float: left;}
 	#rodape_misterw{height: 200px;width: 100px;float: left;}
-h3{color: #077CC4;}
-h4{color: #077CC4;}
+h2{color: #00006C;}
+h3{color: #00006C;}
+h4{color: #00006C;}
 
 /*Titulos*/
 .titulo_destaque{padding: 0 0 0 0; text-align: center;}
@@ -92,27 +89,94 @@ h4{color: #077CC4;}
 .verificar_certificado{padding: 360px 0 0 0;}
 #facebook{width: 980px;height: 300px;float: left;}
 #nome_curso{background: url("../imagens/fundo-curso.png") no-repeat; height: 120px;padding: 2px 0 0 35px;font-size: 22px;}
-#menu_fundo{background-color: red;}
 #menu ul {
 	padding:0px;
 	margin:0px;
-	background-color:#077CC4;
+	background:url("../imagens/icone/topo_menu.png");
 	list-style:none;
+	z-index: 1;
 }
-#menu ul li { display: inline;}
+#menu ul li { display: inline;
+}
 #menu ul li a {
 	padding: 6px 10px;
 	display: inline-block;
   	height: 20px;
 	/* visual do link */
-	background-color:#077CC4;
+	background:url("../imagens/icone/topo_menu.png");
 	color: #FFFFFF;
 	text-decoration: none;
 }
 #menu ul li a:hover {
-	background-color:#077CC4;
+	background:url("../imagens/icone/topo_menu.png");
 	color: #8AC1E3;
 }
 #titulo-areas{background:url("../imagens/fundo-areas.png") repeat-x;width: 980px;height:50px;float: left;margin:0 0 15px 0;color:#333333;font-weight: bold;}
 .visivel { display:inline; }	
 .invisivel { display:none;	}
+
+
+
+
+
+
+
+
+.menu > ul{	}
+			
+			.menu > ul > li{
+				float: left;
+				position: relative;
+				margin-left: 5px;
+			}
+			
+			.menu > ul > li:first-child{
+				margin-left: 0;
+			}
+			
+			.menu > ul > li > a{
+				color:#fff;
+				padding: 5px 10px;
+				background: #999999;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+			}
+			
+			.menu > ul > li > ul{
+				padding: 4px 7px;
+				visibility: hidden;
+				position: absolute;
+				left: 0;
+				top: 23px;
+				-webkit-transition: all 0.7s ease;
+				-moz-transition: all 0.7s ease;
+				-o-transition: all 0.7s ease;
+				-moz-opacity: 0.00;
+				opacity: 0.00;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha"(Opacity=0);
+			}
+			
+			.menu > ul > li:hover > ul{
+				-moz-opacity: 1;
+				opacity: 1;
+				-ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=100);
+				visibility: visible;
+				text-align: left;
+				background: #999999;
+				-webkit-border-radius: 0 0 5px 5px;
+				-moz-border-radius: 0 0 5px 5px;
+				border-radius: 0 0 5px 5px;
+				padding: 4px 7px;
+			}
+			
+			.menu > ul > li > ul > li{
+				display: block;
+				margin-bottom: 5px;
+			}
+			
+			.menu > ul > li > ul > li > a{
+				color: #fff;
+				width: 200px;
+				margin-top: 15px;
+			}

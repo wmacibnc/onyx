@@ -24,5 +24,7 @@ include ("config.php");
 	<h4>Validade em dias</h4>
 	<p><?php echo $resultado['validade']; ?></p>
 
+	<p><?php echo "<a href='matricula.php?curso_id=".$resultado['id']."'><img src='imagens/icone/inscrever.png'/></a></a><br /><br /><br />"; ?>
+
 </div>
 <?php include("footer.php"); ?>

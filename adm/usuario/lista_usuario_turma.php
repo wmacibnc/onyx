@@ -49,7 +49,7 @@
 						<?php
 							$resulta3=mysql_query("select * from turma t LEFT JOIN turma_usuario tu ON t.id = tu.turma_id WHERE tu.usuario_id =".$aluno_id."");
 								while($turma=mysql_fetch_array($resulta3)){
-									echo "<a href='#'>".$turma['nome']."</a><br />";
+									echo "<a href='usuarioturma/editar.php?turma_id=".$turma['turma_id']."&usuario_id=".$aluno_id."'>".$turma['nome']."</a><br />";
 								} 
 						?>
 					</td>
@@ -59,7 +59,12 @@
 							<input type="submit" name="vinculo" value="Vinculo" />
 						</form>
 					</td>
-					<td align="center"></td>
+					<td align="center">
+						<form action="usuario/deletar.php" method="post">
+							<input type="hidden" name="id" value="<?php echo $aluno_id; ?>" />
+							<input type="submit" name="Excluir" value="Excluir" />
+						</form>
+					</td>
 				</tr>
 				<?php
 			}
@@ -68,6 +73,6 @@
 
 		</tbody>
 	</table>
-
+<p> Instituto Onyx - Todos os Direitos Reservados.</p>
 </div>
 <?php include("../footer.php"); ?>

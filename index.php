@@ -1,7 +1,7 @@
 <?php include("header.php");  ?>
 <div id="conteudo">
 
-<div id="destaque">
+<!-- <div id="destaque">
   <div id="destaque_titulo">
     <h2 class="titulo_destaque">Faça agora um curso Online Grátis<h2>
     </div>
@@ -21,7 +21,7 @@
       </ul>
     </div>
   </div>
-</div>
+</div> -->
 
  <div id="box_esquerda" align="center">
   <a href="contato.php"><img src="imagens/box/box1.png"/></a>
