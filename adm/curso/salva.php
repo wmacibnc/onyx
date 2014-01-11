@@ -56,7 +56,7 @@ if ($nao_continuar == 0){
   mkdir($nome_pasta);
 }
 
-echo "<a href='curso/lista_curso.php'> Lista Geral</a>";
+echo "<a href='curso/index.php'> Lista Geral</a>";
 echo "</div>";
 include("../footer.php"); 
 ?>

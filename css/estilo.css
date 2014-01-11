@@ -45,23 +45,42 @@ body{
 	background: url('../imagens/topo.png') repeat-x;
 }
 #centro{margin-left: auto;margin-right: auto;width:980px;height:auto;}
-#centro_menu{margin-left: auto;margin-right: auto;width:700px;height:auto;}
-#logo{height:140px; width: 300px;  float: left;margin:3% 0 0 0;}
-#box_login{height:140px; float: right;line-height: 180%;color:#999999;letter-spacing: 1px;margin: 20px 0 0 0;}
-#menu{height: auto; font-weight:bold;float: left; width: 100%;  background:url(../imagens/icone/topo_menu.png);}
+#centro_menu{margin-left: auto;margin-right: auto;width:980px;height:auto;}
+#logo{height:140px; width: 300px;  float: left;margin:1% 0 0 0;}
+#box_login{height:140px; float: right;line-height: 180%;color:#999999;letter-spacing: 1px;margin: 20px 0 0 0;width: 580px;}
+
+#login_box{float:right;height: 40px;width: 100%;}
+#esqueci_senha_box{float:right;height: 5px;width: 100%;margin-right: 21em;}
+#matricula_box{float:right;height: 40px;width: 100%;margin-right: -12px;}
+#contato_box{float: right;height: 40px;width: 100%;margin:12px 0px 0 0px;}
+#facebook_box{float:right;height: 40px;width: 100%;margin:-40px 112px 0 0;}
+
+#menu{height: 52px; font-weight:bold;float: left; width: 100%;  background:url(../imagens/icone/topo_menu.png) repeat; padding: 20px 0 0 0px;margin-bottom: 2px;}
 #banner{height: 400px;width: 100%;float: left;}
 #destaque{height: 150px; width: 100%;float: left;}
-	#destaque_titulo{height: 150px; width: 200px;float: left;}
-	#banner-rotativo{height: 50px;width: 780px;float: left;}
+	#destaque_titulo{height: 150px; width: 360px;float: left;}
+	#banner-rotativo1{height: 50px;width: 150px;float: left;}
+	#banner-rotativo2{height: 50px;width: 150px;float: left;}
+	#banner-rotativo3{height: 50px;width: 150px;float: left;}
+	#banner-rotativo4{height: 50px;width: 150px;float: left;}
+
 #conteudo{height: auto; width: 100%;float: left;}
-	#box_esquerda{height: 220px;width: 33%;float: left;}
-	#box_central{height: 200px;width: 34%; float: left;}
-	#box_direita{height: 200px;width: 33%; float: left;}
-#rodape{height: 180px;width: 100%;background: url(../imagens/fundo_rodape.png) repeat-x; float: left;margin-top: 60px;}
-	#rodape_esquerda{height: 150px;width: 250px;float: left;}
-	#rodape_central{height: 150px;width: 220px;float: left;}
-	#rodape_direita{height: 150px;width: 220px;float: left;}
-	#rodape_misterw{height: 200px;width: 100px;float: left;}
+
+	#box_1{ height: 220px; width: 280px; float: left; margin-top: 30px;}
+	#box_2{ height: 200px; width: 210px; float: left; margin-top: 30px;}
+	#box_3{ height: 200px; width: 220px; float: left; margin-top: 30px;}
+	#box_4{ height: 220px; width: 245px; float: left; margin-top: 30px;}
+
+	#box_5{ height: 220px; width: 240px; float: left; margin-top: 30px;}
+	#box_6{ height: 200px; width: 240px; float: left; margin-top: 30px;}
+	#box_7{ height: 200px; width: 240px; float: left; margin-top: 30px; background:url(../imagens/box/box7.png)no-repeat;}
+	#box_8{ height: 220px; width: 240px; float: left; margin-top: 30px; background:url(../imagens/box/box8.png)no-repeat;}
+
+#rodape{width: 100%;background: url(../imagens/icone/topo_menu.png) repeat; float: left;}
+	#rodape_esquerda{height: 100px;width: 245px;float: left;}
+	#rodape_central{height: 100px;width: 245px;float: left;}
+	#rodape_direita{height: 100px;width: 245px;float: left;}
+	#rodape_misterw{height: 100px;width: 245px;float: left;}
 h2{color: #00006C;}
 h3{color: #00006C;}
 h4{color: #00006C;}
@@ -72,27 +91,25 @@ h4{color: #00006C;}
 /* Tag */
 
 /*ul*/
-#rodape ul{list-style-image: url(../imagens/icone/rodape_li.png);}
+#rodape ul{list-style: none;}
+#rodape a{text-decoration: none;color:#FFFFFF;font-size: 12px;}
 #login{background-color: #ffffff;margin: 15% auto;width: 400px;height: auto;}
 #erro{background-color: #FFDAB9;}
-.btn-curso{}
 .btn-pesquisa-curso{margin: -21px 0 0 0; vertical-align: middle; line-height: 24px; text-align: center;border-style:inset; border-width:2; border-color:#B5B5B5;}
-.btn-matricula{margin: 25px 0 0 30px;}
+.btn-matricula{margin: 25px 0 0 30px;}*/
 .matricule{color: #000000; font-weight: bold; text-decoration: none;}
 .esqueci{color:#666666;text-decoration: none; font-size: 10px;}
-.titulo-areas{margin: 5px 0 0 20px;}
-.grupo_curso{text-decoration: none; font-size: 16px;color: #666666;text-align: left;line-height: 200%;margin-left: 20px;}
-#grupo_curso{border-bottom-width:thin; border-bottom-style:solid;border-bottom-color:#D6D6D6;width: 220px;}
+.titulo-areas{margin: 5px 0 0 20px; color:#FFFFFF;}
+.titulo_rodape{color:#FFFFFF; font-size: 12px; text-align: center;}
+.grupo_curso{text-decoration: none; font-size: 16px; color: #115197; text-align: left;line-height: 200%;margin-left: 20px;font-weight: bold;}
+#grupo_curso{width: 220px;}
 #recomenda{margin:30px 0 0 0 ;float:left; width: 400px; height: 360px;padding: 165px 0 0 50px; text-align: justify;background: url("../imagens/fundo-comentario.png") no-repeat;}
-#texto-recomenda{width: 300px;}
-#verificar_certificado{margin:30px 0 0 0 ;float:right;width: 430px;height: 360px;text-align: justify;background: url("../imagens/fundo-validar.png") no-repeat;font-family: arial;font-weight: bold;}
-.verificar_certificado{padding: 360px 0 0 0;}
+#texto-recomenda{width: 240px;margin: 3em 0 0 0;}
 #facebook{width: 980px;height: 300px;float: left;}
 #nome_curso{background: url("../imagens/fundo-curso.png") no-repeat; height: 120px;padding: 2px 0 0 35px;font-size: 22px;}
+
 #menu ul {
-	padding:0px;
-	margin:0px;
-	background:url("../imagens/icone/topo_menu.png");
+	background:url(../imagens/icone/topo_menu.png) repeat;
 	list-style:none;
 	z-index: 1;
 }
@@ -102,26 +119,17 @@ h4{color: #00006C;}
 	padding: 6px 10px;
 	display: inline-block;
   	height: 20px;
-	/* visual do link */
-	background:url("../imagens/icone/topo_menu.png");
-	color: #FFFFFF;
 	text-decoration: none;
 }
 #menu ul li a:hover {
-	background:url("../imagens/icone/topo_menu.png");
 	color: #8AC1E3;
 }
-#titulo-areas{background:url("../imagens/fundo-areas.png") repeat-x;width: 980px;height:50px;float: left;margin:0 0 15px 0;color:#333333;font-weight: bold;}
+#titulo-areas{background:url(../imagens/icone/topo_menu.png) repeat;width: 100%;height:34px;float: left;margin:-53px 0 15px 0;text-align: center;font-size: 20px;}
+
 .visivel { display:inline; }	
 .invisivel { display:none;	}
 
-
-
-
-
-
-
-
+.menu{margin: -15px 0 0 285px;position: absolute;}
 .menu > ul{	}
 			
 			.menu > ul > li{
@@ -137,7 +145,6 @@ h4{color: #00006C;}
 			.menu > ul > li > a{
 				color:#fff;
 				padding: 5px 10px;
-				background: #999999;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
 				border-radius: 5px;
@@ -180,3 +187,28 @@ h4{color: #00006C;}
 				width: 200px;
 				margin-top: 15px;
 			}
+
+/* Botão*/
+.btn-azul{background-color: #002040;color:#ffffff;border-radius: 5px;border: none; width: 45px;height: 34px;}
+
+/* Input */
+.login_input{border-radius: 5px;border: groove;border-color: #acac9d;border-width: 1px;height: 32px;color: #acac9d;font-weight: bold;font-size: 12px;padding: 0 0 0 8px;}
+.pesquisar_input{border-radius: 5px;border: groove;border-color: #acac9d;border-width: 1px;height: 32px;color: #acac9d;font-weight: bold;font-size: 12px; margin:18px 0 0 0;padding: 0 0 0 8px;}
+.btn-curso{position: absolute; padding: 18px 0 0 10px;}
+.btn-curso2{position: absolute; padding: 18px 0 0 10px;}
+.btn-pesquisar{position: absolute;margin: 15px 0 0 -80px;}
+.btn-pesquisar2{position: absolute;margin: 15px 0 0 -80px;}
+.input_certificado{border-radius: 5px;border: groove;border-color: #acac9d;border-width: 1px;height: 32px;color: #acac9d;font-weight: bold;font-size: 12px;padding: 0 0 0 8px;margin: 100px 0 0 0 ;}
+
+
+
+#titulo_curso{background: url(../imagens/titulo-curso.png) no-repeat; font-size: 20px;color: #FFFFFF;height: 100px; margin: 10px 0 0 0; padding: 30px 0 0 70px;}
+#investimento{width: 50%;float: left;}
+#carga_horaria{width: 50%;float: left;}
+#objetivo-curso{width: 50%;float: left;}
+#conteudo-programatico{width: 50%;float: left;}
+#quero-curso{float: left;width: 100%;}
+
+
+.imprimir{margin:-12px 0 0 180px; position: absolute;}
+.enviar-amigo{margin:-12px 0 0 310px; position: absolute;}

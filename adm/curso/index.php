@@ -15,7 +15,7 @@ include("../../config.php");
         <th>Grupo</th>
         <th>Nome</th>
         <th>Validade</th>
-        <th>Contéudo</th>
+        <th>Cont&eacute;udo</th>
         <th>Avaliação</th>
       </tr>
   </thead>

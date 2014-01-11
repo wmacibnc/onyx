@@ -122,46 +122,56 @@ jQuery(document).ready(function() {
 
 </head>
 <body>
-  <div id="matricula"><a href="curso.php"><img src="imagens/matricula.jpg"></a></div>
+  <div id="matricula"><a href="curso.php"><img src="imagens/matriculas.png"></a></div>
   <div id="centro">
     <div id="logo"><a href="index.php"><img src="imagens/logo.png" class="imagens_logo"></a>
       <form method="GET" action="curso.php" enctype="multipart/form-data">
-        <input type="text" name="curso" value="O que você quer aprender ?" onfocus="this.value = ''" size="30px" class="btn-pesquisa-curso" />
-        <input type="image" name="imagem"src="imagens/icone/pesquisar.jpg" alt="Buscar curso" class="btn-curso" align="botton" />
+        <input type="text" name="curso" value="O que você quer aprender ?" onfocus="this.value = ''" size="30px" class="pesquisar_input" />
+        <input type="image" name="imagem" src="imagens/icone/pesquisar.png" alt="Buscar curso" class="btn-curso" />
       </form>
     </div>
-    <div id="box_login">
+    <div id="box_login" align="right">
       <form action="validacao.php" method="post">
 
         <?php if(!isset($_SESSION['UsuarioID'])){ ?>
-        <table>
-          <tr>
-            <td> </td>
-            <td><label>E-mail </label></td>
-            <td><label>Senha </label></td>
-            
-          </tr>
-          <tr>
-            <td><label style="margin: 0 0 0 -24px;color:#333333;">Área do Aluno</label></td>
-            <td><input type="text"name="usuario" value="E-mail" onfocus="this.value = ''" size="8" /></td>
-            <td><input type="password"name="senha" value="senha" onfocus="this.value = ''" size="8" /></td>
-            <td><input type="submit" value="ok" /></td>
-            <td><a href="curso.php" class="matricule"><label>Matricule-se</label></a></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td><label><a href="#" class="esqueci">esqueci a senha</a></label></td>
-          </tr>
-        </table>
+
+        <div id="login_box">
+            <label style="margin: 0 0 0 -24px;color:#464637;font-weight:bold;">Área do Aluno</label>
+              <input type="text"name="usuario" value="E-mail" size="25" onfocus="this.value = ''" class="login_input" />
+              <input type="password"name="senha" value="senha" size="25" onfocus="this.value = ''" class="login_input" />
+              <input type="submit" value="OK" class="btn-azul" />
+        </div>
+
+        <div id="esqueci_senha_box" align="right">
+            <label>
+              <a href="#" class="esqueci">esqueci a senha</a>
+            </label>
+        </div>
+
+        <div id="matricula_box" align="right">
+            <a href="curso.php" class="matricule">
+              <img src="imagens/matricula.png" />
+            </a>
+        </div>
+
+        <div id="contato_box">
+            <a href="contato.php">
+              <img src="imagens/icone/fundo_contato.png" />
+            </a>
+        </div>
+
+
         <?php }else{
           echo "Olá, ".$_SESSION['UsuarioNome'];
           echo "<br />";
-          echo "<a href='adm/index.php'><img src='imagens/icone/area_administrativa.png' /> </a>  ";
+          echo "<a href='adm/index.php'><img src='imagens/icone/adm-login.png' /> </a>  ";
           echo "<a href='logoff.php'><img src='imagens/icone/logoff.png' /></a> <br />";
         } ?>
       </form>
-      <div data-href="https://www.facebook.com/institutoonyx" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-show-faces="false" data-send="true" class="fb-like fb_edge_widget_with_comment fb_iframe_widget" fb-xfbml-state="rendered"><span style="height: 24px; width: 450px;"><iframe id="f171c13634" name="f14d813348" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="https://www.facebook.com/plugins/like.php?api_key=113869198637480&amp;channel_url=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D27%23cb%3Df51e52608%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff3f6004914%26relation%3Dparent.parent&amp;colorscheme=light&amp;extended_social_context=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Finstitutoonyx&amp;layout=standard&amp;locale=pt_BR&amp;node_type=link&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=450" style="border: none; overflow: hidden; height: 24px; width: 450px;"></iframe></span></div>
+
+      <div id="facebook_box">
+        <div data-href="https://www.facebook.com/institutoonyx" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-show-faces="false" data-send="true" class="fb-like fb_edge_widget_with_comment fb_iframe_widget" fb-xfbml-state="rendered"><span style="height: 24px; width: 450px;"><iframe id="f171c13634" name="f14d813348" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="https://www.facebook.com/plugins/like.php?api_key=113869198637480&amp;channel_url=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D27%23cb%3Df51e52608%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff3f6004914%26relation%3Dparent.parent&amp;colorscheme=light&amp;extended_social_context=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Finstitutoonyx&amp;layout=standard&amp;locale=pt_BR&amp;node_type=link&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=450" style="border: none; overflow: hidden; height: 24px; width: 450px;"></iframe></span></div>
+      </div>
 
     </div>
   </div>
@@ -188,16 +198,3 @@ jQuery(document).ready(function() {
 </div>
 
 <div id="centro">
-
-  <div id="banner" align="center">
-   
-    <div class="slider">
-        <ul class="bxslider">
-          <li><img src="imagens/banner/banner1.png" /></li>
-          <li><img src="imagens/banner/banner2.png" /></li>
-          <li><img src="imagens/banner/banner3.png" /></li>
-          <li><img src="imagens/banner/banner4.png" /></li>
-        </ul>
-     </div>
-    
-  </div>

@@ -3,11 +3,6 @@
 
 <div id="rodape">
 	<div id="centro">
-	
-		<form method="GET" action="curso.php">
-			<input type="text" name="curso" value="O que você quer aprender ?" onfocus="this.value = ''" size="30px" class="btn-pesquisa-curso" />
-			<input type="image" src="imagens/icone/pesquisar.png" alt="Buscar curso" class="btn-curso" align="botton" />
-		</form>
 		<div id="rodape_esquerda">
 			<ul>
 				<li><a href="index.php">Página Inicial</a></li>
@@ -15,6 +10,7 @@
 				<li><a href="consultoria.php">Consultoria</a></li>
 			</ul>
 		</div>
+
 		<div id="rodape_central">
 			<ul>
 				<li><a href="institucional.php">Sobre nós</a></li>
@@ -30,8 +26,14 @@
 			</ul>
 		</div>
 		<div id="rodape_misterw">
-			<a href="http://www.misterwinformatica.com.br" target="_blank"><img src="imagens/logomisterw.png" /></a>
+			<form method="GET" action="curso.php">
+				<input type="text" name="curso" value="O que você quer aprender ?" onfocus="this.value = ''" size="30px" class="pesquisar_input" />
+				<input type="image" src="imagens/icone/pesquisar2.png" alt="Buscar curso" class="btn-curso2" align="botton" />
+			</form>
+			<!-- <a href="http://www.misterwinformatica.com.br" target="_blank"><img src="imagens/logomisterw.png" /></a> -->
 		</div>
+		<p class="titulo_rodape"> &#169; 2002-2014 Instituto Onyx - Todos os direitos reservados</p>
+		<p class="titulo_rodape"> <a href="http://www.misterwinformatica.com.br" target="_blank">Powered by Mister W Informática</a></p>
 	</div>
 </div>
 

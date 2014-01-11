@@ -82,7 +82,8 @@ tinyMCE.init({
 </script>
 
 
-
+<script type="text/javascript" src="../js/lightbox.js"></script>
+<link href="../css/ligthbox.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <div id="site"><a href="../index.php"><img src="../imagens/site.jpg" width="60px" heigth="auto" /></a></div>

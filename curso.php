@@ -14,7 +14,7 @@ include("config.php");
     echo "<label><font size='5px' color='#1D1D1D' style='margin:0 0 0 25px;'>".$curso['nome']."</font></label><br /><br />";
     echo "<a href='tenho_duvidas.php?curso_id=".$curso['id']."'><img hspace='20px'src='imagens/icone/tenho-duvidas.png'/></a>";
     echo "<a href='mais_informacoes.php?curso_id=".$curso['id']."'><img hspace='20px'src='imagens/icone/ementa.png'/></a>";
-    echo "<a href='matricula.php?curso_id=".$curso['id']."'><img hspace='20px' src='imagens/icone/inscrever.png'/></a></a><br /><br /><br />";
+    //echo "<a href='matricula.php?curso_id=".$curso['id']."'><img hspace='20px' src='imagens/icone/inscrever.png'/></a></a><br /><br /><br />";
   }
   }else{
   $resultado = mysql_query("select * from grupo_curso");
@@ -30,7 +30,7 @@ include("config.php");
     echo "<label><font size='5px' color='#1D1D1D' style='margin:0 0 0 25px;'>".$curso['nome']."</font></label><br /><br />";
     echo "<a href='tenho_duvidas.php?curso_id=".$curso['id']."'><img hspace='20px'src='imagens/icone/tenho-duvidas.png'/></a>";
     echo "<a href='mais_informacoes.php?curso_id=".$curso['id']."'><img hspace='20px'src='imagens/icone/ementa.png'/></a>";
-    echo "<a href='matricula.php?curso_id=".$curso['id']."'><img hspace='20px' src='imagens/icone/inscrever.png'/></a></a><br /><br /><br />";
+    //echo "<a href='matricula.php?curso_id=".$curso['id']."'><img hspace='20px' src='imagens/icone/inscrever.png'/></a></a><br /><br /><br />";
   }
 
   echo '<div id="fechar'.$grupo['id'].'" style="width:50px;margin:0 0 0 25px;"><img src="imagens/icone/seta_para_cima.png"></div>  

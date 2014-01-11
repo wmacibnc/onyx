@@ -7,24 +7,39 @@ include ("config.php");
     $resultado = mysql_fetch_array($consulta);
   ?>
 <div id="conteudo">
-	<h1>Mais Informações - Curso em <?php echo $resultado['nome']; ?></h1>
-	
-	<h4>Descrição</h4>
-	<p><?php echo $resultado['descricao']; ?></p>
+	<div id="titulo_curso">
+		Curso:  <?php echo $resultado['nome']; ?>
+		<img src="imagens/btn-imprimir.png" class="imprimir">
+		<img src="imagens/btn-enviar-amigo.png" class="enviar-amigo">
+	</div>
 
-	<h4>Ementa</h4>
-	<p><?php echo $resultado['ementa']; ?></p>
+	<div id="investimento">
+		<img src="imagens/investimento.png" />
+		<p>R$ <?php echo $resultado['valor']; ?>,00</p>	
+	</div>
 
-	<h4>Investimento</h4>
-	<p>R$ <?php echo $resultado['valor']; ?>,00</p>
+	<div id="carga_horaria">
+		<img src="imagens/carga-horaria.png" />
+		<p><?php echo $resultado['carga_horaria']; ?></p>
+	</div>
 
-	<h4>Observação</h4>
-	<p><?php echo $resultado['observacao']; ?></p>
+	<div id="objetivo-curso">
+		<img src="imagens/objetivo-curso.png" />
+		<p><?php echo $resultado['ementa']; ?></p>
+		<br />
+		<p><?php echo $resultado['observacao']; ?></p>
+	</div>
 
-	<h4>Validade em dias</h4>
-	<p><?php echo $resultado['validade']; ?></p>
+	<div id="conteudo-programatico">
+		<img src="imagens/conteudo-programatico.png" />
+		<p><?php echo $resultado['descricao']; ?></p>
+	</div>
 
-	<p><?php echo "<a href='matricula.php?curso_id=".$resultado['id']."'><img src='imagens/icone/inscrever.png'/></a></a><br /><br /><br />"; ?>
+	<div id="quero-curso">
+		<img src="imagens/quero-curso.png">
+	</dv>
 
+	<p><?php //echo "<a href='matricula.php?curso_id=".$resultado['id']."'><img src='imagens/icone/inscrever.png'/></a></a><br /><br /><br />"; ?>
+</div>
 </div>
 <?php include("footer.php"); ?>

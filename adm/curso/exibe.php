@@ -45,6 +45,7 @@ include("../header.php");
   }else{
 
     echo "Início: ". $inicio ." Valido até ".$validade."<br /><br />";
+
     
     
 // Material por tipo
@@ -62,6 +63,9 @@ include("../header.php");
         case '1':
         echo "<div id='sombra_curso'>";
         echo "<img src='../imagens/icone/pdf.png' /> <br />";
+
+        echo "<a href='curso/".$arquivo."' rel='lightbox'> image #1</a>";
+
         echo '<a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;block&#39;">';
         echo "curso/".$arquivo."";
         echo '</a></p>';
@@ -79,13 +83,15 @@ include("../header.php");
         case '3':
       echo "<div id='sombra_curso'>";
         echo "<img src='../imagens/icone/txt.png' /> <br />";
-        echo '<a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;block&#39;">';
+
+        echo "<a href='../imagens/logo.png' rel='lightbox'> image #1</a>";
+/*        echo '<a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;block&#39;">';
         echo "curso/".$arquivo."";
         echo '</a></p>';
         echo '<div id="white_content" style="display: none;">';
         echo "<embed src='curso/".$arquivo."' width='850px' height='550px'/>";
         echo '<br>Para fechar, <a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;none&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;none&#39;">clique aqui</a>.</div>';
-        echo '<div id="black_overlay" style="display: none;"></div>';
+        echo '<div id="black_overlay" style="display: none;"></div>';*/
         echo "</div>";
         break;
 
