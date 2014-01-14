@@ -2,6 +2,10 @@
 include("../header.php");
 include("../../config.php"); 
 ?>
+
+<head>
+  <META HTTP-EQUIV="REFRESH" CONTENT="5">
+  </head>
 <div id="conteudo_curso">
 	<h3>Lista de Cursos</h3>
 	<?php 
@@ -17,6 +21,8 @@ include("../../config.php");
         <th>Validade</th>
         <th>Cont&eacute;udo</th>
         <th>Avaliação</th>
+        <th>Editar</th>
+        <th>Excluir</th>
       </tr>
   </thead>
 
@@ -42,7 +48,24 @@ include("../../config.php");
     <td align='center'>".$curso['validade'] ." dias</td>
 
     <td><a href='curso/adiciona_conteudo.php?curso=".$curso['id']."'>Contéudo</a></td>
-    <td><a href='curso/lista_avaliacao.php?curso_id=".$curso['id']."'>Listar</a></td></tr>";
+    <td><a href='curso/lista_avaliacao.php?curso_id=".$curso['id']."'>Listar</a></td>
+
+    <td>
+    <form method='post' action='curso/editar.php'> 
+    <input type='hidden' name='id' value='".$curso['id']."'/>
+    <input name='Editar' type='submit' value='Editar' />
+    </form>
+    </td>
+
+    <td>
+    <form method='post' action='curso/deletar.php'> 
+    <input type='hidden' name='id' value='".$curso['id']."'/>
+    <input name='Excluir' type='submit' value='Excluir' />
+    </form>
+    </td>
+
+    </tr>";
+
   }
   ?>
 </tbody>

@@ -23,31 +23,35 @@ include("../header.php");
 
 						<br />
 						<label>Nome: </label> <br />		
-						<input type="text" name="nome" id="nome" size="75px" maxlength="255"/><br/>
-
-						<label>Descrição: </label> <br />		
-						<input type="text" name="descricao" id="descricao" size="75px" maxlength="255"/><br/>
-
-						<label>Ementa: </label> <br />		
-						<input type="text" name="ementa" id="ementa" size="75px" maxlength="255"/><br/>
+						<input type="text" name="nome" id="nome" size="100" maxlength="255"/><br/><br />
 
 						<label>Pasta: </label> <br />		
-						<input type="text" name="nome_pasta" id="nome_pasta" size="75px" maxlength="255"/><br/>
+						<input type="text" name="nome_pasta" id="nome_pasta" size="100" maxlength="255"/><br/><br />
 
-						<label>Observação: </label> <br />
-						<textarea name="observacao" cols="58"></textarea>		
+						<label>Valor: </label> <br />		
+						<input type="text" name="valor" id="valor" size="100" maxlength="10" /> <br /><br />
 
-						<table>
-							<tr>
-								<td width="60%"><label>Valor: </label> <br />		
-									<input type="text" name="valor" id="valor" size="12px" maxlength="10" /></td>
-								<td ><label>Validade Curso: </label> <br />		
-										<input type="text" name="validade" id="validade" size="15px"/></td>
-							</tr>
-						</table>
-						<br />
-						<input type="checkbox" name="ativo" value="1" checked/> Ativo
-						<br /><br />
+						<label>Validade Curso em dias: </label> <br />		
+						<input type="text" name="validade" id="validade" size="100"/><br /><br />
+
+						<label>Carga horária: </label> <br />		
+						<input type="text" name="carga_horaria" id="carga_horaria" size="100"/><br /><br />
+
+						<input type="checkbox" name="ativo" value="1" checked/> Ativo <br /><br />
+
+						<label>Conteúdo Programático: </label> <br /><br />
+						<textarea name="descricao" id="descricao">
+						</textarea>	<br /><br />
+
+						<label>Objetivos do Curso: </label> <br />		<br />
+						<textarea name="ementa" id="ementa">
+						</textarea><br /><br />
+
+
+						<label>Observação: </label> <br /><br />
+						<textarea name="observacao" id="observacao">
+						</textarea>		<br /><br />
+
 						<input type="submit" value="Salvar" />
 						<input type="reset" value="Limpar" />
 					</form>

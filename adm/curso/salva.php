@@ -21,6 +21,7 @@ include("../header.php");
   $valor = $_POST['valor'];
   $validade = $_POST['validade'];
   $ativo = $_POST['ativo'];
+  $carga_horaria = $_POST['carga_horaria'];
 
    // Insere os dados no banco 
   $query = <<<QUERY
@@ -33,7 +34,8 @@ include("../header.php");
     observacao,
     valor,
     validade,
-    ativo
+    ativo,
+    carga_horaria
     )
 VALUES (
   '$grupo_id',
@@ -44,7 +46,8 @@ VALUES (
   '$observacao',
   '$valor',
   '$validade',
-  '$ativo'
+  '$ativo',
+  '$carga_horaria'
   )
 QUERY;
 mysql_query($query) or die ('ERRO: '.mysql_error());
