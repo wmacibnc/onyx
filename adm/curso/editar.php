@@ -37,11 +37,11 @@ $curso=mysql_fetch_array($res);
       </select>
       <br /><br />
 
-      <label>Nome: </label> <br />
+      <label>Nome do Curso: </label> <br />
       <input type="text" name="nome" id="nome" value="<?php echo $curso['nome']; ?>" size="100"/>
       <br /><br />
 
-      <label>Valor: </label> <br />
+      <label>Investimento: </label> <br />
       <input type="text" name="valor" id="valor" value="<?php echo $curso['valor']; ?>" size="100"/><br /><br />
 
       <label>Validade em Dias: </label> <br />

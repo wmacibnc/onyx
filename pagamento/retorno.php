@@ -1,5 +1,5 @@
 <head>
-	<base href="/onyx/" />
+	<base href="http://www.institutoonyx.com.br" />
 </head>
 <?php 
 include("../config.php"); 
@@ -13,6 +13,8 @@ include("PagSeguroLibrary.php");
     <?php
 
     $type = $_GET['codigo'];    
+
+    echo "<h4> Anote o código da sua Transação</h4>" . $type;
     
     /* Definindo as credenciais  */    
     $credentials = new PagSeguroAccountCredentials(      
@@ -35,6 +37,8 @@ include("PagSeguroLibrary.php");
     $status = $transaction->getStatus()->getValue();
     $matricula = $transaction->getReference();
 
+    echo "<h4> Anote o número da sua Matricula: </h4>" . $matricula;
+
     $consulta = mysql_query("select * from usuario_curso where matricula='".$matricula."'");
     $resultado = mysql_fetch_array($consulta);
 
@@ -47,7 +51,7 @@ include("PagSeguroLibrary.php");
     mysql_query($editar) or die ('ERRO: '.mysql_error());
 
 
-
+    echo " <h4>Situação da sua transação até o momento: </h4>";
     switch ($status) {
     	case '1':
     	echo "Aguardando Pagamento";

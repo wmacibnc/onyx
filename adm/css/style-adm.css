@@ -35,10 +35,14 @@ body{font-family: Arial;
 h3{color: #077CC4;}
 h4{color: #000000;}
 
-#rodape{height: 150px;width: 100%;background: url(../../imagens/fundo_rodape.png) repeat-x; float: left;margin: 30px 0 0 0;}
-	#rodape_esquerda{height: 150px;width: 27%;float: left;padding: 1% 0 0 15%;}
-	#rodape_central{height: 150px;width: 20%;float: left;padding: 1% 0 0 0;}
-	#rodape_direita{height: 150px;width: 20%;float: left;padding: 1% 0 0 7%;}
+#rodape{width: 100%;background: url(../../imagens/icone/topo_menu.png) repeat; float: left;margin-top: 20px;}
+	#rodape_esquerda{height: 100px;width: 245px;float: left;}
+	#rodape_central{height: 100px;width: 245px;float: left;}
+	#rodape_direita{height: 100px;width: 245px;float: left;}
+	#rodape_misterw{height: 100px;width: 245px;float: left;}
+#rodape ul{list-style: none;}
+#rodape a{text-decoration: none;color:#FFFFFF;font-size: 12px;}
+.titulo_rodape{color:#FFFFFF; font-size: 12px; text-align: center;}
 
 #progressbar_box{width: 70%;margin: -20px 0 0 0;line-height: 200%;}
 #progressbar100{background-color: #ffffff;border-width: medium; border-style: solid; border-color: #077CC4;-moz-border-radius: 100px;-webkit-border-radius: 100px;border-radius: 100px; color: #FFFFFF;height: 5px;}

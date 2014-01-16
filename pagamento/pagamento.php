@@ -1,5 +1,5 @@
 <head>
-  <base href="/onyx/" />
+  <base href="http://www.institutoonyx.com.br/" />
 </head>
 <?php 
 include ("../header.php");
@@ -140,6 +140,6 @@ $credentials = new PagSeguroAccountCredentials(
 $url = $paymentRequest->register($credentials);
 
 echo "<a href='".$url."' target='_blank'><img src='imagens/icone/pagseguro.png'</a>";
-
+echo "</div>";
 include("../footer.php");
 ?>

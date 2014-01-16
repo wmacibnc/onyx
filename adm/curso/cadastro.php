@@ -22,13 +22,13 @@ include("../header.php");
 
 
 						<br />
-						<label>Nome: </label> <br />		
+						<label>Nome do Curso: </label> <br />		
 						<input type="text" name="nome" id="nome" size="100" maxlength="255"/><br/><br />
 
 						<label>Pasta: </label> <br />		
 						<input type="text" name="nome_pasta" id="nome_pasta" size="100" maxlength="255"/><br/><br />
 
-						<label>Valor: </label> <br />		
+						<label>Investimento: </label> <br />		
 						<input type="text" name="valor" id="valor" size="100" maxlength="10" /> <br /><br />
 
 						<label>Validade Curso em dias: </label> <br />		

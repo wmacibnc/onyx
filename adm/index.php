@@ -85,7 +85,6 @@ echo $resultado['ddtelefone']." ".$resultado['telefone']." - ".$resultado['ddcel
 	}
 	
 	?>
-<p align='center'>Todos os direitos reservados - Instituto Onyx 2013</p>
 </div>
 
 <?php include("footer.php") ?>
