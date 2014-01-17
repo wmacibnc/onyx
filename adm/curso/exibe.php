@@ -51,20 +51,40 @@ include("../header.php");
 // Material por tipo
     $curso_id = $row2['curso_id'];
 
-    $consulta = mysql_query("select * from upload where curso_id=".$curso_id." AND aula=1");
+    
 
 
+    $pagina = basename($_SERVER['REQUEST_URI']);
+    $contador = 0;
+
+    $consulta = mysql_query("select * from upload where curso_id=".$curso_id." AND aula=1 order by tipo");
     while ($resultado2 = mysql_fetch_array($consulta)) {
+      $contador ++;
+
       $tipo = $resultado2['tipo'];
       $arquivo = $resultado2['caminho'];
-
-  // Livros e Artigos
+    
+    // Livros e Artigos
       switch ($tipo) {
         case '1':
         echo "<div id='sombra_curso'>";
         echo "<img src='../imagens/icone/pdf.png' /> <br />";
 
-        echo "<a href='curso/".$arquivo."' rel='lightbox'> image #1</a>";
+        echo '<div id="divThumbnails">
+                <a href="curso/'.$pagina.'#divModalDialog'.$contador.'"> Conteúdo nº '.$contador.'</a>
+              </div>
+
+              <div id="divModalDialog'.$contador.'" class="divModalDialog">
+                <div> 
+                  <embed src="curso/'.$arquivo.'"width="80%" height="550px" />
+                  <br />
+                  <a href=curso/'.$pagina.'>Clique aqui</a> para fechar.
+                </div>
+              </div>
+    ';
+
+
+        /*echo "<a href='curso/".$arquivo."' rel='lightbox'> image #1</a>";
 
         echo '<a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;block&#39;">';
         echo "curso/".$arquivo."";
@@ -72,7 +92,7 @@ include("../header.php");
         echo '<div id="white_content" style="display: none;">';
         echo "<embed src='curso/".$arquivo."' width='850px' height='550px'/>";
         echo '<br>Para fechar, <a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;none&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;none&#39;">clique aqui</a>.</div>';
-        echo '<div id="black_overlay" style="display: none;"></div>';
+        echo '<div id="black_overlay" style="display: none;"></div>';*/
         echo "</div>";
         break;
 
