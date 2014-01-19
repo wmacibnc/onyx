@@ -19,10 +19,11 @@
         /*** virtual frame containing controls, image and caption ***/
 	    .divModalDialog div  {
 	       /* either absolute or fixed */
+           background-color: #FFFFFF;
 		    position:fixed;
 		    top:5%;
 		    width:100%;
-		    height:80%;
+		    height:580px;
             /* rounded corners */
 	        -moz-border-radius: 10px;
             -webkit-border-radius: 10px;

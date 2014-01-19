@@ -1,0 +1,20 @@
+Relatorio de Registro de Diploma
+
+Titulo: Nome do Curso
+Registro nº: Número do Certificado (ID);
+Expedido em: __/ __/___ Curso Concluido: Data
+Nome do Estabelecimento: Razão Social
+Local do estabelecimento: Endere
+
+
+Dados do Aluno
+Nome
+Nacionalidade
+Nascido à: Natural da Cidade
+Estado
+Pai Mae
+
+Registro por: ______
+Cargo
+
+Local, Data 

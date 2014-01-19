@@ -57,73 +57,122 @@ include("../header.php");
     $pagina = basename($_SERVER['REQUEST_URI']);
     $contador = 0;
 
-    $consulta = mysql_query("select * from upload where curso_id=".$curso_id." AND aula=1 order by tipo");
-    while ($resultado2 = mysql_fetch_array($consulta)) {
-      $contador ++;
+    // Aulas Virtuais = 1
+    // Livros Artigos = 2
+    // Arquivos Textos= 3
+    // Vídeos         = 4
+    // Donwloads      = 5
 
-      $tipo = $resultado2['tipo'];
-      $arquivo = $resultado2['caminho'];
-    
-    // Livros e Artigos
-      switch ($tipo) {
-        case '1':
+    // Aulas Virtuais = 1
+    $consulta_1 = mysql_query("select * from upload where curso_id=".$curso_id." AND aula=1 AND tipo=1");
+    if(mysql_num_rows($consulta_1) >=1){
         echo "<div id='sombra_curso'>";
-        echo "<img src='../imagens/icone/pdf.png' /> <br />";
+        echo "<img src='../imagens/icone/apresentacao.png' /> <br /><br />";
+          while ($aulasVirtuais = mysql_fetch_array($consulta_1)) {
+            $contador ++;
+            $arquivo = $aulasVirtuais['caminho'];
 
-        echo '<div id="divThumbnails">
-                <a href="curso/'.$pagina.'#divModalDialog'.$contador.'"> Conteúdo nº '.$contador.'</a>
-              </div>
+            echo '<div id="divThumbnails">
+                <a href="curso/'.$pagina.'#divModalDialog'.$contador.'"> Aula '.$contador.'</a>
+                  </div>
 
-              <div id="divModalDialog'.$contador.'" class="divModalDialog">
-                <div> 
-                  <embed src="curso/'.$arquivo.'"width="80%" height="550px" />
-                  <br />
-                  <a href=curso/'.$pagina.'>Clique aqui</a> para fechar.
-                </div>
-              </div>
-    ';
+                  <div id="divModalDialog'.$contador.'" class="divModalDialog">
+                    <div> 
+                      <embed src="curso/'.$arquivo.'"width="80%" height="550px" /> <br />
+                      <a href=curso/'.$pagina.' class="clique_aqui">Clique aqui para fechar.</a> 
+                    </div>
+                  </div>';
+          }
+    echo "<br />";
+    echo "</div>";
+  }
 
+    // Livros Artigos = 2
+    $consulta_2 = mysql_query("select * from upload where curso_id=".$curso_id." AND aula=1 AND tipo=2");
+    if(mysql_num_rows($consulta_2) >=1){
+        echo "<div id='sombra_curso'>";
+        echo "<img src='../imagens/icone/pdf.png' /> <br /><br />";
+          while ($artigos = mysql_fetch_array($consulta_2)) {
+            $contador ++;
+            $arquivo = $artigos['caminho'];
 
-        /*echo "<a href='curso/".$arquivo."' rel='lightbox'> image #1</a>";
+            echo '<div id="divThumbnails">
+                <a href="curso/'.$pagina.'#divModalDialog'.$contador.'"> Aula '.$contador.'</a>
+                  </div>
 
-        echo '<a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;block&#39;">';
-        echo "curso/".$arquivo."";
-        echo '</a></p>';
-        echo '<div id="white_content" style="display: none;">';
-        echo "<embed src='curso/".$arquivo."' width='850px' height='550px'/>";
-        echo '<br>Para fechar, <a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;none&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;none&#39;">clique aqui</a>.</div>';
-        echo '<div id="black_overlay" style="display: none;"></div>';*/
+                  <div id="divModalDialog'.$contador.'" class="divModalDialog">
+                    <div> 
+                      <embed src="curso/'.$arquivo.'"width="80%" height="550px" /> <br />
+                      <a href=curso/'.$pagina.' class="clique_aqui">Clique aqui para fechar.</a> 
+                    </div>
+                  </div>';
+          }
+    echo "<br />";
+    echo "</div>";
+  }
+
+    // Arquivos Textos= 3
+    $consulta_3 = mysql_query("select * from upload where curso_id=".$curso_id." AND aula=1 AND tipo=3");
+    if(mysql_num_rows($consulta_3) >=1){
+        echo "<div id='sombra_curso'>";
+        echo "<img src='../imagens/icone/txt.png' /> <br /><br />";
+          while ($arquivosTextos = mysql_fetch_array($consulta_3)) {
+            $contador ++;
+            $arquivo = $arquivosTextos['caminho'];
+
+            echo '<div id="divThumbnails">
+                <a href="curso/'.$pagina.'#divModalDialog'.$contador.'"> Aula '.$contador.'</a>
+                  </div>
+
+                  <div id="divModalDialog'.$contador.'" class="divModalDialog">
+                    <div> 
+                      <embed src="curso/'.$arquivo.'"width="80%" height="550px" /> <br />
+                      <a href=curso/'.$pagina.' class="clique_aqui">Clique aqui para fechar.</a> 
+                    </div>
+                  </div>';
+          }
+    echo "<br />";
+    echo "</div>";
+  }
+    // Vídeos         = 4
+    $consulta_4 = mysql_query("select * from upload where curso_id=".$curso_id." AND aula=1 AND tipo=4");
+    if(mysql_num_rows($consulta_4) >=1){
+        echo "<div id='sombra_curso'>";
+        echo "<img src='../imagens/icone/video.png' /> <br /><br />";
+          while ($videos = mysql_fetch_array($consulta_4)) {
+            $contador ++;
+            $arquivo = $videos['caminho'];
+
+            echo '<div id="divThumbnails">
+                <a href="curso/'.$pagina.'#divModalDialog'.$contador.'"> Aula '.$contador.'</a>
+                  </div>
+
+                  <div id="divModalDialog'.$contador.'" class="divModalDialog">
+                    <div> 
+                      <embed src="curso/'.$arquivo.'"width="80%" height="550px" /> <br />
+                      <a href=curso/'.$pagina.' class="clique_aqui">Clique aqui para fechar.</a> 
+                    </div>
+                  </div>';
+          }
+    echo "<br />";
+    echo "</div>";
+  }
+
+    // Donwloads      = 5
+    $consulta_5 = mysql_query("select * from upload where curso_id=".$curso_id." AND aula=1 AND tipo=5");
+    if(mysql_num_rows($consulta_5) >=1){
+        echo "<div id='sombra_curso'>";
+        echo "<img src='../imagens/icone/outros.png' /> <br /><br />";
+          while ($donwloads = mysql_fetch_array($consulta_5)) {
+            $contador ++;
+            $arquivo = $donwloads['caminho'];
+            echo "<a href='curso/donwload.php?arquivo=".$arquivo."'> Aula ".$contador."</a> <br />";
+          }
+        echo "<br />";
         echo "</div>";
-        break;
 
-        case '2':
-      
-        break;
 
-        case '3':
-      echo "<div id='sombra_curso'>";
-        echo "<img src='../imagens/icone/txt.png' /> <br />";
-
-        echo "<a href='../imagens/logo.png' rel='lightbox'> image #1</a>";
-/*        echo '<a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;block&#39;">';
-        echo "curso/".$arquivo."";
-        echo '</a></p>';
-        echo '<div id="white_content" style="display: none;">';
-        echo "<embed src='curso/".$arquivo."' width='850px' height='550px'/>";
-        echo '<br>Para fechar, <a href="javascript:void(0)" onclick="document.getElementById(&#39;white_content&#39;).style.display=&#39;none&#39;;document.getElementById(&#39;black_overlay&#39;).style.display=&#39;none&#39;">clique aqui</a>.</div>';
-        echo '<div id="black_overlay" style="display: none;"></div>';*/
-        echo "</div>";
-        break;
-
-        case '4':
-      
-        break;
-
-        default:
-      
-        break;
-      }
-      }
+    }
     }
 
 ?>    
